@@ -7,6 +7,7 @@ import BrandsRoutes from './components/brands/BrandsRoutes';
 import Navbar from './components/utility/Navbar';
 
 import 'bootstrap-css-only';
+
 import './scss/style.scss';
 
 class App extends React.Component {

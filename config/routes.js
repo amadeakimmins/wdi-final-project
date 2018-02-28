@@ -12,6 +12,11 @@ router.route('/brands/:id')
   .put(secureRoute, brands.update)
   .delete(secureRoute, brands.delete);
 
+router.route('/brands/:id/comments')
+  .post(secureRoute, brands.addComment);
+router.route('/brands/:id/comments/:commentId')
+  .delete(secureRoute, brands.deleteComment);
+
 router.route('/register')
   .post(auth.register);
 
