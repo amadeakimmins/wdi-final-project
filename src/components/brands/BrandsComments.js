@@ -7,7 +7,7 @@ function BrandsComments({ handleCommentSubmit, handleChange, comment }) {
       <FormGroup>
         <FormControl
           name="text"
-          className="textarea"
+          className="textarea input-bar"
           value={comment.text}
           placeholder="What do you think of the brand?"
           onChange={handleChange}
@@ -15,7 +15,7 @@ function BrandsComments({ handleCommentSubmit, handleChange, comment }) {
         </FormControl>
       </FormGroup>
       <FormGroup>
-        <button>Post</button>
+        <button className="main-button">Post</button>
       </FormGroup>
     </form>
   );

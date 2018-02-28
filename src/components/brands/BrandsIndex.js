@@ -54,7 +54,7 @@ class BrandsIndex extends Component {
           </Col>
         </Row>
         <Row>
-          <div className="search-bar">
+          <div className="input-bar">
             <BrandsSearchBar
               handleSort={this.handleSort}
               handleSearch={this.handleSearch}

@@ -95,32 +95,35 @@ class BrandsShow extends React.Component {
     return (
       <Grid>
         <BackButton history={this.props.history} />
-        <h1>{this.state.brand.name}</h1>
+        <h1 className="show-title">{this.state.brand.name}</h1>
         <Row>
+
           <Col md={6}>
-            <Slider {...settings}>
+            <Slider className="slider" {...settings}>
               <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
               <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
               <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
               <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
             </Slider>
-          </Col>
-          <Col md={6}>
-            <p><strong>Categories:</strong> {this.state.brand.categories}</p>
-            <p><strong>About:</strong> {this.state.brand.about}</p>
-            <p><strong>Price: </strong>{this.state.brand.priceRange}</p>
-            <p><a href={this.state.brand.website}>Visit the website</a></p>
-
+            <p className="show-info"><strong><em>Categories:</em></strong> {this.state.brand.categories}</p>
+            <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
+            <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
             {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
             { Auth.isAuthenticated() &&
-            <button  onClick={this.deleteBrand}>
+            <button className="main-button" onClick={this.deleteBrand}>
             Delete
             </button>}
-            { Auth.isAuthenticated() && <Link to={`/brands/${this.state.brand.id}/edit`} >
+            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
             Edit
             </Link> }
+          </Col>
+
+          <Col md={6} className="show-margin">
+            <p><strong><em>About: </em></strong></p>
+            <p>{this.state.brand.about}</p>
 
             {/* comments */}
+            <p><strong><em>Comments: </em></strong></p>
             <BrandsComments
               history={this.props.history}
               handleCommentSubmit={this.handleCommentSubmit}
@@ -128,19 +131,18 @@ class BrandsShow extends React.Component {
               brand={this.state.brand}
               comment={this.state.comment}
             />
-            <ul>
-              { this.state.brand.name && this.state.brand.comments.map(comment =>
-                <li key={comment.id}>
-                  {comment.text}
-                  <button onClick={() =>  this.deleteComment(comment.id)}>
-                  Delete
-                  </button>
-                </li>
-
-              )}
-            </ul>
+            { this.state.brand.name && this.state.brand.comments.map(comment =>
+              <li className="comments" key={comment.id}>
+                <strong>{comment.createdBy.username}</strong>{comment.text}
+                <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                Delete
+                </button>
+              </li>
+            )}
           </Col>
         </Row>
+        <hr className="horizontal-rule"/>
+
         <Row>
           {/* HIDE UNTIL BUTTON IS CLICKED */}
           <Col md={12}>

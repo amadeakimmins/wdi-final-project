@@ -16,7 +16,6 @@ main {
   text-align: center;
   font-size: 45px;
   color: black;
-  font-family: 'Gilroy', sans-serif;
 }
 
 .title:hover {
@@ -60,6 +59,8 @@ img {
   border-radius: 3px;
   padding: 8px 10px;
   color: black;
+  border: 0;
+  background-color: #F9F9F6;
   text-transform: uppercase;
   text-decoration: underline;
 }
@@ -70,7 +71,7 @@ img {
   opacity: 0.8;
 }
 
-.search-bar {
+.input-bar {
   width: 100%;
   margin: 0 auto;
   background-color: #F9F9F6;
@@ -79,8 +80,38 @@ img {
   border-right: 0;
   border-radius: 0;
   outline: none;
+}
 
+*:focus {
+  outline: none;
+}
 
+// SHOW PAGE
+.show-title {
+  text-align: center;
+  font-size: 45px;
+  color: black;
+}
+
+.slider {
+  margin: 10%;
+}
+
+.show-margin {
+  margin-top: 4%;
+}
+
+.show-info {
+  font-size: 15px;
+}
+
+.show-link {
+  color: black;
+  text-decoration: underline;
+}
+
+.comments {
+  list-style-type: none;
 }
 
 // NAVBAR ITEM

@@ -4,11 +4,12 @@ import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 function BrandsProducts({ handleProductSubmit, handleChange, product }) {
   return (
     <form onSubmit={handleProductSubmit}>
+      <p><strong><em>Recommend a Product: </em></strong></p>
       <FormGroup>
         <ControlLabel htmlFor="name">Name</ControlLabel>
         <FormControl
           name="name"
-          className="textarea"
+          className="input-bar textarea"
           defaultValue={product.name}
           onChange={handleChange}
         >
@@ -17,21 +18,21 @@ function BrandsProducts({ handleProductSubmit, handleChange, product }) {
         <ControlLabel htmlFor="image">Image</ControlLabel>
         <FormControl
           name="image"
-          className="textarea"
+          className="input-bar textarea"
           defaultValue={product.image}
           onChange={handleChange}
         >
         </FormControl>
 
         <ControlLabel>Rating (5)</ControlLabel>
-        <FormControl componentClass="select" name="rating">
+        <FormControl componentClass="select" className="input-bar" name="rating">
           <option value="1">⭐️</option>
           <option value="2">⭐️⭐️</option>
           <option value="3">⭐️⭐️⭐️</option>
           <option value="4">⭐️⭐️⭐️⭐️</option>
           <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
         </FormControl>
-        <button>Submit</button>
+        <button className="main-button">Submit</button>
       </FormGroup>
     </form>
   );
