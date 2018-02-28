@@ -1,25 +1,22 @@
 import React from 'react';
+import { FormGroup, FormControl } from 'react-bootstrap';
 
-function BrandsComments({ handleSubmit, handleChange }) {
+function BrandsComments({ handleCommentSubmit, handleChange, comment }) {
   return (
-    <form onSubmit={handleSubmit}>
-      <article className="media">
-        <div className="media-content">
-          <div className="field">
-            <p className="control">
-              <textarea
-                className="textarea" ng-model="vm.newComment.text" placeholder="What do you think of the brand?" onChange={handleChange}
-              >
-              </textarea>
-            </p>
-          </div>
-          <div className="field">
-            <p className="control">
-              <button className="button button--full">Post</button>
-            </p>
-          </div>
-        </div>
-      </article>
+    <form onSubmit={handleCommentSubmit}>
+      <FormGroup>
+        <FormControl
+          name="text"
+          className="textarea"
+          value={comment.text}
+          placeholder="What do you think of the brand?"
+          onChange={handleChange}
+        >
+        </FormControl>
+      </FormGroup>
+      <FormGroup>
+        <button>Post</button>
+      </FormGroup>
     </form>
   );
 }

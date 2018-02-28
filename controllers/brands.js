@@ -58,10 +58,9 @@ function brandsDelete(req, res, next) {
 }
 
 function addCommentRoute(req, res, next) {
-  req.body.createdBy = req.user;
-
+  req.body.createdBy = req.currentUser;
   Brand
-    .findOne({ id: req.params.id })
+    .findById(req.params.id)
     .exec()
     .then((brand) => {
       if(!brand) return res.notFound();
@@ -70,14 +69,15 @@ function addCommentRoute(req, res, next) {
       brand.comments.push(comment);
 
       return brand.save()
-        .then(() => res.json(comment));
+        .then(brand => res.json(brand));
     })
     .catch(next);
 }
 
 function deleteCommentRoute(req, res, next) {
+
   Brand
-    .findOne({ id: req.params.id })
+    .findById(req.params.id)
     .exec()
     .then((brand) => {
       if(!brand) return res.notFound();
@@ -85,7 +85,45 @@ function deleteCommentRoute(req, res, next) {
       const comment = brand.comments.id(req.params.commentId);
       comment.remove();
 
-      return brand.save();
+      brand.save();
+      res.json(brand);
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
+function addProductRoute(req, res, next) {
+  req.body.createdBy = req.currentUser;
+  console.log(req.body);
+
+  Brand
+    .findById(req.params.id)
+    .exec()
+    .then((brand) => {
+      if(!brand) return res.notFound();
+
+      const product = brand.products.create(req.body);
+      brand.products.push(product);
+
+      return brand.save()
+        .then(brand => res.json(brand));
+    })
+    .catch(next);
+}
+
+function deleteProductRoute(req, res, next) {
+
+  Brand
+    .findById(req.params.id)
+    .exec()
+    .then((brand) => {
+      if(!brand) return res.notFound();
+
+      const product = brand.products.id(req.params.productId);
+      product.remove();
+
+      brand.save();
+      res.json(brand);
     })
     .then(() => res.status(204).end())
     .catch(next);
@@ -98,5 +136,7 @@ module.exports = {
   update: brandsUpdate,
   delete: brandsDelete,
   addComment: addCommentRoute,
-  deleteComment: deleteCommentRoute
+  deleteComment: deleteCommentRoute,
+  addProduct: addProductRoute,
+  deleteProduct: deleteProductRoute
 };

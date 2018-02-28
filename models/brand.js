@@ -7,6 +7,15 @@ const commentSchema = new mongoose.Schema({
 
 commentSchema.set('toJSON', { virtuals: true });
 
+const productSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  image: { type: String, required: true },
+  rating: { type: String, required: true },
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+});
+
+productSchema.set('toJSON', { virtuals: true });
+
 const brandSchema = mongoose.Schema({
   name: { type: String, required: true },
   categories: [],
