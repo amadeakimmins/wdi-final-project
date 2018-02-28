@@ -1,21 +1,13 @@
 import React from 'react';
 
-import { Col, FormGroup, FormControl } from 'react-bootstrap';
+import { Row, Col, FormGroup, FormControl } from 'react-bootstrap';
 
-const SearchBar = ({ handleSearch }) => {
+const SearchBar = ({ handleSort, handleSearch }) => {
   return(
     <div>
-      {/* <form className="col-md-6">
-        <div className="form-group">
-          <select onChange={handleSort}>
-            <option value="name|asc">Make (A -Z)</option>
-            <option value="name|desc">Make (Z - A)</option>
-          </select>
-        </div>
-      </form> */}
       <form>
-        <Col md={6}>
-          <FormGroup>
+        <Row>
+          <Col md={6}>
             <FormControl
               className="search-bar"
               type="text"
@@ -23,8 +15,17 @@ const SearchBar = ({ handleSearch }) => {
               onChange={handleSearch}
             >
             </FormControl>
-          </FormGroup>
-        </Col>
+          </Col>
+          <Col md={6}>
+            <FormControl componentClass="select" placeholder="select" className="search-bar" onChange={handleSort}>
+              <option defaultValue="women">Filter...</option>
+              <option value="women">Women</option>
+              <option value="men">Men</option>
+              <option value="accessories">Accessories</option>
+              <option value="beauty">Beauty</option>
+            </FormControl>
+          </Col>
+        </Row>
       </form>
     </div>
 

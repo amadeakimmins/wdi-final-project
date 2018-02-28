@@ -11,8 +11,8 @@ import BrandsSearchBar from './BrandsSearchBar';
 class BrandsIndex extends Component {
   state = {
     brands: [],
-    sortBy: 'name',
-    sortDirection: 'asc',
+    sortBy: 'category',
+    sortDirection: 'women',
     query: ''
   }
 
@@ -24,18 +24,15 @@ class BrandsIndex extends Component {
   }
 
   handleSort = (e) => {
-    // console.log(e.target.value.split('|'));
     const [sortBy, sortDirection] = e.target.value.split('|');
     this.setState({ sortBy, sortDirection });
   }
 
   handleSearch = (e) => {
-    // console.log(e.target.value);
     this.setState({ query: e.target.value });
   }
 
   sortingAndFiltering = () => {
-    // console.log('LOGGING Q IN RENDER METHOD ======> ', this.state.query);
     const { sortBy, sortDirection, query } = this.state;
 
     const regex = new RegExp(query, 'i');
@@ -55,12 +52,14 @@ class BrandsIndex extends Component {
           <Col md={6}>
             { Auth.isAuthenticated() && <Link className="main-button" to="/brands/new">Suggest a Brand</Link> }
           </Col>
-          <Col className="search-bar" md={6}>
+        </Row>
+        <Row>
+          <div className="search-bar">
             <BrandsSearchBar
               handleSort={this.handleSort}
               handleSearch={this.handleSearch}
             />
-          </Col>
+          </div>
         </Row>
         <Row>
           { brands.map(brand => {
