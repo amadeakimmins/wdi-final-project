@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-// import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap';
 
 import Auth from '../../lib/Auth';
 
@@ -17,9 +16,9 @@ const Navbar1 = ({ history }) => {
       {' '}
       { !Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
       {' '}
-      <Link to="/about" className="navbar-item">About</Link>
-      {' '}
       <Link to="/" className="navbar-item"><i className="fa fa-home"></i> Home</Link>
+      {' '}
+      <Link to="/brands" className="navbar-item"><i className="fa fa-shopping-bag"></i> Brands</Link>
       {' '}
       { !!Auth.isAuthenticated() && <Link to="" className="navbar-item"><i className="fa fa-user"></i> My Account</Link>}
       {' '}

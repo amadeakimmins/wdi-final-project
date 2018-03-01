@@ -23,6 +23,7 @@ class BrandsShow extends React.Component {
     }
   }
 
+  // BRANDS
   componentDidMount() {
     Axios
       .get(`/api/brands/${this.props.match.params.id}`)
@@ -30,13 +31,20 @@ class BrandsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
+  deleteBrand = () => {
+    Axios
+      .delete(`/api/brands/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
+      .then(() => this.props.history.push('/'))
+      .catch(err =>console.log(err));
+  }
+
+  // COMMENTS //
   handleChange = ({ target: { name, value } }) => {
     console.log(value);
     const comment = Object.assign({}, this.state.comment, { [name]: value });
     this.setState({ comment }, () => console.log(this.state));
   }
 
-  // comments
   handleCommentSubmit = (e) => {
     e.preventDefault();
     Axios
@@ -55,13 +63,12 @@ class BrandsShow extends React.Component {
       .catch(err =>console.log(err));
   }
 
-  // products
+  // PRODUCTS //
   handleProductChange = ({ target: { name, value } }) => {
     console.log(value);
     const product = Object.assign({}, this.state.product, { [name]: value });
     this.setState({ product }, () => console.log(this.state));
   }
-
 
   handleProductSubmit = (e) => {
     e.preventDefault();
@@ -81,13 +88,7 @@ class BrandsShow extends React.Component {
       .catch(err =>console.log(err));
   }
 
-  // brands
-  deleteBrand = () => {
-    Axios
-      .delete(`/api/brands/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/'))
-      .catch(err =>console.log(err));
-  }
+
 
   render() {
     var settings = {
