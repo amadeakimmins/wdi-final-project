@@ -49,35 +49,38 @@ class BrandsIndex extends Component {
   render() {
     const brands = this.filtering();
     return (
-      <Grid className="container">
-        <Row>
-          <Col md={6}>
-            { Auth.isAuthenticated() && <Link className="main-button" to="/brands/new">Suggest a Brand</Link> }
-          </Col>
-        </Row>
-        <Row>
-          <div className="input-bar">
-            <BrandsSearchBar
-              handleSort={this.handleCategory}
-              handleSearch={this.handleSearch}
-            />
-          </div>
-        </Row>
-        <Row className="container">
-          { brands.map(brand => {
-            return(
-              <Col key={brand.id} xs={12} sm={6} md={4}>
-                <Link to={`/brands/${brand.id}`}>
-                  <div className="image-container">
-                    <img src={brand.image1} className="img-responsive index-images" />
-                  </div>
-                  <p className="brand-title">{brand.name}</p>
-                </Link>
-              </Col>
-            );
-          })}
-        </Row>
-      </Grid>
+      <div>
+        <hr className="horizontal-rule"/>
+        <Grid className="container">
+          <Row>
+            <Col md={6}>
+              { Auth.isAuthenticated() && <Link className="main-button" to="/brands/new">Suggest a Brand</Link> }
+            </Col>
+          </Row>
+          <Row>
+            <div className="input-bar">
+              <BrandsSearchBar
+                handleSort={this.handleCategory}
+                handleSearch={this.handleSearch}
+              />
+            </div>
+          </Row>
+          <Row className="container">
+            { brands.map(brand => {
+              return(
+                <Col key={brand.id} xs={12} sm={6} md={4}>
+                  <Link to={`/brands/${brand.id}`}>
+                    <div className="image-container">
+                      <img src={brand.image1} className="img-responsive index-images" />
+                    </div>
+                    <p className="brand-title">{brand.name}</p>
+                  </Link>
+                </Col>
+              );
+            })}
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

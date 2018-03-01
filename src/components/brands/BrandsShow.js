@@ -101,92 +101,95 @@ class BrandsShow extends React.Component {
     };
 
     return (
-      <Grid className="container">
-        <BackButton history={this.props.history} />
-
-        {/* IMAGE AND OTHER INFO */}
-        <h1 className="show-title">{this.state.brand.name}</h1>
-        <Row>
-          <Col md={6}>
-            <Col className="show-container" >
-              <Slider className="slider" {...settings}>
-                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
-                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
-                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
-                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
-              </Slider>
-            </Col>
-            <p className="show-info"><strong><em>Categories:</em></strong> {this.state.brand.categories}</p>
-            <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
-            <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
-            {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
-            { Auth.isAuthenticated() &&
-            <button className="main-button" onClick={this.deleteBrand}>
-            Delete
-            </button>}
-            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
-            Edit
-            </Link> }
-          </Col>
-
-          {/* ABOUT BRAND */}
-          <Col md={6} className="show-margin">
-            <p><strong><em>About: </em></strong></p>
-            <p>{this.state.brand.about}</p>
-
-            {/* COMMENTS */}
-            <p className="subtitle"><strong><em>Comments: </em></strong></p>
-            <BrandsComments
-              history={this.props.history}
-              handleCommentSubmit={this.handleCommentSubmit}
-              handleChange={this.handleChange}
-              brand={this.state.brand}
-              comment={this.state.comment}
-            />
-            { this.state.brand.name && this.state.brand.comments.map(comment =>
-              <li className="comments" key={comment.id}>
-                <strong>{comment.createdBy.username} - </strong>{comment.text}
-                <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
-                Delete
-                </button>
-              </li>
-            )}
-          </Col>
-        </Row>
+      <div>
         <hr className="horizontal-rule"/>
+        <Grid className="container">
+          <BackButton history={this.props.history} />
 
-        {/* SUGGEST PRODUCTS */}
+          {/* IMAGE AND OTHER INFO */}
+          <h1 className="show-title">{this.state.brand.name}</h1>
+          <Row>
+            <Col md={6}>
+              <Col className="show-container" >
+                <Slider className="slider" {...settings}>
+                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
+                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
+                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
+                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
+                </Slider>
+              </Col>
+              <p className="show-info"><strong><em>Categories:</em></strong> {this.state.brand.categories}</p>
+              <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
+              <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
+              {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
+              { Auth.isAuthenticated() &&
+              <button className="main-button" onClick={this.deleteBrand}>
+              Delete
+              </button>}
+              { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
+              Edit
+              </Link> }
+            </Col>
 
-        <Row>
-          {/* HIDE UNTIL BUTTON IS CLICKED */}
-          <Col md={12}>
-            <BrandsProducts
-              history={this.props.history}
-              handleSubmit={this.handleProductSubmit}
-              handleChange={this.handleProductChange}
-              brand={this.state.brand}
-              product={this.state.product}
-            />
-            <p className="subtitle"><strong><em>
-              Recommended Products
-            </em></strong></p>
-            <Row>
-              { this.state.brand.name && this.state.brand.products.map(product =>
-                <Col key={product.id} xs={12} sm={6} md={3}>
-                  <p><strong><em>
-                    {product.name}
-                  </em></strong></p>
-                  <img className="product-container" src={product.image}/>
-                  <p><strong><em>Rating: </em></strong>{product.rating}</p>
-                  <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
+            {/* ABOUT BRAND */}
+            <Col md={6} className="show-margin">
+              <p><strong><em>About: </em></strong></p>
+              <p>{this.state.brand.about}</p>
+
+              {/* COMMENTS */}
+              <p className="subtitle"><strong><em>Comments: </em></strong></p>
+              <BrandsComments
+                history={this.props.history}
+                handleCommentSubmit={this.handleCommentSubmit}
+                handleChange={this.handleChange}
+                brand={this.state.brand}
+                comment={this.state.comment}
+              />
+              { this.state.brand.name && this.state.brand.comments.map(comment =>
+                <li className="comments" key={comment.id}>
+                  <strong>{comment.createdBy.username} - </strong>{comment.text}
+                  <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
                   Delete
                   </button>
-                </Col>
+                </li>
               )}
-            </Row>
-          </Col>
-        </Row>
-      </Grid>
+            </Col>
+          </Row>
+          <hr className="horizontal-rule"/>
+
+          {/* SUGGEST PRODUCTS */}
+
+          <Row>
+            {/* HIDE UNTIL BUTTON IS CLICKED */}
+            <Col md={12}>
+              <BrandsProducts
+                history={this.props.history}
+                handleSubmit={this.handleProductSubmit}
+                handleChange={this.handleProductChange}
+                brand={this.state.brand}
+                product={this.state.product}
+              />
+              <p className="subtitle"><strong><em>
+                Recommended Products
+              </em></strong></p>
+              <Row>
+                { this.state.brand.name && this.state.brand.products.map(product =>
+                  <Col key={product.id} xs={12} sm={6} md={3}>
+                    <p><strong><em>
+                      {product.name}
+                    </em></strong></p>
+                    <img className="product-container" src={product.image}/>
+                    <p><strong><em>Rating: </em></strong>{product.rating}</p>
+                    <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
+                    Delete
+                    </button>
+                  </Col>
+                )}
+              </Row>
+            </Col>
+          </Row>
+        </Grid>
+      </div>
     );
   }
 }

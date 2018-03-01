@@ -24,10 +24,14 @@ class ProfilePage extends Component {
   render() {
     return (
       <div>
-        <h1>
-          Welcome, {this.state.user.username}
-        </h1>
+        <hr className="horizontal-rule"/>
+        <div className="container">
+          <h1>
+            Welcome, {this.state.user.username}
+          </h1>
+        </div>
       </div>
+
     );
   }
 }
