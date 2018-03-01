@@ -101,7 +101,7 @@ class BrandsShow extends React.Component {
     };
 
     return (
-      <Grid>
+      <Grid className="container">
         <BackButton history={this.props.history} />
 
         {/* IMAGE AND OTHER INFO */}

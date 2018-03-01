@@ -47,7 +47,7 @@ class BrandsIndex extends Component {
   render() {
     const brands = this.sortingAndFiltering();
     return (
-      <Grid>
+      <Grid className="container">
         <Row>
           <Col md={6}>
             { Auth.isAuthenticated() && <Link className="main-button" to="/brands/new">Suggest a Brand</Link> }
@@ -61,7 +61,7 @@ class BrandsIndex extends Component {
             />
           </div>
         </Row>
-        <Row>
+        <Row className="container">
           { brands.map(brand => {
             return(
               <Col key={brand.id} xs={12} sm={6} md={4}>

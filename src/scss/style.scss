@@ -10,6 +10,38 @@ main {
   }
 }
 
+// HOMEPAGE
+.jumbotron {
+  background-image: url('../assets/images/pinkdress.jpg');
+  background-position: center;
+  background-size: cover;
+  min-height: 600px;
+}
+
+.jumbotron-text {
+  text-align: center;
+  font-size: 25px;
+  color:white;
+}
+
+.jumbotron-button {
+  font-size: 27px;
+  border-radius: 3px;
+  padding: 8px 10px;
+  color: black;
+  border: 0;
+  background-color: #F9F9F6;
+  text-transform: uppercase;
+  opacity: 0.7;
+} a {
+  color: black;
+}
+
+.jumbotron-button, a:hover {
+  color: #ecbbbc;
+  text-decoration: none;
+}
+
 // INDEX
 .title {
   text-align: center;

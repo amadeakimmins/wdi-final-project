@@ -4,7 +4,7 @@ import { Row, Col, FormControl } from 'react-bootstrap';
 
 const SearchBar = ({ handleSort, handleSearch }) => {
   return(
-    <div>
+    <div className="container">
       <form>
         <Row>
           <Col md={6}>

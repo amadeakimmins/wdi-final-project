@@ -13,10 +13,10 @@ const BrandsRoutes = () => {
   return (
     <Switch>
       <Route exact path="/" component={HomePage} />
-      <Route path="/brands" component={BrandsIndex} />
-      <ProtectedRoute path="/brands/new" component={BrandsNew} />
-      <ProtectedRoute path="/brands/:id/edit" component={BrandsEdit} />
-      <Route path="/brands/:id" component={BrandsShow} />
+      <Route exact path="/brands" component={BrandsIndex} />
+      <ProtectedRoute exact path="/brands/new" component={BrandsNew} />
+      <ProtectedRoute exact path="/brands/:id/edit" component={BrandsEdit} />
+      <Route exact path="/brands/:id" component={BrandsShow} />
     </Switch>
   );
 };

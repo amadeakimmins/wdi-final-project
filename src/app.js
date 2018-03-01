@@ -22,7 +22,7 @@ class App extends React.Component {
             <h1 className="title"><Link className="title" to="/">sustain.</Link></h1>
             <hr className="horizontal-rule"/>
           </header>
-          <main className="container">
+          <main>
             <AuthenticationRoutes />
             <BrandsRoutes />
           </main>
