@@ -108,12 +108,14 @@ class BrandsShow extends React.Component {
         <h1 className="show-title">{this.state.brand.name}</h1>
         <Row>
           <Col md={6}>
-            <Slider className="slider" {...settings}>
-              <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
-              <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
-              <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
-              <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
-            </Slider>
+            <Col className="show-container" >
+              <Slider className="slider" {...settings}>
+                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
+                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
+                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
+                <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
+              </Slider>
+            </Col>
             <p className="show-info"><strong><em>Categories:</em></strong> {this.state.brand.categories}</p>
             <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
             <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
