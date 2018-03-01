@@ -21,6 +21,7 @@ function brandsCreate(req, res, next) {
 function brandsShow(req, res, next) {
   Brand
     .findById(req.params.id)
+    .populate('comments.createdBy')
     .exec()
     .then((brand) => {
       if(!brand) return res.notFound();

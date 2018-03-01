@@ -9,7 +9,7 @@ const SearchBar = ({ handleSort, handleSearch }) => {
         <Row>
           <Col md={6}>
             <FormControl
-              className="search-bar"
+              className="input-bar"
               type="text"
               placeholder="Search"
               onChange={handleSearch}
@@ -17,7 +17,7 @@ const SearchBar = ({ handleSort, handleSearch }) => {
             </FormControl>
           </Col>
           <Col md={6}>
-            <FormControl componentClass="select" placeholder="select" className="search-bar" onChange={handleSort}>
+            <FormControl componentClass="select" placeholder="select" className="input-bar" onChange={handleSort}>
               <option defaultValue="women">Filter...</option>
               <option value="women">Women</option>
               <option value="men">Men</option>

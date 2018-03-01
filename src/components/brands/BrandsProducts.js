@@ -1,10 +1,10 @@
 import React from 'react';
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
-function BrandsProducts({ handleProductSubmit, handleChange, product }) {
+function BrandsProducts({ handleSubmit, handleChange, product }) {
   return (
-    <form onSubmit={handleProductSubmit}>
-      <p><strong><em>Recommend a Product: </em></strong></p>
+    <form onSubmit={handleSubmit}>
+      <p className="subtitle"><strong><em>Recommend a Product: </em></strong></p>
       <FormGroup>
         <ControlLabel htmlFor="name">Name</ControlLabel>
         <FormControl
@@ -25,12 +25,12 @@ function BrandsProducts({ handleProductSubmit, handleChange, product }) {
         </FormControl>
 
         <ControlLabel>Rating (5)</ControlLabel>
-        <FormControl componentClass="select" className="input-bar" name="rating">
-          <option value="1">⭐️</option>
-          <option value="2">⭐️⭐️</option>
-          <option value="3">⭐️⭐️⭐️</option>
-          <option value="4">⭐️⭐️⭐️⭐️</option>
-          <option value="5">⭐️⭐️⭐️⭐️⭐️</option>
+        <FormControl componentClass="select" className="input-bar" name="rating" onChange={handleChange}>
+          <option value="⭐️">⭐️</option>
+          <option value="⭐️⭐️">⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
+          <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
         </FormControl>
         <button className="main-button">Submit</button>
       </FormGroup>

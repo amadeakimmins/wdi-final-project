@@ -27,7 +27,8 @@ const brandSchema = mongoose.Schema({
   image3: { type: String },
   image4: { type: String },
   image5: { type: String },
-  comments: [ commentSchema ]
+  comments: [ commentSchema ],
+  products: [ productSchema ]
 });
 
 brandSchema.set('toJSON', {
