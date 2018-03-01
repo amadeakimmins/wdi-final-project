@@ -5,7 +5,7 @@ import BackButton from '../utility/BackButton';
 
 function BrandsForm({ history, handleSubmit, handleChange, brand}) {
   return (
-    <Grid>
+    <Grid className="container">
       <Row>
         <Col md={12}>
           <BackButton history={history} />
@@ -24,7 +24,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               </FormControl>
 
               <ControlLabel>Select Categories</ControlLabel>
-              <FormControl componentClass="select" multiple>
+              <FormControl componentClass="select">
                 <option value="women">Women</option>
                 <option value="men">Men</option>
                 <option value="men">Accessories</option>
@@ -109,7 +109,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               >
               </FormControl>
             </FormGroup>
-            <button>Save</button>
+            <button className="main-button">Save</button>
           </form>
         </Col>
       </Row>
