@@ -20,7 +20,7 @@ class App extends React.Component {
             <Navbar />
             <hr className="horizontal-rule"/>
             <h1 className="title"><Link className="title" to="/">sustain.</Link></h1>
-            <hr className="horizontal-rule"/>
+            {/* <hr className="horizontal-rule"/> */}
           </header>
           <main>
             <AuthenticationRoutes />

@@ -12,16 +12,16 @@ main {
 
 // HOMEPAGE
 .jumbotron {
-  background-image: url('../assets/images/pinkdress.jpg');
+  background-image: url('../assets/images/girl-and-road.jpg');
   background-position: center;
   background-size: cover;
-  min-height: 600px;
+  min-height: 680px;
 }
 
 .jumbotron-text {
-  text-align: center;
-  font-size: 25px;
-  color:white;
+  text-align: right;
+  font-size: 30px;
+  color: white;
 }
 
 .jumbotron-button {
@@ -30,7 +30,6 @@ main {
   padding: 8px 10px;
   color: black;
   border: 0;
-  background-color: #F9F9F6;
   text-transform: uppercase;
   opacity: 0.7;
 } a {
@@ -40,6 +39,10 @@ main {
 .jumbotron-button, a:hover {
   color: #ecbbbc;
   text-decoration: none;
+}
+
+.jumbotron-container {
+  margin-right: 10%;
 }
 
 // INDEX
