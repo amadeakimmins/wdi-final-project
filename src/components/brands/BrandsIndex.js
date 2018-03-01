@@ -12,7 +12,7 @@ class BrandsIndex extends Component {
   state = {
     brands: [],
     sortBy: 'category',
-    sortDirection: 'women',
+    sortItem: 'women',
     query: ''
   }
 
@@ -24,8 +24,9 @@ class BrandsIndex extends Component {
   }
 
   handleSort = (e) => {
-    const [sortBy, sortDirection] = e.target.value.split('|');
-    this.setState({ sortBy, sortDirection });
+    const [sortBy, sortItem] = e.target.value.split('|');
+    console.log(e.target.value);
+    this.setState({ sortBy, sortItem });
   }
 
   handleSearch = (e) => {
@@ -33,11 +34,11 @@ class BrandsIndex extends Component {
   }
 
   sortingAndFiltering = () => {
-    const { sortBy, sortDirection, query } = this.state;
+    const { sortBy, sortItem, query } = this.state;
 
     const regex = new RegExp(query, 'i');
 
-    const orderedBrands = _.orderBy(this.state.brands, [sortBy], [sortDirection]);
+    const orderedBrands = _.orderBy(this.state.brands, [sortBy], [sortItem]);
 
     const brands = _.filter(orderedBrands, (brand) => regex.test(brand.name));
 
