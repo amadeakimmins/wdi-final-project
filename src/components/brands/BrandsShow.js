@@ -160,6 +160,13 @@ class BrandsShow extends React.Component {
         <Row>
           {/* HIDE UNTIL BUTTON IS CLICKED */}
           <Col md={12}>
+            <BrandsProducts
+              history={this.props.history}
+              handleSubmit={this.handleProductSubmit}
+              handleChange={this.handleProductChange}
+              brand={this.state.brand}
+              product={this.state.product}
+            />
             <p className="subtitle"><strong><em>
               Recommended Products
             </em></strong></p>
@@ -177,13 +184,6 @@ class BrandsShow extends React.Component {
                 </Col>
               )}
             </Row>
-            <BrandsProducts
-              history={this.props.history}
-              handleSubmit={this.handleProductSubmit}
-              handleChange={this.handleProductChange}
-              brand={this.state.brand}
-              product={this.state.product}
-            />
           </Col>
         </Row>
       </Grid>
