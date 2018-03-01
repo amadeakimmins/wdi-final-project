@@ -8,10 +8,12 @@ import BrandsIndex from './BrandsIndex';
 import BrandsShow from  './BrandsShow';
 import BrandsNew from './BrandsNew';
 import BrandsEdit from './BrandsEdit';
+import ProfilePage from '../user/ProfilePage';
 
 const BrandsRoutes = () => {
   return (
     <Switch>
+      <Route exact path="/users/:id" component={ProfilePage} />
       <Route exact path="/" component={HomePage} />
       <Route exact path="/brands" component={BrandsIndex} />
       <ProtectedRoute exact path="/brands/new" component={BrandsNew} />

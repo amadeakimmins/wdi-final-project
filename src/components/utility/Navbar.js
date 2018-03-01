@@ -21,7 +21,7 @@ const Navbar1 = ({ history }) => {
         {' '}
         <Link to="/brands" className="navbar-item"><i className="fa fa-shopping-bag"></i> Brands</Link>
         {' '}
-        { !!Auth.isAuthenticated() && <Link to="" className="navbar-item"><i className="fa fa-user"></i> Account</Link>}
+        { !!Auth.isAuthenticated() && <Link to={'/users/' + Auth.getPayload().userId} className="navbar-item"><i className="fa fa-user"></i> Account</Link>}
         {' '}
         { !!Auth.isAuthenticated() && <a href="#" className="navbar-item" onClick={logout}><i className="fa fa-sign-out"></i>Logout</a>}
       </nav>

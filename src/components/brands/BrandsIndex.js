@@ -11,6 +11,7 @@ import BrandsSearchBar from './BrandsSearchBar';
 class BrandsIndex extends Component {
   state = {
     brands: [],
+    categories: [],
     query: '',
     categoryQuery: ''
   }
@@ -30,24 +31,23 @@ class BrandsIndex extends Component {
     this.setState({ query: e.target.value });
   }
 
-  // sortingAndFiltering = () => {
-  //   const { categoryQuery, query } = this.state;
-  //   console.log(categoryQuery);
-  //
-  //   const regex = new RegExp(query, 'i');
-  //   const categoryRegex = new RegExp(categoryQuery, 'i');
-  //
-  //   const brandsFilteredBySearchQuery = _.filter(this.state.brands, (brand) => regex.test(brand.name));
-  //   // filter block of code that takes the brandsFilteredBySearchQuery and filters them by categoryQuery
-  //   const brandsFilteredByCategoryQuery = _.filter(this,state.brands, (brand) )
-  //
-  //
-  //
-  //   return brands;
-  // }
+  filtering = () => {
+    const { categoryQuery, query } = this.state;
+
+    const regex = new RegExp(query, 'i');
+
+    const brandsFilteredBySearchQuery = _.filter(this.state.brands, (brand) => regex.test(brand.name));
+
+    const brandsFilteredByCategoryQuery = _.filter(brandsFilteredBySearchQuery, (brand) => {
+      if (!categoryQuery) return brand;
+      return brand.categories.some(category => category === categoryQuery);
+    });
+
+    return brandsFilteredByCategoryQuery;
+  }
 
   render() {
-    // const brands = this.sortingAndFiltering();
+    const brands = this.filtering();
     return (
       <Grid className="container">
         <Row>
@@ -58,13 +58,13 @@ class BrandsIndex extends Component {
         <Row>
           <div className="input-bar">
             <BrandsSearchBar
-              handleSort={this.handleSort}
+              handleSort={this.handleCategory}
               handleSearch={this.handleSearch}
             />
           </div>
         </Row>
         <Row className="container">
-          { this.state.brands.map(brand => {
+          { brands.map(brand => {
             return(
               <Col key={brand.id} xs={12} sm={6} md={4}>
                 <Link to={`/brands/${brand.id}`}>
