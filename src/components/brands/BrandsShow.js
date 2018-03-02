@@ -22,7 +22,8 @@ class BrandsShow extends React.Component {
       image: '',
       rating: ''
     },
-    favorites: []
+    favorites: [],
+    apiKey: process.env.FILESTACK_API_KEY
   }
 
   // BRANDS
@@ -31,12 +32,14 @@ class BrandsShow extends React.Component {
       .get(`/api/brands/${this.props.match.params.id}`)
       .then(res => this.setState({ brand: res.data }))
       .catch(err => console.log(err));
+
+
   }
 
   deleteBrand = () => {
     Axios
       .delete(`/api/brands/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push('/brands'))
       .catch(err =>console.log(err));
   }
 
@@ -72,6 +75,11 @@ class BrandsShow extends React.Component {
     this.setState({ product }, () => console.log(this.state));
   }
 
+  handleImageUpload = result => {
+    const product = Object.assign({}, this.state.product, { image: result.filesUploaded[0].url});
+    this.setState({ product }), () => console.log(product);
+  }
+
   handleProductSubmit = (e) => {
     e.preventDefault();
     Axios
@@ -103,7 +111,7 @@ class BrandsShow extends React.Component {
   deleteFavourite = (id) => {
     Axios
       .delete(`/api/brands/${this.props.match.params.id}/favorites/${id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then((res) => this.setState({ favorites: res.data}))
+      .then((res) => this.setState({ favorites: res.data}), () => console.log(this.state))
       .catch(err => console.log(err));
   }
 
@@ -141,7 +149,7 @@ class BrandsShow extends React.Component {
               <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
               <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
               {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
-              { Auth.isAuthenticated() && !this.state.user.handleFavouriteSubmit() &&
+              { Auth.isAuthenticated() &&
               <button className="main-button" onClick={this.deleteBrand}>
               Delete
               </button>}
@@ -156,8 +164,16 @@ class BrandsShow extends React.Component {
               <p>{this.state.brand.about}</p>
 
               {/* FAVORITES */}
-              { Auth.isAuthenticated() && <button onClick={this.handleFavouriteSubmit} className="main-button">Favourite</button>}
-              { Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteFavourite}>Unfavourite</button>}
+              { Auth.isAuthenticated() &&
+                this.state.brand.favorites &&
+                this.state.brand.favorites.every(favorite => favorite !== Auth.getPayload().userId) &&
+                <button onClick={this.handleFavouriteSubmit} className="main-button">Favourite</button>
+              }
+              { Auth.isAuthenticated() &&
+                this.state.brand.favorites &&
+                this.state.brand.favorites.some(favorite => favorite === Auth.getPayload().userId) &&
+                <button className="main-button" onClick={this.deleteFavourite}>Unfavourite</button>
+              }
 
               {/* COMMENTS */}
               <p className="subtitle"><strong><em>Comments: </em></strong></p>
@@ -191,6 +207,8 @@ class BrandsShow extends React.Component {
                 handleChange={this.handleProductChange}
                 brand={this.state.brand}
                 product={this.state.product}
+                handleImageUpload={this.handleImageUpload}
+                apiKey={this.apiKey}
               /> }
               <p className="subtitle"><strong><em>
                 Recommended Products

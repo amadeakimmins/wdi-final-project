@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
-import { Grid, Row, Col, Link } from 'react-bootstrap';
+import { Grid, Row, Col } from 'react-bootstrap';
 
 class ProfilePage extends Component {
   state = {
@@ -26,13 +26,6 @@ class ProfilePage extends Component {
       })
       .catch(err => console.log(err));
   }
-
-  // getBrands() {
-  //   Axios
-  //     .get('/api/brands')
-  //     .then(res => this.setState({ brands: res.data }))
-  //     .catch(err => console.log(err));
-  // }
 
   render() {
     return (
@@ -58,11 +51,11 @@ class ProfilePage extends Component {
               {this.state.user.username && this.state.user.favorites.map(favorite => {
                 return(
                   <Col key={favorite.id} xs={12} sm={6} md={4}>
-                    {/* <Link to={`/brands/${favorite.brand._id}`}> */}
-                    <div className="image-container">
-                      <img src={favorite.image1} className="img-responsive index-images" />
-                    </div>
-                    {/* </Link> */}
+                    <Link to={`/brands/${favorite.id}`}>
+                      <div className="image-container">
+                        <img src={favorite.image1} className="img-responsive index-images" />
+                      </div>
+                    </Link>
                     <p className="brand-title">{favorite.name}</p>
                   </Col>
                 );

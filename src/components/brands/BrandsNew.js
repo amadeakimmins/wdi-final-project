@@ -30,7 +30,7 @@ class BrandsNew extends React.Component {
 
     Axios
       .post('/api/brands', this.state.brand, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
-      .then(() => this.props.history.push('/'))
+      .then(() => this.props.history.push('/brands'))
       .catch(err => console.log(err));
   }
 
@@ -41,6 +41,7 @@ class BrandsNew extends React.Component {
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
         brand={this.state.brand}
+        handleImageUpload={this.state.handleImageUpload}
       />
     );
   }

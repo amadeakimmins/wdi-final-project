@@ -159,7 +159,7 @@ function unfavoriteBrand(req, res, next) {
       if(!brand) return res.notFound();
       console.log(brand.favorites);
 
-      const indexOfFavorite = brand.favorites.indexOf(req.user.id);
+      const indexOfFavorite = brand.favorites.indexOf(req.currentUser.id);
 
       brand.favorites.splice(indexOfFavorite, 1);
 

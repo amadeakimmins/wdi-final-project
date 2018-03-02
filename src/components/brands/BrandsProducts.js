@@ -1,7 +1,9 @@
 import React from 'react';
+import ReactFilestack from 'filestack-react';
+
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
-function BrandsProducts({ handleSubmit, handleChange, product }) {
+function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload, apiKey }) {
   return (
     <form onSubmit={handleSubmit}>
       <p className="subtitle"><strong><em>Recommend a Product: </em></strong></p>
@@ -16,13 +18,16 @@ function BrandsProducts({ handleSubmit, handleChange, product }) {
         </FormControl>
 
         <ControlLabel htmlFor="image">Image</ControlLabel>
-        <FormControl
-          name="image"
-          className="input-bar textarea"
-          defaultValue={product.image}
-          onChange={handleChange}
-        >
-        </FormControl>
+        <ReactFilestack
+          apikey={apiKey}
+          buttonText="Upload a photo"
+          buttonClass="main-button"
+          onSuccess={handleImageUpload}
+        />
+        { product.name && <div className="product-container">
+          <h2 className="subtitle">Image Preview:</h2>
+          <img src={product.image} className="img-responsive" />
+        </div> }
 
         <ControlLabel>Rating (5)</ControlLabel>
         <FormControl componentClass="select" className="input-bar" name="rating" onChange={handleChange}>

@@ -1,9 +1,10 @@
 import React from 'react';
+
 import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
 
 import BackButton from '../utility/BackButton';
 
-function BrandsForm({ history, handleSubmit, handleChange, brand}) {
+function BrandsForm({ history, handleSubmit, handleChange, brand }) {
   return (
     <Grid className="container">
       <Row>
@@ -13,7 +14,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
         <Col md={12}>
           <form onSubmit={handleSubmit}>
             <FormGroup>
-              <ControlLabel htmlFor="name">Name</ControlLabel>
+              <ControlLabel htmlFor="name">Name:</ControlLabel>
               <FormControl
                 type="text"
                 name="name"
@@ -69,7 +70,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               >
               </FormControl>
 
-              <ControlLabel htmlFor="name">Product Image 2</ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image2"
@@ -79,7 +80,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               >
               </FormControl>
 
-              <ControlLabel htmlFor="name">Product Image 3</ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image3"
@@ -89,7 +90,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               >
               </FormControl>
 
-              <ControlLabel htmlFor="name">Product Image 4</ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image4"
@@ -99,7 +100,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand}) {
               >
               </FormControl>
 
-              <ControlLabel htmlFor="name">Product Image 5</ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image5"
