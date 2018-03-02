@@ -3,7 +3,7 @@ const User = require('../models/user');
 function usersShow(req, res, next) {
   User
     .findById(req.params.id)
-    // .populate()
+    .populate('favorites')
     .exec()
     .then((user) => {
       console.log(user);

@@ -58,6 +58,8 @@ function brandsDelete(req, res, next) {
     .catch(next);
 }
 
+// ADD COMMENTS //
+
 function addCommentRoute(req, res, next) {
   req.body.createdBy = req.currentUser;
   Brand
@@ -92,6 +94,8 @@ function deleteCommentRoute(req, res, next) {
     .then(() => res.status(204).end())
     .catch(next);
 }
+
+//  ADD PRODUCTS //
 
 function addProductRoute(req, res, next) {
   req.body.createdBy = req.currentUser;
@@ -130,6 +134,41 @@ function deleteProductRoute(req, res, next) {
     .catch(next);
 }
 
+// FAVOURITE BRANDS //
+function favoriteBrand(req, res, next) {
+
+  Brand
+    .findById(req.params.id)
+    .exec()
+    .then((brand) => {
+      if(!brand) return res.notFound();
+
+      brand.favorites.push(req.currentUser.id);
+
+      return brand.save();
+    })
+    .then((brand) => res.json(brand))
+    .catch(next);
+}
+
+function unfavoriteBrand(req, res, next) {
+  Brand
+    .findById(req.params.id)
+    .exec()
+    .then((brand) => {
+      if(!brand) return res.notFound();
+      console.log(brand.favorites);
+
+      const indexOfFavorite = brand.favorites.indexOf(req.user.id);
+
+      brand.favorites.splice(indexOfFavorite, 1);
+
+      return brand.save();
+    })
+    .then(() => res.status(204).end())
+    .catch(next);
+}
+
 module.exports = {
   index: brandsIndex,
   create: brandsCreate,
@@ -139,5 +178,7 @@ module.exports = {
   addComment: addCommentRoute,
   deleteComment: deleteCommentRoute,
   addProduct: addProductRoute,
-  deleteProduct: deleteProductRoute
+  deleteProduct: deleteProductRoute,
+  favorite: favoriteBrand,
+  unfavorite: unfavoriteBrand
 };

@@ -23,6 +23,12 @@ router.route('/brands/:id/products')
   .post(secureRoute, brands.addProduct);
 router.route('/brands/:id/products/:productId')
   .delete(secureRoute, brands.deleteProduct);
+// favourites
+router.route('/brands/:id/favorites')
+  .post(secureRoute, brands.favorite);
+
+router.route('/brands/:id/favorites/:favoriteId')
+  .delete(secureRoute, brands.unfavorite);
 
 // authentication
 router.route('/register')

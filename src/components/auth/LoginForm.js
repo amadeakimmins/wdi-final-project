@@ -2,7 +2,7 @@ import React from 'react';
 
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       <div className="form-group">
         <input
           type="text"

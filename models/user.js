@@ -6,7 +6,15 @@ const userSchema = new mongoose.Schema({
   username: { type: String, required: 'username required' },
   email: { type: String, required: 'A valid email address is required', uniqueness: true },
   password: { type: String, required: 'password required' }
-});
+}, {toObject: { virtuals: true }});
+
+
+userSchema
+  .virtual('favorites', {
+    ref: 'Brand',
+    localField: '_id',
+    foreignField: 'favorites'
+  });
 
 userSchema.set('toJSON', {
   getters: true,
@@ -15,6 +23,7 @@ userSchema.set('toJSON', {
     delete json._id;
     delete json.__v;
     delete json.password;
+    delete json.passwordConfirmation;
   }
 });
 

@@ -28,7 +28,8 @@ const brandSchema = mongoose.Schema({
   image4: { type: String },
   image5: { type: String },
   comments: [ commentSchema ],
-  products: [ productSchema ]
+  products: [ productSchema ],
+  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
 });
 
 brandSchema.set('toJSON', {
@@ -40,4 +41,4 @@ brandSchema.set('toJSON', {
   }
 });
 
-module.exports = mongoose.model('brand', brandSchema);
+module.exports = mongoose.model('Brand', brandSchema);

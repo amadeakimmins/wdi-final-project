@@ -12,6 +12,7 @@ import BrandsProducts from './BrandsProducts';
 
 class BrandsShow extends React.Component {
   state = {
+    user: {},
     brand: {},
     comment: {
       text: ''
@@ -20,7 +21,8 @@ class BrandsShow extends React.Component {
       name: '',
       image: '',
       rating: ''
-    }
+    },
+    favorites: []
   }
 
   // BRANDS
@@ -88,6 +90,23 @@ class BrandsShow extends React.Component {
       .catch(err =>console.log(err));
   }
 
+  // FAVOURITES //
+  handleFavouriteSubmit = (e) => {
+    e.preventDefault();
+
+    Axios
+      .post(`/api/brands/${this.props.match.params.id}/favorites`, this.state.favorite, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
+      .then((res) => this.setState({ favorites: res.data }), () => console.log(this.state))
+      .catch(err => console.log(err));
+  }
+
+  deleteFavourite = (id) => {
+    Axios
+      .delete(`/api/brands/${this.props.match.params.id}/favorites/${id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
+      .then((res) => this.setState({ favorites: res.data}))
+      .catch(err => console.log(err));
+  }
+
 
 
   render() {
@@ -122,7 +141,7 @@ class BrandsShow extends React.Component {
               <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
               <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
               {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
-              { Auth.isAuthenticated() &&
+              { Auth.isAuthenticated() && !this.state.user.handleFavouriteSubmit() &&
               <button className="main-button" onClick={this.deleteBrand}>
               Delete
               </button>}
@@ -136,15 +155,19 @@ class BrandsShow extends React.Component {
               <p><strong><em>About: </em></strong></p>
               <p>{this.state.brand.about}</p>
 
+              {/* FAVORITES */}
+              { Auth.isAuthenticated() && <button onClick={this.handleFavouriteSubmit} className="main-button">Favourite</button>}
+              { Auth.isAuthenticated() && <button className="main-button" onClick={this.deleteFavourite}>Unfavourite</button>}
+
               {/* COMMENTS */}
               <p className="subtitle"><strong><em>Comments: </em></strong></p>
-              <BrandsComments
+              { Auth.isAuthenticated() && <BrandsComments
                 history={this.props.history}
                 handleCommentSubmit={this.handleCommentSubmit}
                 handleChange={this.handleChange}
                 brand={this.state.brand}
                 comment={this.state.comment}
-              />
+              /> }
               { this.state.brand.name && this.state.brand.comments.map(comment =>
                 <li className="comments" key={comment.id}>
                   <strong>{comment.createdBy.username} - </strong>{comment.text}
@@ -162,13 +185,13 @@ class BrandsShow extends React.Component {
           <Row>
             {/* HIDE UNTIL BUTTON IS CLICKED */}
             <Col md={12}>
-              <BrandsProducts
+              { Auth.isAuthenticated() &&  <BrandsProducts
                 history={this.props.history}
                 handleSubmit={this.handleProductSubmit}
                 handleChange={this.handleProductChange}
                 brand={this.state.brand}
                 product={this.state.product}
-              />
+              /> }
               <p className="subtitle"><strong><em>
                 Recommended Products
               </em></strong></p>

@@ -3,7 +3,7 @@ import React from 'react';
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="container">
       { errors.passwordConfirmation && <p>{errors.passwordConfirmation}</p>}
 
       { errors.emailUnique && <p>{errors.emailUnique}</p>}
