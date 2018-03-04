@@ -54,9 +54,9 @@ class ProfilePage extends Component {
                     <Link to={`/brands/${favorite.id}`}>
                       <div className="image-container">
                         <img src={favorite.image1} className="img-responsive index-images" />
+                        <p className="brand-title">{favorite.name}</p>
                       </div>
                     </Link>
-                    <p className="brand-title">{favorite.name}</p>
                   </Col>
                 );
               })}
