@@ -4,9 +4,9 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
     <form onSubmit={handleSubmit} className="container">
-      { errors.passwordConfirmation && <p>{errors.passwordConfirmation}</p>}
+      { errors.passwordConfirmation && <p className="errors">{errors.passwordConfirmation}</p>}
 
-      { errors.emailUnique && <p>{errors.emailUnique}</p>}
+      { errors.emailUnique && <p className="errors">{errors.emailUnique}</p>}
 
 
       <div className="form-group">
@@ -18,7 +18,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.fullname}
           className="form-control"
         />
-        { errors.fullname && <p>{errors.fullname}</p>}
+        { errors.fullname && <p className="errors">{errors.fullname}</p>}
       </div>
       <div className="form-group">
         <input
@@ -29,7 +29,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.username}
           className="form-control"
         />
-        { errors.username && <p>{errors.username}</p>}
+        { errors.username && <p className="errors">{errors.username}</p>}
       </div>
       <div className="form-group">
         <input
@@ -40,7 +40,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.email}
           className="form-control"
         />
-        { errors.email && <p>{errors.email}</p>}
+        { errors.email && <p className="errors">{errors.email}</p>}
       </div>
       <div className="form-group">
         <input
@@ -51,7 +51,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
           value={user.password}
           className="form-control"
         />
-        { errors.password && <p>{errors.password}</p>}
+        { errors.password && <p className="errors">{errors.password}</p>}
       </div>
       <div className="form-group">
         <input

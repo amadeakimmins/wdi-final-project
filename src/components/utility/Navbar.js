@@ -23,13 +23,14 @@ const Navbar1 = ({ history }) => {
         {' '}
         {!Auth.isAuthenticated() && <Link to="/login" className="navbar-item"><i className="fa fa-sign-in"></i> Login</Link>}
         {' '}
-        { !Auth.isAuthenticated() && <Link to="/register" className="navbar-item">Register</Link>}
+        { !Auth.isAuthenticated() && <Link to="/register" className="navbar-item"><i className="fa fa-edit"></i> Register</Link>}
         {' '}
-        { !!Auth.isAuthenticated() && <a href="#" className="navbar-item" onClick={logout}><i className="fa fa-sign-out"></i>Logout</a>}
+        { !!Auth.isAuthenticated() && <a href="#" className="navbar-item" onClick={logout}><i className="fa fa-sign-out"></i> Logout</a>}
       </nav>
+      
     </div>
 
-  
+
   );
 };
 

@@ -36,7 +36,7 @@ class ProfilePage extends Component {
         </Row>
         <br/>
         <Row>
-          <Col md={6}>
+          <Col md={6} className="profile-details">
             <h3 className="subtitle"><strong><em>User Details: </em></strong></h3>
             <br/>
             <p><strong><em>Name: </em></strong>{this.state.user.fullname}</p>

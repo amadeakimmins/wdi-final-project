@@ -17,12 +17,14 @@ class BrandsNew extends React.Component {
       image3: '',
       image4: '',
       image5: ''
-    }
+    },
+    errors: {}
   };
 
   handleChange = ({ target: { name, value } }) => {
     const brand = Object.assign({}, this.state.brand, { [name]: value });
-    this.setState({ brand });
+    const errors  = Object.assign({}, this.state.errors, { [name]: ''});
+    this.setState({ brand, errors });
   }
 
   handleSubmit = (e) => {
@@ -31,7 +33,9 @@ class BrandsNew extends React.Component {
     Axios
       .post('/api/brands', this.state.brand, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
       .then(() => this.props.history.push('/brands'))
-      .catch(err => console.log(err));
+      .catch(err =>{
+        this.setState({ errors: err.response.data.errors });
+      });
   }
 
   render() {
@@ -42,6 +46,7 @@ class BrandsNew extends React.Component {
         handleChange={this.handleChange}
         brand={this.state.brand}
         handleImageUpload={this.state.handleImageUpload}
+        errors={this.state.errors}
       />
     );
   }

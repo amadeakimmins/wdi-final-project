@@ -4,7 +4,8 @@ import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-boot
 
 import BackButton from '../utility/BackButton';
 
-function BrandsForm({ history, handleSubmit, handleChange, brand }) {
+function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
     <Grid className="container">
       <Row>
@@ -23,6 +24,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.name && <p className="errors">{errors.name}</p>}
 
               <ControlLabel>Select Categories</ControlLabel>
               <FormControl componentClass="select">
@@ -31,6 +33,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 <option value="men">Accessories</option>
                 <option value="men">Beauty</option>
               </FormControl>
+              { errors.categories && <p className="errors">{errors.categories}</p>}
 
               <ControlLabel htmlFor="name">About Brand:</ControlLabel>
               <FormControl
@@ -41,6 +44,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.about && <p className="errors">{errors.about}</p>}
 
               <ControlLabel htmlFor="name">Website Link:</ControlLabel>
               <FormControl
@@ -51,6 +55,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.website && <p className="errors">{errors.website}</p>}
 
               <ControlLabel>Select Price Range</ControlLabel>
               <FormControl componentClass="select" placeholder="select">
@@ -59,6 +64,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 <option value="high">£££</option>
                 <option value="very-high">££££</option>
               </FormControl>
+              { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 
               <ControlLabel htmlFor="name">Main Image:</ControlLabel>
               <FormControl
@@ -69,6 +75,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.image1 && <p className="errors">{errors.image1}</p>}
 
               <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
@@ -79,6 +86,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.image2 && <p className="errors">{errors.image2}</p>}
 
               <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
@@ -89,6 +97,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
                 onChange={handleChange}
               >
               </FormControl>
+              { errors.image3 && <p className="errors">{errors.image3}</p>}
 
               <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
@@ -110,7 +119,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand }) {
               >
               </FormControl>
             </FormGroup>
-            <button className="main-button">Save</button>
+            <button disabled={formIsInvalid} className="main-button">Save</button>
           </form>
         </Col>
       </Row>

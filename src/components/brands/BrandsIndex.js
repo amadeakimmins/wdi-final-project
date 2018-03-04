@@ -53,7 +53,7 @@ class BrandsIndex extends Component {
         <hr className="horizontal-rule"/>
         <Grid className="container">
           <Row>
-            <Col md={6}>
+            <Col md={6} className="index-margin-button">
               { Auth.isAuthenticated() && <Link className="main-button" to="/brands/new">Suggest a Brand</Link> }
             </Col>
           </Row>

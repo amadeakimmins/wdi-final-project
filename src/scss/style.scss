@@ -10,6 +10,11 @@ main {
   }
 }
 
+.errors {
+  color: red;
+  font-size: 15px;
+}
+
 // HOMEPAGE
 .jumbotron {
   background-image: url('../assets/images/girl-and-road.jpg');
@@ -53,6 +58,10 @@ main {
   font-size: 50px;
   // color: #ecbbbc;
   color: black;
+}
+
+.index-margin-button {
+  margin-bottom: 1%;
 }
 
 .title:hover {
@@ -116,7 +125,7 @@ img {
   border-top: 0;
   border-left: 0;
   border-right: 0;
-  border-radius: 0;
+  border-radius: 3px;
   outline: none;
 }
 
@@ -129,6 +138,11 @@ img {
   text-align: center;
   font-size: 45px;
   color: black;
+  margin-bottom: 0;
+}
+
+.margin-button {
+  margin-bottom: 5%;
 }
 
 img {
@@ -145,10 +159,6 @@ img {
 
 .show-margin {
   margin-top: 4%;
-}
-
-.show-info {
-  font-size: 15px;
 }
 
 .show-link {
@@ -168,7 +178,7 @@ img {
 
 .subtitle {
   font-size: 20px;
-  text-decoration: underline;
+  // text-decoration: underline;
 }
 
 // NAVBAR ITEM
@@ -198,4 +208,8 @@ hr.horizontal-rule {
 .welcome {
   color: #ecbbbc;
   text-decoration: underline;
+}
+
+.profile-details {
+  margin-bottom: 5%;
 }

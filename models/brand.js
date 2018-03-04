@@ -17,14 +17,14 @@ const productSchema = new mongoose.Schema({
 productSchema.set('toJSON', { virtuals: true });
 
 const brandSchema = mongoose.Schema({
-  name: { type: String, required: true },
-  categories: [],
-  about: { type: String, required: true },
-  website: { type: String, required: true },
-  priceRange: { type: String },
-  image1: { type: String },
-  image2: { type: String },
-  image3: { type: String },
+  name: { type: String, required: 'Name is required' },
+  categories: [{ type: Array, required: 'At least one category is required' }],
+  about: { type: String, required: 'A description is required' },
+  website: { type: String, required: 'A website link is required' },
+  priceRange: { type: String, required: 'Price range is required' },
+  image1: { type: String, required: 'Main image is required' },
+  image2: { type: String, required: 'At least two product images are required' },
+  image3: { type: String, required: 'At least two product images are required' },
   image4: { type: String },
   image5: { type: String },
   comments: [ commentSchema ],

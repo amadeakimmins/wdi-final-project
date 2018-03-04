@@ -3,7 +3,8 @@ import ReactFilestack from 'filestack-react';
 
 import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
-function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload, apiKey }) {
+function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload, apiKey, errors }) {
+  const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
     <form onSubmit={handleSubmit}>
       <p className="subtitle"><strong><em>Recommend a Product: </em></strong></p>
@@ -16,6 +17,7 @@ function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload
           onChange={handleChange}
         >
         </FormControl>
+        { errors.name && <p className="errors">{errors.name}</p>}
 
         <ControlLabel htmlFor="image">Image</ControlLabel>
         <ReactFilestack
@@ -37,7 +39,8 @@ function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload
           <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
           <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
         </FormControl>
-        <button className="main-button">Submit</button>
+        { errors.rating && <p className="errors">{errors.rating}</p>}
+        <button disabled={formIsInvalid} className="main-button">Submit</button>
       </FormGroup>
     </form>
   );

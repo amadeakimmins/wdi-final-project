@@ -22,18 +22,20 @@ class BrandsShow extends React.Component {
       image: '',
       rating: ''
     },
+    categories: {},
     favorites: [],
-    apiKey: process.env.FILESTACK_API_KEY
+    apiKey: process.env.FILESTACK_API_KEY,
+    errors: {}
   }
+
 
   // BRANDS
   componentDidMount() {
+    console.log(this.state.categories);
     Axios
       .get(`/api/brands/${this.props.match.params.id}`)
       .then(res => this.setState({ brand: res.data }))
       .catch(err => console.log(err));
-
-
   }
 
   deleteBrand = () => {
@@ -72,7 +74,8 @@ class BrandsShow extends React.Component {
   handleProductChange = ({ target: { name, value } }) => {
     console.log(value);
     const product = Object.assign({}, this.state.product, { [name]: value });
-    this.setState({ product }, () => console.log(this.state));
+    const errors  = Object.assign({}, this.state.errors, { [name]: ''});
+    this.setState({ product, errors });
   }
 
   handleImageUpload = result => {
@@ -115,8 +118,6 @@ class BrandsShow extends React.Component {
       .catch(err => console.log(err));
   }
 
-
-
   render() {
     var settings = {
       dots: true,
@@ -129,8 +130,8 @@ class BrandsShow extends React.Component {
 
     return (
       <div>
-        <hr className="horizontal-rule"/>
         <Grid className="container">
+          <hr className="horizontal-rule"/>
           <BackButton history={this.props.history} />
 
           {/* IMAGE AND OTHER INFO */}
@@ -145,8 +146,11 @@ class BrandsShow extends React.Component {
                   <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
                 </Slider>
               </Col>
-              <p className="show-info"><strong><em>Categories:</em></strong> {this.state.brand.categories}</p>
-              <p className="show-info"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
+              <p className="subtitle"><strong><em>Categories:</em></strong></p>
+              {/* { this.state.categories.map((category, index) =>
+                <p key={index}>{category}</p>,
+              )} */}
+              <p className="subtitle"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
               <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
               {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
               { Auth.isAuthenticated() &&
@@ -160,14 +164,14 @@ class BrandsShow extends React.Component {
 
             {/* ABOUT BRAND */}
             <Col md={6} className="show-margin">
-              <p><strong><em>About: </em></strong></p>
+              <p className="subtitle"><strong><em>About: </em></strong></p>
               <p>{this.state.brand.about}</p>
 
               {/* FAVORITES */}
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
                 this.state.brand.favorites.every(favorite => favorite !== Auth.getPayload().userId) &&
-                <button onClick={this.handleFavouriteSubmit} className="main-button">Favourite</button>
+                <button onClick={this.handleFavouriteSubmit} className="main-button margin-button">Favourite</button>
               }
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
@@ -208,7 +212,8 @@ class BrandsShow extends React.Component {
                 brand={this.state.brand}
                 product={this.state.product}
                 handleImageUpload={this.handleImageUpload}
-                apiKey={this.apiKey}
+                apiKey={this.state.apiKey}
+                errors={this.state.errors}
               /> }
               <p className="subtitle"><strong><em>
                 Recommended Products
