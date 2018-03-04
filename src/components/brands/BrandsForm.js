@@ -15,7 +15,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
         <Col md={12}>
           <form onSubmit={handleSubmit} className="container">
             <FormGroup>
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Name:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Name:</ControlLabel>
               <FormControl
                 type="text"
                 name="name"
@@ -28,7 +28,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               { errors.name && <p className="errors">{errors.name}</p>}
 
               <FormGroup>
-                <ControlLabel className="form-title"><strong><em>Select Categories:</em></strong></ControlLabel>
+                <ControlLabel>Select Categories:</ControlLabel>
                 <Checkbox value="women">Women</Checkbox>
                 <Checkbox value="men">Men</Checkbox>
                 <Checkbox value="accessories">Accessories</Checkbox>
@@ -44,7 +44,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl> */}
               { errors.categories && <p className="errors">{errors.categories}</p>}
 
-              <ControlLabel className="form-title" htmlFor="about"><strong><em>About:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="about">About:</ControlLabel>
               <FormControl
                 type="text"
                 name="about"
@@ -56,7 +56,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.about && <p className="errors">{errors.about}</p>}
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Website Link:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Website Link:</ControlLabel>
               <FormControl
                 type="text"
                 name="website"
@@ -68,7 +68,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.website && <p className="errors">{errors.website}</p>}
 
-              <ControlLabel className="form-title"><strong><em>Select Price Range</em></strong></ControlLabel>
+              <ControlLabel>Select Price Range</ControlLabel>
               <FormControl componentClass="select" className="input-bar" placeholder="select">
                 <option value="low">£</option>
                 <option value="medium">££</option>
@@ -77,7 +77,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Main Image:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Main Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image1"
@@ -89,7 +89,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image1 && <p className="errors">{errors.image1}</p>}
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image2"
@@ -101,7 +101,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image2 && <p className="errors">{errors.image2}</p>}
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image3"
@@ -113,7 +113,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image3 && <p className="errors">{errors.image3}</p>}
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image4"
@@ -124,7 +124,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               >
               </FormControl>
 
-              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
+              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
               <FormControl
                 type="text"
                 name="image5"
