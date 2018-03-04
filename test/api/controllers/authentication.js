@@ -17,6 +17,7 @@ describe('Authentication Controller Tests', () => {
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
+          fullname: 'test',
           username: 'test',
           email: 'test@test.com',
           password: 'password',
@@ -36,6 +37,7 @@ describe('Authentication Controller Tests', () => {
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
+          fullname: 'test',
           username: 'test',
           email: 'test@test.com',
           password: 'password',
@@ -44,8 +46,8 @@ describe('Authentication Controller Tests', () => {
         .end((err, res) => {
           expect(res.status).to.eq(400);
           expect(res.body).to.be.a('object');
-          expect(res.body.message).to.eq('Bad Request');
-          expect(res.body.errors).to.eq('ValidationError: passwordConfirmation: does not match');
+          expect(res.body.message).to.eq('Unprocessable Entity');
+          expect(res.body.errors).to.eq('ValidationError');
           done();
         });
     });
@@ -58,6 +60,7 @@ describe('Authentication Controller Tests', () => {
         .post('/api/register')
         .set('Accept', 'application/json')
         .send({
+          fullname: 'test',
           username: 'test',
           email: 'test@test.com',
           password: 'password',

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Grid, Row, Col, FormGroup, ControlLabel, FormControl } from 'react-bootstrap';
+import { Grid, Row, Col, FormGroup, ControlLabel, FormControl, Checkbox } from 'react-bootstrap';
 
 import BackButton from '../utility/BackButton';
 
@@ -13,12 +13,13 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
           <BackButton history={history} />
         </Col>
         <Col md={12}>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} className="container">
             <FormGroup>
-              <ControlLabel htmlFor="name">Name:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Name:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="name"
+                className="input-bar textarea"
                 id="name"
                 value={brand.name}
                 onChange={handleChange}
@@ -26,19 +27,28 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.name && <p className="errors">{errors.name}</p>}
 
-              <ControlLabel>Select Categories</ControlLabel>
+              <FormGroup>
+                <ControlLabel className="form-title"><strong><em>Select Categories:</em></strong></ControlLabel>
+                <Checkbox value="women">Women</Checkbox>
+                <Checkbox value="men">Men</Checkbox>
+                <Checkbox value="accessories">Accessories</Checkbox>
+                <Checkbox value="beauty">Beauty</Checkbox>
+              </FormGroup>
+
+              {/* <ControlLabel>Select Categories</ControlLabel>
               <FormControl componentClass="select">
                 <option value="women">Women</option>
                 <option value="men">Men</option>
                 <option value="men">Accessories</option>
                 <option value="men">Beauty</option>
-              </FormControl>
+              </FormControl> */}
               { errors.categories && <p className="errors">{errors.categories}</p>}
 
-              <ControlLabel htmlFor="name">About Brand:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="about"><strong><em>About:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="about"
+                className="input-bar textarea"
                 id="about"
                 value={brand.about}
                 onChange={handleChange}
@@ -46,10 +56,11 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.about && <p className="errors">{errors.about}</p>}
 
-              <ControlLabel htmlFor="name">Website Link:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Website Link:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="website"
+                className="input-bar textarea"
                 id="website"
                 value={brand.website}
                 onChange={handleChange}
@@ -57,8 +68,8 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.website && <p className="errors">{errors.website}</p>}
 
-              <ControlLabel>Select Price Range</ControlLabel>
-              <FormControl componentClass="select" placeholder="select">
+              <ControlLabel className="form-title"><strong><em>Select Price Range</em></strong></ControlLabel>
+              <FormControl componentClass="select" className="input-bar" placeholder="select">
                 <option value="low">£</option>
                 <option value="medium">££</option>
                 <option value="high">£££</option>
@@ -66,10 +77,11 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 
-              <ControlLabel htmlFor="name">Main Image:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Main Image:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="image1"
+                className="input-bar textarea"
                 id="image1"
                 value={brand.image1}
                 onChange={handleChange}
@@ -77,10 +89,11 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image1 && <p className="errors">{errors.image1}</p>}
 
-              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="image2"
+                className="input-bar textarea"
                 id="image2"
                 value={brand.image2}
                 onChange={handleChange}
@@ -88,10 +101,11 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image2 && <p className="errors">{errors.image2}</p>}
 
-              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="image3"
+                className="input-bar textarea"
                 id="image3"
                 value={brand.image3}
                 onChange={handleChange}
@@ -99,20 +113,22 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.image3 && <p className="errors">{errors.image3}</p>}
 
-              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="image4"
+                className="input-bar textarea"
                 id="image4"
                 value={brand.image4}
                 onChange={handleChange}
               >
               </FormControl>
 
-              <ControlLabel htmlFor="name">Product Image:</ControlLabel>
+              <ControlLabel className="form-title" htmlFor="name"><strong><em>Product Image:</em></strong></ControlLabel>
               <FormControl
                 type="text"
                 name="image5"
+                className="input-bar textarea"
                 id="image5"
                 value={brand.image5}
                 onChange={handleChange}

@@ -15,6 +15,11 @@ main {
   font-size: 15px;
 }
 
+.form-title {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
 // HOMEPAGE
 .jumbotron {
   background-image: url('../assets/images/girl-and-road.jpg');
@@ -127,6 +132,7 @@ img {
   border-right: 0;
   border-radius: 3px;
   outline: none;
+  margin-bottom: 1%;
 }
 
 *:focus {
