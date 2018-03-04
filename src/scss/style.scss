@@ -5,24 +5,49 @@ body {
   font-family: $primary-font;
 }
 
-main {
-  &.container {
-    width: 100%;
-    margin: 0 auto;
-  }
-}
-
 .errors {
   color: $error-color;
   font-size: 15px;
 }
 
+// APP.JS
+
+div {
+  header {
+    h1 {
+      &.title {
+          text-align: center;
+          font-size: 50px;
+          color: $font-color;
+      }
+      &.title:hover {
+        text-decoration: none;
+        color: $hover-font-color;
+      }
+    }
+  }
+  main {
+    &.container {
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}
+
 // HOMEPAGE
+
 .jumbotron {
-  background-image: url('../assets/images/girl-and-road.jpg');
-  background-position: center;
-  background-size: cover;
-  min-height: 730px;
+    background-image: url('../assets/images/girl-and-road.jpg');
+    background-position: center;
+    background-size: cover;
+    min-height: 730px;
+  }
+
+
+div {
+  .jumbotron-container {
+    margin-right: 10%;
+  }
 }
 
 .jumbotron-text {
@@ -48,26 +73,15 @@ main {
   text-decoration: none;
 }
 
-.jumbotron-container {
-  margin-right: 10%;
-}
-
 
 // INDEX
-.title {
-  text-align: center;
-  font-size: 50px;
-  color: $font-color;
+div {
+  &.index-margin-button {
+    margin-bottom: 1%;
+  }
 }
 
-.index-margin-button {
-  margin-bottom: 1%;
-}
 
-.title:hover {
-  text-decoration: none;
-  color: $hover-font-color;
-}
 
 .image-container {
   width: 250px;
