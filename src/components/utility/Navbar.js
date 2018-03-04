@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom';
 
 import Auth from '../../lib/Auth';
 
+// import { Navbar, FormGroup, FormControl, Button } from 'react-bootstrap';
+
 const Navbar1 = ({ history }) => {
   function logout(e) {
     e.preventDefault();
@@ -26,6 +28,8 @@ const Navbar1 = ({ history }) => {
         { !!Auth.isAuthenticated() && <a href="#" className="navbar-item" onClick={logout}><i className="fa fa-sign-out"></i>Logout</a>}
       </nav>
     </div>
+
+  
   );
 };
 

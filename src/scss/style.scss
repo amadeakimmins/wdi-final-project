@@ -21,7 +21,8 @@ main {
 .jumbotron-text {
   text-align: right;
   font-size: 30px;
-  color: #ecbbbc;
+  // color: #ecbbbc;
+  color: black;
 }
 
 .jumbotron-button {
@@ -45,10 +46,12 @@ main {
   margin-right: 10%;
 }
 
+
 // INDEX
 .title {
   text-align: center;
-  font-size: 45px;
+  font-size: 50px;
+  // color: #ecbbbc;
   color: black;
 }
 
@@ -70,6 +73,9 @@ img {
   &.index-images {
     width: inherit;
     height: inherit;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   &.index-images:hover {
     opacity: 0.5;
