@@ -72,8 +72,9 @@ class BrandsIndex extends Component {
                   <Link to={`/brands/${brand.id}`}>
                     <div className="image-container">
                       <img src={brand.image1} className="img-responsive index-images" />
+                      <p className="brand-title">{brand.name}</p>
                     </div>
-                    <p className="brand-title">{brand.name}</p>
+
                   </Link>
                 </Col>
               );
