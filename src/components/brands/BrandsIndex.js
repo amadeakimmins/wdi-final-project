@@ -68,7 +68,7 @@ class BrandsIndex extends Component {
           <Row className="container">
             { brands.map(brand => {
               return(
-                <Col key={brand.id} xs={12} sm={6} md={4}>
+                <Col key={brand.id} xs={12} sm={6} md={6} lg={4}>
                   <Link to={`/brands/${brand.id}`}>
                     <div className="image-container">
                       <img src={brand.image1} className="img-responsive index-images" />
