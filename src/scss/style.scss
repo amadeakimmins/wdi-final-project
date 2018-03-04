@@ -1,3 +1,4 @@
+// #666666
 body {
   background-color: #F9F9F6;
   font-family: 'Gilroy', sans-serif;
@@ -25,26 +26,26 @@ main {
   background-image: url('../assets/images/girl-and-road.jpg');
   background-position: center;
   background-size: cover;
-  min-height: 680px;
+  min-height: 730px;
 }
 
 .jumbotron-text {
   text-align: right;
   font-size: 30px;
   // color: #ecbbbc;
-  color: black;
+  color: #666666;
 }
 
 .jumbotron-button {
   font-size: 27px;
   border-radius: 3px;
   padding: 8px 10px;
-  color: black;
+  color: #666666;
   border: 0;
   text-transform: uppercase;
   opacity: 0.7;
 } a {
-  color: black;
+  color: #666666;
 }
 
 .jumbotron-button, a:hover {
@@ -62,7 +63,7 @@ main {
   text-align: center;
   font-size: 50px;
   // color: #ecbbbc;
-  color: black;
+  color: #666666;
 }
 
 .index-margin-button {
@@ -98,7 +99,7 @@ img {
 
 .brand-title {
   text-align: center;
-  color: black;
+  color: #666666;
   margin-bottom: 0;
 }
 
@@ -110,7 +111,7 @@ img {
   font-size: 18px;
   border-radius: 3px;
   padding: 8px 10px;
-  color: black;
+  color: #666666;
   border: 0;
   background-color: #F9F9F6;
   text-transform: uppercase;
@@ -143,7 +144,7 @@ img {
 .show-title {
   text-align: center;
   font-size: 45px;
-  color: black;
+  color: #666666;
   margin-bottom: 0;
 }
 
@@ -167,8 +168,10 @@ img {
   margin-top: 4%;
 }
 
+
 .show-link {
-  color: black;
+  color: #666666;
+
   text-decoration: underline;
 }
 
@@ -193,7 +196,7 @@ img {
 }
 
 .navbar-item {
-  color: black;
+  color: #666666;
   text-transform: uppercase;
 }
 
