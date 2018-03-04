@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import Axios from 'axios';
 import Slider from 'react-slick';
 
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Tabs, Tab } from 'react-bootstrap';
 
 import Auth from '../../lib/Auth';
 import BackButton from '../utility/BackButton';
@@ -203,36 +203,40 @@ class BrandsShow extends React.Component {
           {/* SUGGEST PRODUCTS */}
 
           <Row>
-            {/* HIDE UNTIL BUTTON IS CLICKED */}
-            <Col md={12}>
-              { Auth.isAuthenticated() &&  <BrandsProducts
-                history={this.props.history}
-                handleSubmit={this.handleProductSubmit}
-                handleChange={this.handleProductChange}
-                brand={this.state.brand}
-                product={this.state.product}
-                handleImageUpload={this.handleImageUpload}
-                apiKey={this.state.apiKey}
-                errors={this.state.errors}
-              /> }
-              <p className="subtitle"><strong><em>
-                Recommended Products
-              </em></strong></p>
-              <Row>
-                { this.state.brand.name && this.state.brand.products.map(product =>
-                  <Col key={product.id} xs={12} sm={6} md={3}>
-                    <p><strong><em>
-                      {product.name}
-                    </em></strong></p>
-                    <img className="product-container" src={product.image}/>
-                    <p><strong><em>Rating: </em></strong>{product.rating}</p>
-                    <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
-                    Delete
-                    </button>
-                  </Col>
-                )}
-              </Row>
-            </Col>
+            <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+              <Tab eventKey={1} className="subtitle" title="Recommend a Product">
+                { Auth.isAuthenticated() &&  <BrandsProducts
+                  history={this.props.history}
+                  handleSubmit={this.handleProductSubmit}
+                  handleChange={this.handleProductChange}
+                  brand={this.state.brand}
+                  product={this.state.product}
+                  handleImageUpload={this.handleImageUpload}
+                  apiKey={this.state.apiKey}
+                  errors={this.state.errors}
+                /> }
+              </Tab>
+              {' '}
+              <Tab eventKey={2} title="Recommended Products">
+                <p className="subtitle"><strong><em>
+                  Recommended Products
+                </em></strong></p>
+                <Row>
+                  { this.state.brand.name && this.state.brand.products.map(product =>
+                    <Col key={product.id} xs={12} sm={6} md={3}>
+                      <p><strong><em>
+                        {product.name}
+                      </em></strong></p>
+                      <img className="product-container" src={product.image}/>
+                      <p><strong><em>Rating: </em></strong>{product.rating}</p>
+                      <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
+                      Delete
+                      </button>
+                    </Col>
+                  )}
+                </Row>
+              </Tab>
+            </Tabs>
           </Row>
         </Grid>
       </div>

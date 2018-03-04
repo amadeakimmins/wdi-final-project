@@ -1,69 +1,72 @@
 import React from 'react';
 
+import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
     <form onSubmit={handleSubmit} className="container">
+
       { errors.passwordConfirmation && <p className="errors">{errors.passwordConfirmation}</p>}
 
       { errors.emailUnique && <p className="errors">{errors.emailUnique}</p>}
 
-
-      <div className="form-group">
-        <input
-          type="text"
+      <FormGroup>
+        <ControlLabel htmlFor="fullname">fullname</ControlLabel>
+        <FormControl
           name="fullname"
-          placeholder="Full Name"
+          type="fullname"
+          className="input-bar textarea"
+          defaultValue={user.fullname}
           onChange={handleChange}
-          value={user.fullname}
-          className="form-control"
-        />
+        >
+        </FormControl>
         { errors.fullname && <p className="errors">{errors.fullname}</p>}
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          name="username"
-          placeholder="Username"
-          onChange={handleChange}
-          value={user.username}
-          className="form-control"
-        />
-        { errors.username && <p className="errors">{errors.username}</p>}
-      </div>
-      <div className="form-group">
-        <input
-          type="text"
-          name="email"
-          placeholder="Email"
-          onChange={handleChange}
-          value={user.email}
-          className="form-control"
-        />
-        { errors.email && <p className="errors">{errors.email}</p>}
-      </div>
-      <div className="form-group">
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          onChange={handleChange}
-          value={user.password}
-          className="form-control"
-        />
-        { errors.password && <p className="errors">{errors.password}</p>}
-      </div>
-      <div className="form-group">
-        <input
-          type="password"
-          name="passwordConfirmation"
-          placeholder="Confirm Password"
-          onChange={handleChange}
-          value={user.passwordConfirmation}
-          className="form-control"
-        />
-      </div>
 
+        <ControlLabel htmlFor="username">Username</ControlLabel>
+        <FormControl
+          name="username"
+          type="username"
+          className="input-bar textarea"
+          defaultValue={user.username}
+          onChange={handleChange}
+        >
+        </FormControl>
+        { errors.username && <p className="errors">{errors.username}</p>}
+
+        <ControlLabel htmlFor="email">Email</ControlLabel>
+        <FormControl
+          name="email"
+          type="email"
+          className="input-bar textarea"
+          defaultValue={user.email}
+          onChange={handleChange}
+        >
+        </FormControl>
+        { errors.email && <p className="errors">{errors.email}</p>}
+
+        <ControlLabel htmlFor="password">Password</ControlLabel>
+        <FormControl
+          name="password"
+          type="password"
+          className="input-bar textarea"
+          defaultValue={user.password}
+          onChange={handleChange}
+        >
+        </FormControl>
+        { errors.password && <p className="errors">{errors.password}</p>}
+
+        <ControlLabel htmlFor="passwordConfirmation">Password Confirmation</ControlLabel>
+        <FormControl
+          name="passwordConfirmation"
+          type="passwordConfirmation"
+          className="input-bar textarea"
+          defaultValue={user.passwordConfirmation}
+          onChange={handleChange}
+        >
+        </FormControl>
+        { errors.passwordConfirmation && <p className="errors">{errors.passwordConfirmation}</p>}
+      </FormGroup>
       <button disabled={formIsInvalid} className="main-button">Register</button>
     </form>
   );

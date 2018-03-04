@@ -1,29 +1,32 @@
 import React from 'react';
 
+import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
+
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
     <form onSubmit={handleSubmit} className="container">
-      <div className="form-group">
-        <input
-          type="text"
+      <FormGroup>
+        <ControlLabel htmlFor="email">Email</ControlLabel>
+        <FormControl
           name="email"
-          placeholder="Email"
+          type="email"
+          className="input-bar textarea"
+          defaultValue={user.email}
           onChange={handleChange}
-          value={user.email}
-          className="form-control"
-        />
-      </div>
-      <div className="form-group">
-        <input
-          type="password"
+        >
+        </FormControl>
+        
+        <ControlLabel htmlFor="password">Password</ControlLabel>
+        <FormControl
           name="password"
-          placeholder="Password"
+          type="password"
+          className="input-bar textarea"
+          defaultValue={user.password}
           onChange={handleChange}
-          value={user.password}
-          className="form-control"
-        />
+        >
+        </FormControl>
         { errors.message && <p className="errors">{errors.message}</p>}
-      </div>
+      </FormGroup>
       <button className="main-button">Login</button>
     </form>
   );
