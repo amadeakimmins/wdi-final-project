@@ -1,6 +1,8 @@
+@import "variables";
+
 body {
-  background-color: #F9F9F6;
-  font-family: 'Gilroy', sans-serif;
+  background-color: $background-color;
+  font-family: $primary-font;
 }
 
 main {
@@ -11,7 +13,7 @@ main {
 }
 
 .errors {
-  color: red;
+  color: $error-color;
   font-size: 15px;
 }
 
@@ -31,24 +33,23 @@ main {
 .jumbotron-text {
   text-align: right;
   font-size: 30px;
-  // color: #ecbbbc;
-  color: #666666;
+  color: $font-color;
 }
 
 .jumbotron-button {
   font-size: 27px;
   border-radius: 3px;
   padding: 8px 10px;
-  color: #666666;
+  color: $font-color;
   border: 0;
   text-transform: uppercase;
   opacity: 0.7;
 } a {
-  color: #666666;
+  color: $font-color;
 }
 
 .jumbotron-button, a:hover {
-  color: #ecbbbc;
+  color: $hover-font-color;
   text-decoration: none;
 }
 
@@ -61,8 +62,7 @@ main {
 .title {
   text-align: center;
   font-size: 50px;
-  // color: #ecbbbc;
-  color: #666666;
+  color: $font-color;
 }
 
 .index-margin-button {
@@ -71,7 +71,7 @@ main {
 
 .title:hover {
   text-decoration: none;
-  color: #ecbbbc;
+  color: $hover-font-color;
 }
 
 .image-container {
@@ -83,51 +83,39 @@ main {
 }
 
 .brand-title {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   position: absolute;
   top: 50%;
-  left: 50%;
-  color: #666666;
+  left: 20%;
+  color: $font-color;
   visibility: hidden;
-
-  /* transition effect. not necessary */
-  transition: opacity .1s, visibility .1s;
 }
 
 .image-container:hover .brand-title {
   visibility: visible;
-  opacity: 1;
 }
 
-img {
-  &.index-images {
-    width: inherit;
-    height: inherit;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  &.index-images:hover {
-    opacity: 0.2;
+div {
+  img {
+    &.index-images {
+      width: inherit;
+      height: inherit;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &.index-images:hover {
+      opacity: 0.1;
+    }
   }
 }
-
-// .brand-title {
-//   text-align: center;
-//   color: #666666;
-//   margin-bottom: 0;
-// }
-//
-// .brand-title:hover {
-//   text-decoration: none;
-// }
 
 .main-button {
   font-size: 18px;
   border-radius: 3px;
   padding: 8px 10px;
-  color: #666666;
+  color: $font-color;
   border: 0;
   background-color: #F9F9F6;
   text-transform: uppercase;
@@ -135,7 +123,7 @@ img {
 }
 
 .main-button:hover {
-  color: #ecbbbc;
+  color: $hover-font-color;
   text-decoration: none;
   opacity: 0.8;
 }
@@ -143,7 +131,7 @@ img {
 .input-bar {
   width: 100%;
   margin: 0 auto;
-  background-color: #F9F9F6;
+  background-color: $background-color;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -160,7 +148,7 @@ img {
 .show-title {
   text-align: center;
   font-size: 45px;
-  color: #666666;
+  color: $font-color;
   margin-bottom: 0;
 }
 
@@ -186,7 +174,7 @@ img {
 
 
 .show-link {
-  color: #666666;
+  color: $font-color;
 
   text-decoration: underline;
 }
@@ -203,7 +191,6 @@ img {
 
 .subtitle {
   font-size: 20px;
-  // text-decoration: underline;
 }
 
 // NAVBAR ITEM
@@ -212,14 +199,13 @@ img {
 }
 
 .navbar-item {
-  color: #666666;
+  color: $font-color;
   text-transform: uppercase;
 }
 
 .navbar-item:hover {
   text-decoration: none;
-  // color: grey;
-  color: #ecbbbc;
+  color: $hover-font-color;
 }
 
 hr.horizontal-rule {
@@ -231,7 +217,7 @@ hr.horizontal-rule {
 // PROFILE PAGE
 
 .welcome {
-  color: #ecbbbc;
+  color: $hover-font-color;
   text-decoration: underline;
 }
 
