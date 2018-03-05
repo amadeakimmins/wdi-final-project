@@ -10,6 +10,9 @@ body {
   font-size: 15px;
 }
 
+
+
+
 // showpage category
 .category {
   border: 1px solid $hover-font-color;
@@ -19,6 +22,10 @@ body {
   min-width: 20%;
   border-radius: 6px;
   padding: 3px;
+}
+
+.tab-container {
+  min-height: 400px;
 }
 
 // APP.JS
@@ -287,4 +294,8 @@ hr.horizontal-rule {
 
 .slick-slide img {
   margin: 0 auto;
+}
+
+.slick-next:before, .slick-prev:before {
+  color: $hover-font-color;
 }

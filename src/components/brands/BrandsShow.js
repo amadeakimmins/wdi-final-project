@@ -183,13 +183,20 @@ class BrandsShow extends React.Component {
                 <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
             </Col>
+            {' '}
+            { Auth.isAuthenticated() &&
+            <button className="main-button" onClick={this.deleteBrand}>
+            Delete
+            </button>}
+            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
+            Edit
+            </Link> }
           </Row>
           <hr className="horizontal-rule"/>
 
-          {/* SUGGEST PRODUCTS */}
-
-          <Row>
-            <Tabs defaultActiveKey={2} id="uncontrolled-tab-example">
+          {/* TABS */}
+          <Row className="tab-container">
+            <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
               <Tab eventKey={1} className="subtitle" title="Recommend a Product">
                 { Auth.isAuthenticated() &&  <BrandsProducts
                   history={this.props.history}
@@ -222,31 +229,27 @@ class BrandsShow extends React.Component {
                   )}
                 </Row>
               </Tab>
-              {/* COMMENTS */}
-              <p className="subtitle"><strong><em>Comments: </em></strong></p>
-              { Auth.isAuthenticated() && <BrandsComments
-                history={this.props.history}
-                handleCommentSubmit={this.handleCommentSubmit}
-                handleChange={this.handleChange}
-                brand={this.state.brand}
-                comment={this.state.comment}
-              /> }
-              { this.state.brand.name && this.state.brand.comments.map(comment =>
-                <li className="comments" key={comment.id}>
-                  <strong>{comment.createdBy.username} - </strong>{comment.text}
-                  { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
-                  Delete
-                  </button>}
-                </li>
-              )}
+              <Tab eventKey={3} title="Reviews">
+                <p className="subtitle"><strong><em>Reviews: </em></strong></p>
+                <Row>
+                  { Auth.isAuthenticated() && <BrandsComments
+                    history={this.props.history}
+                    handleCommentSubmit={this.handleCommentSubmit}
+                    handleChange={this.handleChange}
+                    brand={this.state.brand}
+                    comment={this.state.comment}
+                  /> }
+                  { this.state.brand.name && this.state.brand.comments.map(comment =>
+                    <li className="comments" key={comment.id}>
+                      <strong>{comment.createdBy.username} - </strong>{comment.text}
+                      { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                      Delete
+                      </button>}
+                    </li>
+                  )}
+                </Row>
+              </Tab>
             </Tabs>
-            { Auth.isAuthenticated() &&
-            <button className="main-button" onClick={this.deleteBrand}>
-            Delete
-            </button>}
-            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
-            Edit
-            </Link> }
           </Row>
         </Grid>
       </div>
