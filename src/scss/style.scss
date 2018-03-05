@@ -265,10 +265,13 @@ img {
   }
 }
 
-.navbar-item {
-  color: $font-color;
-  text-transform: uppercase;
-  font-size: 18px;
+a {
+  &.navbar-item {
+    color: inherit;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
 }
 
 .navbar-item:hover {
@@ -306,4 +309,9 @@ hr.horizontal-rule {
 
 .footer {
   margin-top: 12%;
+}
+
+.form-control:focus {
+  border-color: $hover-font-color;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
 }
