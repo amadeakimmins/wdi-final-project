@@ -6,6 +6,10 @@ import BackButton from '../utility/BackButton';
 
 function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
+
+  console.log(brand);
+
+
   return (
     <Grid className="container">
       <Row>
@@ -29,10 +33,10 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
 
               <FormGroup>
                 <ControlLabel>Select Categories:</ControlLabel>
-                <Checkbox name="categories" value="women" onChange={handleChange}>Women</Checkbox>
-                <Checkbox name="categories" value="men" onChange={handleChange}>Men</Checkbox>
-                <Checkbox name="categories" value="accessories" onChange={handleChange}>Accessories</Checkbox>
-                <Checkbox name="categories" value="beauty" onChange={handleChange}>Beauty</Checkbox>
+                <Checkbox name="categories" value="women" onChange={handleChange} checked={brand.categories.indexOf('women') !== -1}>Women</Checkbox>
+                <Checkbox name="categories" value="men" onChange={handleChange} checked={brand.categories.indexOf('men') !== -1}>Men</Checkbox>
+                <Checkbox name="categories" value="accessories" onChange={handleChange} checked={brand.categories.indexOf('accessories') !== -1}>Accessories</Checkbox>
+                <Checkbox name="categories" value="beauty" onChange={handleChange} checked={brand.categories.indexOf('beauty') !== -1}>Beauty</Checkbox>
               </FormGroup>
 
               { errors['categories.0'] && <p className="errors">{errors['categories.0']}</p>}
@@ -62,12 +66,12 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               { errors.website && <p className="errors">{errors.website}</p>}
 
               <ControlLabel>Select Price Range</ControlLabel>
-              <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange}>
+              { brand.priceRange && <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange} defaultValue={brand.priceRange}>
                 <option value="£">£</option>
                 <option value="££">££</option>
                 <option value="£££">£££</option>
                 <option value="££££">££££</option>
-              </FormControl>
+              </FormControl> }
               { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 
               <ControlLabel htmlFor="name">Main Image:</ControlLabel>

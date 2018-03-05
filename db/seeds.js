@@ -14,9 +14,9 @@ User
   .create([{
     fullname: 'Amadea Kimmins',
     username: 'amadeakimmins',
-    email: 'amadea.kimmins@hotmail.co.uk',
-    password: 'password',
-    passwordConfirmation: 'password'
+    email: 'amadea.kimmins@gmail.com',
+    password: 'hello',
+    passwordConfirmation: 'hello'
   }])
   .then(users => {
     console.log(`${users.length} users created!`);

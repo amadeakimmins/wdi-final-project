@@ -8,7 +8,7 @@ class BrandsEdit extends React.Component {
   state = {
     brand: {
       name: '',
-      categories: '',
+      categories: [],
       about: '',
       website: '',
       priceRange: '',
@@ -17,7 +17,8 @@ class BrandsEdit extends React.Component {
       image3: '',
       image4: '',
       image5: ''
-    }
+    },
+    errors: {}
   };
 
   componentDidMount() {
@@ -27,9 +28,25 @@ class BrandsEdit extends React.Component {
       .catch(err => console.log(err));
   }
 
-  handleChange = ({ target: { name, value } }) => {
-    const brand = Object.assign({}, this.state.brand, { [name]: value });
-    this.setState({ brand });
+  handleChange = ({ target }) => {
+    let brand = {};
+    let errors = {};
+
+    if (target.name === 'categories') {
+      let categories = [];
+      if (target.checked) {
+        categories = [...this.state.brand.categories, target.value];
+      } else {
+        categories = this.state.brand.categories.filter(category => category !== target.value);
+      }
+      brand = Object.assign({}, this.state.brand, { categories });
+      errors  = Object.assign({}, this.state.errors, { 'categories.0': ''});
+    } else {
+      brand = Object.assign({}, this.state.brand, { [target.name]: target.value });
+      errors  = Object.assign({}, this.state.errors, { [target.name]: ''});
+    }
+
+    this.setState({ brand, errors }, () => console.log('state',this.state));
   }
 
   handleSubmit = (e) => {
@@ -49,6 +66,7 @@ class BrandsEdit extends React.Component {
         handleSubmit={this.handleSubmit}
         handleChange={this.handleChange}
         brand={this.state.brand}
+        errors={this.state.errors}
       />
     );
   }
