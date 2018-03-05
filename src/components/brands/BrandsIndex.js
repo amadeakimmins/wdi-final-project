@@ -70,8 +70,8 @@ class BrandsIndex extends Component {
               return(
                 <Col key={brand.id} xs={12} sm={6} md={6} lg={4}>
                   <Link to={`/brands/${brand.id}`}>
-                    <div className="image-container">
-                      <img src={brand.image1} className="img-responsive index-images" />
+                    <div className="image-container" style={{ backgroundImage: `url('${brand.image1}')` }}>
+                      {/* <img src={brand.image1} className="img-responsive index-images" /> */}
                       <p className="brand-title">{brand.name}</p>
                     </div>
                   </Link>

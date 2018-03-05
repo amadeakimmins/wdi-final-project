@@ -47,7 +47,8 @@ describe('Authentication Controller Tests', () => {
           expect(res.status).to.eq(400);
           expect(res.body).to.be.a('object');
           expect(res.body.message).to.eq('Unprocessable Entity');
-          expect(res.body.errors).to.eq('ValidationError');
+          console.log('res.body.errors*********', res.body.errors);
+          expect(res.body.errors).to.eq('passwordConfirmation', 'Passwords do not match');
           done();
         });
     });

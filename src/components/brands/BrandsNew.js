@@ -21,10 +21,25 @@ class BrandsNew extends React.Component {
     errors: {}
   };
 
-  handleChange = ({ target: { name, value } }) => {
-    const brand = Object.assign({}, this.state.brand, { [name]: value });
-    const errors  = Object.assign({}, this.state.errors, { [name]: ''});
-    this.setState({ brand, errors });
+  handleChange = ({ target }) => {
+    let brand = {};
+    let errors = {};
+
+    if (target.name === 'categories') {
+      let categories = [];
+      if (target.checked) {
+        categories = [...this.state.brand.categories, target.value];
+      } else {
+        categories = this.state.brand.categories.filter(category => category !== target.value);
+      }
+      brand = Object.assign({}, this.state.brand, { categories });
+      errors  = Object.assign({}, this.state.errors, { 'categories.0': ''});
+    } else {
+      brand = Object.assign({}, this.state.brand, { [target.name]: target.value });
+      errors  = Object.assign({}, this.state.errors, { [target.name]: ''});
+    }
+
+    this.setState({ brand, errors }, () => console.log('state',this.state));
   }
 
   handleSubmit = (e) => {
@@ -33,7 +48,7 @@ class BrandsNew extends React.Component {
     Axios
       .post('/api/brands', this.state.brand, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
       .then(() => this.props.history.push('/brands'))
-      .catch(err =>{
+      .catch(err => {
         this.setState({ errors: err.response.data.errors });
       });
   }

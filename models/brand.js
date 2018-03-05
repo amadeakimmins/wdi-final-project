@@ -18,7 +18,7 @@ productSchema.set('toJSON', { virtuals: true });
 
 const brandSchema = mongoose.Schema({
   name: { type: String, required: 'Name is required' },
-  categories: [{ type: Array, required: 'At least one category is required' }],
+  categories: [{ type: String, required: 'At least one category is required' }],
   about: { type: String, required: 'A description is required' },
   website: { type: String, required: 'A website link is required' },
   priceRange: { type: String, required: 'Price range is required' },
@@ -30,6 +30,13 @@ const brandSchema = mongoose.Schema({
   comments: [ commentSchema ],
   products: [ productSchema ],
   favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
+});
+
+brandSchema.pre('validate', function checkCategories(next) {
+  if(this.categories.length < 1) {
+    this.invalidate('categories', 'Must have 1 or more categories');
+  }
+  next();
 });
 
 brandSchema.set('toJSON', {

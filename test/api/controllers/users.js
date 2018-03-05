@@ -52,9 +52,9 @@ describe('Users Controller Tests', () => {
             .and.have.all.keys([
               'id',
               'username',
-              'email',
-              'password',
-              'passwordConfirmation'
+              'favorites',
+              'fullname',
+              'email'
             ]);
 
           done();

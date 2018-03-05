@@ -101,11 +101,29 @@ div {
 }
 
 .image-container {
-  width: 250px;
-  height: 150px;
-  overflow: hidden;
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 6px;
+  padding-top: 66%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    border-radius: 6px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  &:hover {
+    &:after {
+      opacity: 1;
+    }
+  }
 }
 
 .brand-title {
@@ -113,28 +131,16 @@ div {
   font-weight: bold;
   position: absolute;
   top: 50%;
-  left: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   color: $font-color;
   visibility: hidden;
+  margin-bottom: 0;
+  z-index: 2;
 }
 
 .image-container:hover .brand-title {
   visibility: visible;
-}
-
-div {
-  img {
-    &.index-images {
-      width: inherit;
-      height: inherit;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    &.index-images:hover {
-      opacity: 0.1;
-    }
-  }
 }
 
 .main-button {
@@ -222,6 +228,16 @@ img {
 // NAVBAR ITEM
 .navbar {
   padding-top: 2%;
+  display: flex;
+  justify-content: space-between;
+  @media only screen and (max-width: 767px) {
+    a {
+      font-size: 0;
+      i {
+        font-size: 18px;
+      }
+    }
+  }
 }
 
 .navbar-item {
@@ -250,4 +266,10 @@ hr.horizontal-rule {
 
 .profile-details {
   margin-bottom: 5%;
+}
+
+// slick overrides
+
+.slick-slide img {
+  margin: 0 auto;
 }

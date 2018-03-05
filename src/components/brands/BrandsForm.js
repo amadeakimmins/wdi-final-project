@@ -29,20 +29,13 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
 
               <FormGroup>
                 <ControlLabel>Select Categories:</ControlLabel>
-                <Checkbox value="women">Women</Checkbox>
-                <Checkbox value="men">Men</Checkbox>
-                <Checkbox value="accessories">Accessories</Checkbox>
-                <Checkbox value="beauty">Beauty</Checkbox>
+                <Checkbox name="categories" value="women" onChange={handleChange}>Women</Checkbox>
+                <Checkbox name="categories" value="men" onChange={handleChange}>Men</Checkbox>
+                <Checkbox name="categories" value="accessories" onChange={handleChange}>Accessories</Checkbox>
+                <Checkbox name="categories" value="beauty" onChange={handleChange}>Beauty</Checkbox>
               </FormGroup>
 
-              {/* <ControlLabel>Select Categories</ControlLabel>
-              <FormControl componentClass="select">
-                <option value="women">Women</option>
-                <option value="men">Men</option>
-                <option value="men">Accessories</option>
-                <option value="men">Beauty</option>
-              </FormControl> */}
-              { errors.categories && <p className="errors">{errors.categories}</p>}
+              { errors['categories.0'] && <p className="errors">{errors['categories.0']}</p>}
 
               <ControlLabel htmlFor="about">About:</ControlLabel>
               <FormControl
@@ -69,7 +62,7 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               { errors.website && <p className="errors">{errors.website}</p>}
 
               <ControlLabel>Select Price Range</ControlLabel>
-              <FormControl componentClass="select" className="input-bar" placeholder="select">
+              <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange}>
                 <option value="low">£</option>
                 <option value="medium">££</option>
                 <option value="high">£££</option>

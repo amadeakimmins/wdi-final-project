@@ -38,7 +38,7 @@ router.route('/login')
 
 // user
 router.route('/users/:id')
-  .get(users.show);
+  .get(secureRoute, users.show);
 // .put(users.update);
 
 

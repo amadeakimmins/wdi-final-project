@@ -13,7 +13,9 @@ import BrandsProducts from './BrandsProducts';
 class BrandsShow extends React.Component {
   state = {
     user: {},
-    brand: {},
+    brand: {
+      categories: []
+    },
     comment: {
       text: ''
     },
@@ -22,7 +24,6 @@ class BrandsShow extends React.Component {
       image: '',
       rating: ''
     },
-    categories: {},
     favorites: [],
     apiKey: process.env.FILESTACK_API_KEY,
     errors: {}
@@ -42,12 +43,11 @@ class BrandsShow extends React.Component {
     Axios
       .delete(`/api/brands/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
       .then(() => this.props.history.push('/brands'))
-      .catch(err =>console.log(err));
+      .catch(err => console.log(err));
   }
 
   // COMMENTS //
   handleChange = ({ target: { name, value } }) => {
-    console.log(value);
     const comment = Object.assign({}, this.state.comment, { [name]: value });
     this.setState({ comment }, () => console.log(this.state));
   }
@@ -106,15 +106,15 @@ class BrandsShow extends React.Component {
     e.preventDefault();
 
     Axios
-      .post(`/api/brands/${this.props.match.params.id}/favorites`, this.state.favorite, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then((res) => this.setState({ favorites: res.data }), () => console.log(this.state))
+      .post(`/api/brands/${this.props.match.params.id}/favorites`, {}, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
+      .then((res) => this.setState({ favorites: res.data.favorites }, () => console.log(res.data.favorites)))
       .catch(err => console.log(err));
   }
 
   deleteFavourite = (id) => {
     Axios
       .delete(`/api/brands/${this.props.match.params.id}/favorites/${id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then((res) => this.setState({ favorites: res.data}), () => console.log(this.state))
+      .then((res) => this.setState({ favorites: res.data }, () => console.log(res.data)))
       .catch(err => console.log(err));
   }
 
@@ -147,9 +147,9 @@ class BrandsShow extends React.Component {
                 </Slider>
               </Col>
               <p className="subtitle"><strong><em>Categories:</em></strong></p>
-              {/* { this.state.categories.map((category, index) =>
-                <p key={index}>{category}</p>,
-              )} */}
+              {this.state.brand.categories.map((category, index) =>
+                <p key={index}>{category}</p>
+              )}
               <p className="subtitle"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
               <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
               {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
@@ -191,9 +191,9 @@ class BrandsShow extends React.Component {
               { this.state.brand.name && this.state.brand.comments.map(comment =>
                 <li className="comments" key={comment.id}>
                   <strong>{comment.createdBy.username} - </strong>{comment.text}
-                  <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                  { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
                   Delete
-                  </button>
+                  </button>}
                 </li>
               )}
             </Col>

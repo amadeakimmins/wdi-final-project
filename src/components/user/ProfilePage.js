@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Axios from 'axios';
 import { Link } from 'react-router-dom';
+import Auth from '../../lib/Auth';
 
 import { Grid, Row, Col } from 'react-bootstrap';
 
@@ -18,7 +19,7 @@ class ProfilePage extends Component {
 
   componentDidMount() {
     Axios
-      .get(`/api/users/${this.props.match.params.id}`)
+      .get(`/api/users/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
       .then(res => {
 
         this.setState({ user: res.data });

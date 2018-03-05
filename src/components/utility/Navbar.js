@@ -27,7 +27,7 @@ const Navbar1 = ({ history }) => {
         {' '}
         { !!Auth.isAuthenticated() && <a href="#" className="navbar-item" onClick={logout}><i className="fa fa-sign-out"></i> Logout</a>}
       </nav>
-      
+
     </div>
 
 

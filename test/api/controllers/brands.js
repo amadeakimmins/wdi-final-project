@@ -30,7 +30,7 @@ describe('Brands Controller Tests', () => {
 
     it('should return a 200 response', done => {
       api
-        .get('/api/shoes')
+        .get('/api/brands')
         .set('Accept', 'application/json')
         .expect(200, done);
     });
