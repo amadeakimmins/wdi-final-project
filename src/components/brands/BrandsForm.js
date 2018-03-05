@@ -53,6 +53,15 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               </FormControl>
               { errors.about && <p className="errors">{errors.about}</p>}
 
+              <ControlLabel>Select Price Range</ControlLabel>
+              <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange} value={brand.priceRange}>
+                <option value="£">£</option>
+                <option value="££">££</option>
+                <option value="£££">£££</option>
+                <option value="££££">££££</option>
+              </FormControl>
+              { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
+
               <ControlLabel htmlFor="name">Website Link:</ControlLabel>
               <FormControl
                 type="text"
@@ -64,15 +73,6 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
               >
               </FormControl>
               { errors.website && <p className="errors">{errors.website}</p>}
-
-              <ControlLabel>Select Price Range</ControlLabel>
-              { brand.priceRange && <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange} defaultValue={brand.priceRange}>
-                <option value="£">£</option>
-                <option value="££">££</option>
-                <option value="£££">£££</option>
-                <option value="££££">££££</option>
-              </FormControl> }
-              { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 
               <ControlLabel htmlFor="name">Main Image:</ControlLabel>
               <FormControl

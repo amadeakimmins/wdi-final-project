@@ -12,7 +12,7 @@ const productSchema = new mongoose.Schema({
   name: { type: String, required: true },
   image: { type: String, required: true },
   rating: { type: String, required: true },
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 productSchema.set('toJSON', { virtuals: true });
@@ -31,7 +31,7 @@ const brandSchema = mongoose.Schema({
   comments: [ commentSchema ],
   products: [ productSchema ],
   favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
-  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User'}
 });
 
 brandSchema.pre('validate', function checkCategories(next) {

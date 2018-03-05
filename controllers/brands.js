@@ -21,7 +21,7 @@ function brandsCreate(req, res, next) {
 function brandsShow(req, res, next) {
   Brand
     .findById(req.params.id)
-    .populate('comments.createdBy')
+    .populate('comments.createdBy products.createdBy createdBy')
     .exec()
     .then((brand) => {
       if(!brand) return res.notFound();
@@ -111,9 +111,9 @@ function addProductRoute(req, res, next) {
       const product = brand.products.create(req.body);
       brand.products.push(product);
 
-      return brand.save()
-        .then(brand => res.json(brand));
+      return brand.save();
     })
+    .then(brand => res.json(brand))
     .catch(next);
 }
 

@@ -32,6 +32,7 @@ class BrandsShow extends React.Component {
 
   // BRANDS
   componentDidMount() {
+
     Axios
       .get(`/api/brands/${this.props.match.params.id}`)
       .then(res => this.setState({ brand: res.data }, () => console.log(this.state)))
@@ -83,6 +84,7 @@ class BrandsShow extends React.Component {
 
   handleProductSubmit = (e) => {
     e.preventDefault();
+
     Axios
       .post(`/api/brands/${this.props.match.params.id}/products`, this.state.product, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
       .then((res) => {
@@ -114,6 +116,11 @@ class BrandsShow extends React.Component {
       .delete(`/api/brands/${this.props.match.params.id}/favorites/${id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
       .then((res) => this.setState({ brand: res.data }, () => console.log(res.data)))
       .catch(err => console.log(err));
+  }
+
+  userCreatedBrand = () => {
+    console.log('created by', this.state.brand.createdBy);
+    return this.state.brand.createdBy && Auth.getPayload().userId === this.state.brand.createdBy.id;
   }
 
   render() {
@@ -175,7 +182,8 @@ class BrandsShow extends React.Component {
                 <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
             </Col>
-            {' '};
+            {' '}
+            {/* this.userCreatedBrand() && */}
             { Auth.isAuthenticated() &&
             <button className="main-button" onClick={this.deleteBrand}>
             Delete

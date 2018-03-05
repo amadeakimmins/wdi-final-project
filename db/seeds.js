@@ -39,7 +39,13 @@ User
         image2: 'https://products-zady-com1.a.ssl.fastly.net/75/21fdc0a76b11e6b0e19d84a830d53f/SHOT_26_002.jpg',
         image3: 'https://products-zady-com1.a.ssl.fastly.net/37/06d4208ff611e69f38694afe11f17d/SILKDRESSSHOT2.jpg',
         image4: 'https://products-zady-com0.a.ssl.fastly.net/43/05c9d07efc11e6baa60fcc4772d6b7/Turtneck-front.jpg',
-        image5: 'https://products-zady-com1.a.ssl.fastly.net/64/3b22d0a1f711e6ab7083a27c4bcd87/Khaki-Trench-selling-shot-back.jpg'
+        image5: 'https://products-zady-com1.a.ssl.fastly.net/64/3b22d0a1f711e6ab7083a27c4bcd87/Khaki-Trench-selling-shot-back.jpg',
+        createdBy: users[0]._id,
+        products: [
+          {
+            
+          }
+        ]
       }, {
         name: 'Reformation',
         categories: ['women'],
