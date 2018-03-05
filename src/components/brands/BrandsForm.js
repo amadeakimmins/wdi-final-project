@@ -63,10 +63,10 @@ function BrandsForm({ history, handleSubmit, handleChange, brand, errors }) {
 
               <ControlLabel>Select Price Range</ControlLabel>
               <FormControl componentClass="select" className="input-bar" placeholder="select" name="priceRange" onChange={handleChange}>
-                <option value="low">£</option>
-                <option value="medium">££</option>
-                <option value="high">£££</option>
-                <option value="very-high">££££</option>
+                <option value="£">£</option>
+                <option value="££">££</option>
+                <option value="£££">£££</option>
+                <option value="££££">££££</option>
               </FormControl>
               { errors.priceRange && <p className="errors">{errors.priceRange}</p>}
 

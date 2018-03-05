@@ -134,7 +134,7 @@ class BrandsShow extends React.Component {
           <hr className="horizontal-rule"/>
           <BackButton history={this.props.history} />
 
-          {/* IMAGE AND OTHER INFO */}
+          {/* IMAGE - LEFT */}
           <h1 className="show-title">{this.state.brand.name}</h1>
           <Row>
             <Col md={6}>
@@ -146,56 +146,42 @@ class BrandsShow extends React.Component {
                   <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
                 </Slider>
               </Col>
-              <p className="subtitle"><strong><em>Categories:</em></strong></p>
-              {this.state.brand.categories.map((category, index) =>
-                <p key={index}>{category}</p>
-              )}
-              <p className="subtitle"><strong><em>Price: </em></strong>{this.state.brand.priceRange}</p>
-              <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
-              {/* MAKE IT SO ONLY ADMIN CAN DELETE */}
-              { Auth.isAuthenticated() &&
-              <button className="main-button" onClick={this.deleteBrand}>
-              Delete
-              </button>}
-              { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
-              Edit
-              </Link> }
             </Col>
 
             {/* ABOUT BRAND */}
             <Col md={6} className="show-margin">
-              <p className="subtitle"><strong><em>About: </em></strong></p>
+              {/* <p className="subtitle"><strong><em>About: </em></strong></p> */}
               <p>{this.state.brand.about}</p>
 
+              <Row>
+                {this.state.brand.categories.map((category, index) =>
+                  <Col md={4} key={index}>
+                    <p className="category">{category}</p>
+                  </Col>
+                )}
+              </Row>
+
+
+              <p>price range - {this.state.brand.priceRange}</p>
+
+              <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
+
+              {/* HEART ICON : <i className="fa fa-heart fa-stack-1.5x"></i> */}
               {/* FAVORITES */}
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
                 this.state.brand.favorites.every(favorite => favorite !== Auth.getPayload().userId) &&
-                <button onClick={this.handleFavouriteSubmit} className="main-button margin-button">Favourite</button>
+                <button onClick={this.handleFavouriteSubmit} className="main-button margin-button"><i className="fa fa-thumbs-up"></i></button>
               }
+              {/* BROKEN HEART: <span className="fa-stack fa-1.5x">
+                <i className="fa fa-heart fa-stack-1x"></i>
+                <i className="fa fa-bolt fa-stack-1x fa-inverse"></i>
+              </span> */}
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
                 this.state.brand.favorites.some(favorite => favorite === Auth.getPayload().userId) &&
-                <button className="main-button" onClick={this.deleteFavourite}>Unfavourite</button>
+                <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
-
-              {/* COMMENTS */}
-              <p className="subtitle"><strong><em>Comments: </em></strong></p>
-              { Auth.isAuthenticated() && <BrandsComments
-                history={this.props.history}
-                handleCommentSubmit={this.handleCommentSubmit}
-                handleChange={this.handleChange}
-                brand={this.state.brand}
-                comment={this.state.comment}
-              /> }
-              { this.state.brand.name && this.state.brand.comments.map(comment =>
-                <li className="comments" key={comment.id}>
-                  <strong>{comment.createdBy.username} - </strong>{comment.text}
-                  { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
-                  Delete
-                  </button>}
-                </li>
-              )}
             </Col>
           </Row>
           <hr className="horizontal-rule"/>
@@ -236,7 +222,31 @@ class BrandsShow extends React.Component {
                   )}
                 </Row>
               </Tab>
+              {/* COMMENTS */}
+              <p className="subtitle"><strong><em>Comments: </em></strong></p>
+              { Auth.isAuthenticated() && <BrandsComments
+                history={this.props.history}
+                handleCommentSubmit={this.handleCommentSubmit}
+                handleChange={this.handleChange}
+                brand={this.state.brand}
+                comment={this.state.comment}
+              /> }
+              { this.state.brand.name && this.state.brand.comments.map(comment =>
+                <li className="comments" key={comment.id}>
+                  <strong>{comment.createdBy.username} - </strong>{comment.text}
+                  { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                  Delete
+                  </button>}
+                </li>
+              )}
             </Tabs>
+            { Auth.isAuthenticated() &&
+            <button className="main-button" onClick={this.deleteBrand}>
+            Delete
+            </button>}
+            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
+            Edit
+            </Link> }
           </Row>
         </Grid>
       </div>

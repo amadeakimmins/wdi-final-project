@@ -10,6 +10,17 @@ body {
   font-size: 15px;
 }
 
+// showpage category
+.category {
+  border: 1px solid $hover-font-color;
+  background-color: $hover-font-color;
+  color: $background-color;
+  text-align: center;
+  min-width: 20%;
+  border-radius: 6px;
+  padding: 3px;
+}
+
 // APP.JS
 
 div {
