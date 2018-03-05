@@ -8,6 +8,8 @@ import AuthenticationRoutes from './components/auth/AuthenticationRoutes';
 import BrandsRoutes from './components/brands/BrandsRoutes';
 import Navbar from './components/utility/Navbar';
 
+// import Gilroy from './fonts/Gilroy-Light.otf';
+
 import 'bootstrap-css-only';
 import 'font-awesome/css/font-awesome.css';
 import './scss/style.scss';

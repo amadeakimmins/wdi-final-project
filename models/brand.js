@@ -30,7 +30,8 @@ const brandSchema = mongoose.Schema({
   image5: { type: String },
   comments: [ commentSchema ],
   products: [ productSchema ],
-  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User' }]
+  favorites: [{ type: mongoose.Schema.ObjectId, ref: 'User' }],
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 });
 
 brandSchema.pre('validate', function checkCategories(next) {

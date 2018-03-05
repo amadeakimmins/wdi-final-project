@@ -32,10 +32,9 @@ class BrandsShow extends React.Component {
 
   // BRANDS
   componentDidMount() {
-    console.log(this.state.categories);
     Axios
       .get(`/api/brands/${this.props.match.params.id}`)
-      .then(res => this.setState({ brand: res.data }))
+      .then(res => this.setState({ brand: res.data }, () => console.log(this.state)))
       .catch(err => console.log(err));
   }
 
@@ -176,7 +175,7 @@ class BrandsShow extends React.Component {
                 <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
             </Col>
-            {' '}
+            {' '};
             { Auth.isAuthenticated() &&
             <button className="main-button" onClick={this.deleteBrand}>
             Delete
@@ -199,9 +198,9 @@ class BrandsShow extends React.Component {
                       </em></strong></p>
                       <img className="product-container" src={product.image}/>
                       <p><strong><em>Rating: </em></strong>{product.rating}</p>
-                      <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
+                      { Auth.isAuthenticated() && Auth.getPayload().userId === product.createdBy.id && <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
                       Delete
-                      </button>
+                      </button>}
                     </Col>
                   )}
                 </Row>
@@ -211,7 +210,7 @@ class BrandsShow extends React.Component {
                   { this.state.brand.name && this.state.brand.comments.map(comment =>
                     <li className="comments" key={comment.id}>
                       <strong>{comment.createdBy.username} - </strong>{comment.text} - {comment.rating}
-                      { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                      { Auth.isAuthenticated() && Auth.getPayload().userId === comment.createdBy.id && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
                         <i className="fa fa-trash"></i>
                       </button>}
                     </li>

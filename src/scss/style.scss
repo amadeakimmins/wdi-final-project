@@ -1,9 +1,9 @@
 @import "variables";
 
-// @font-face {
-//   font-family: "Gilroy";
-//   src: url("../fonts/Gilroy-FREE/Gilroy-Light.otf");
-// }
+@font-face {
+  font-family: "Gilroy";
+  src: url("../assets/fonts/Gilroy-Light.otf");
+}
 
 body {
   background-color: $background-color;
