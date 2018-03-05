@@ -1,5 +1,10 @@
 @import "variables";
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("fonts/Gilroy-FREE/Gilroy-Light.otf");
+}
+
 body {
   background-color: $background-color;
   font-family: $primary-font;
