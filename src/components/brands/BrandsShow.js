@@ -200,7 +200,7 @@ class BrandsShow extends React.Component {
               <Tab eventKey={1} title="Product Reviews">
                 <Row>
                   { this.state.brand.name && this.state.brand.products.map(product =>
-                    <Col key={product.id} xs={6} sm={4} md={4}>
+                    <Col key={product.id} xs={4} sm={4} md={3}>
                       <p><strong><em>
                         {product.name}
                       </em></strong></p>
@@ -225,6 +225,7 @@ class BrandsShow extends React.Component {
                     </li>
                   )}
                   <p><strong><em>LEAVE A REVIEW:</em></strong></p>
+                  { !Auth.isAuthenticated() && <p>Please login in to leave a review</p>}
                   { Auth.isAuthenticated() && <BrandsComments
                     history={this.props.history}
                     handleCommentSubmit={this.handleCommentSubmit}
@@ -235,6 +236,7 @@ class BrandsShow extends React.Component {
                 </Row>
               </Tab>
               <Tab eventKey={3} className="comment-container" title="Review a Product">
+                { !Auth.isAuthenticated() && <p>Please login in to leave a review</p>}
                 { Auth.isAuthenticated() &&  <BrandsProducts
                   history={this.props.history}
                   handleSubmit={this.handleProductSubmit}

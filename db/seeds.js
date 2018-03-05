@@ -30,7 +30,7 @@ User
     password: 'password',
     passwordConfirmation: 'password'
   }, {
-    fullname: 'Bill Edwards',
+    fullname: 'Billy Edwards',
     username: 'billybill',
     email: 'bill@gmail.com',
     password: 'password',
@@ -87,7 +87,7 @@ User
           {
             text: 'An amazing company with an incredible mission! All clothes are made beautifully and worth every penny!',
             rating: '★★★★★',
-            createdBy: users[4]._id
+            createdBy: users[3]._id
           }, {
             text: 'I agree, completely amazing company! I rarely buy from anywhere else and the clothes last forever.',
             rating: '★★★★★',
@@ -106,8 +106,36 @@ User
         image3: 'https://assets2.thereformation.com/app/public/assets/products/124728/original/MILAN_DRESS_IVORY_1_CLP.jpg?1507318225%27)',
         image4: 'https://assets2.thereformation.com/app/public/assets/products/139819/original/GEORGIA_JUMPSUIT_KASAI_1_clp.jpg?1518832866%27)',
         image5: 'https://assets2.thereformation.com/app/public/assets/products/131429/original/REX_TWO_PIECE_HEATHER_PLD_1_CLP.jpg?1512769948%27)',
-        createdBy: users[1]._id
-
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'Hendrix Jean',
+            image: 'https://media1.popsugar-assets.com/files/thumbor/ldo658sQyY-WwZUHN8Yzl8h7cKg/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2018/02/21/775/n/44344577/3bd21f2dfe337ed2_Screen_Shot_2018-02-21_at_9.36.22_AM/i/Hendrix-Jean.png',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }, {
+            name: 'Roper Jean',
+            image: 'https://assets2.thereformation.com/app/public/assets/products/125440/original/ROPER_JEAN_SULU_5_mobile.jpg?1507825680',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }, {
+            name: 'Angela Dress',
+            image: 'https://s-media-cache-ak0.pinimg.com/originals/f6/79/4e/f6794e5593c5c378087924592a394c4d.jpg',
+            rating: '★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The best jeans and such cute dresses for the summer!',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            text: 'More suited for the petite woman but all the clothes are lovely',
+            rating: '★★★',
+            createdBy: users[5]._id
+          }
+        ]
       }, {
         name: 'Stella McCartney',
         categories: ['women', 'accessories', 'men'],
@@ -131,7 +159,27 @@ User
         image3: 'https://svilu.com/wp-content/uploads/2016/11/4-NIR_9083-copy.jpg',
         image4: 'https://svilu.com/wp-content/uploads/2016/11/10-NIR_8287-copy.jpg',
         image5: 'https://svilu.com/wp-content/uploads/2016/11/19-NIR_8427-copy.jpg',
-        createdBy: users[3]._id
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Open-back black dress',
+            image: 'https://svilu.com/wp-content/uploads/2017/02/02.jpg',
+            rating: '★★★★',
+            createdBy: users[3]._id
+          }, {
+            name: 'White Mid Dress',
+            image: 'https://svilu.com/wp-content/uploads/2017/02/05.jpg',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Super sophisticated!',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
       }, {
         name: 'Chinti & Parker',
         categories: ['women', 'accessories'],
@@ -143,7 +191,41 @@ User
         image3: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/s/u/sunflower-piped-milano-jacket_kk99mbc_2.jpg',
         image4: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/i/-/i-am-cashmere-sweater_kk118xbm_2.jpg',
         image5: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/y/e/yellow-graduated-stripe-cashmere-sweater_kk88mc_2.jpg',
-        createdBy: users[4]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'I am Cashmere Sweater',
+            image: 'https://www.chintiandparker.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/i/-/i-am-cashmere-sweater_kk118xbm_2.jpg',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Love Women Cashmere Sweater',
+            image: 'https://www.chintiandparker.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/l/o/love-women-cashmere-sweater_kk115xbm_1.jpg',
+            rating: '★★★★',
+            createdBy: users[3]._id
+          }, {
+            name: 'Navy Cashmere Lounge Pant',
+            image: 'https://www.chintiandparker.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/n/a/navy-stripe-trim-cashmere-lounge-pants_kk91nm_1_1.jpg',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }, {
+            name: 'Cream Silk Striped Pants',
+            image: 'https://www.chintiandparker.com/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/c/r/cream-silk-striped-pants_pk04bb_2.jpg',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The BEST cashmere jumpers!! My favourite is the \'I am\' cashmere sweater!',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }, {
+            text: 'Get the cashmere loungewear, you\'ll never want to wear anything else',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
 
       }, {
         name: 'kowtow',
@@ -156,7 +238,27 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/2182/6091/products/nelken-top_06_gold_lookbook_1024x1024@2x.jpg?13008533507746690969',
         image4: 'https://cdn.shopify.com/s/files/1/2182/6091/products/SlowpaceDress_007_navy_lookbook_a83c6987-f765-417f-bb2b-aa13353dc70b_1024x1024@2x.jpg?13008533507746690969',
         image5: 'https://cdn.shopify.com/s/files/1/2182/6091/products/formation-jacket_06_denim_lookbook_1024x1024@2x.jpg?13008533507746690969',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Stage Pant, Black',
+            image: 'https://cdn.shopify.com/s/files/1/2182/6091/products/stage-pant_11_black_lookbook_800x1200@2x.jpg?v=1517363185',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }, {
+            name: 'Turnaround Pant, Red',
+            image: 'https://cdn.shopify.com/s/files/1/2182/6091/products/turnaround-pant_36_red_lookbook_800x1200@2x.jpg?v=1517363513',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'All the items are made sustainably and ethically and with real design in mind',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
       }, {
         name: 'Rapanui',
         categories: ['women', 'men'],
@@ -168,19 +270,67 @@ User
         image3: 'https://rapanuiclothing.com/uploaded/thumbnails/grey-merino-wool-jumper_13045961_480xauto.jpg',
         image4: 'https://rapanuiclothing.com/uploaded/thumbnails/polar-berg_9876765_480xauto.jpg',
         image5: 'https://rapanuiclothing.com/uploaded/thumbnails/redwine-baseball-top_15819154_480xauto.jpg',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Long sleeve baseball shirt',
+            image: 'https://rapanuiclothing.com/uploaded/thumbnails/rna8-grey-baseball_13046632_480xauto.jpg',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }, {
+            name: 'Wool Cargigan',
+            image: 'https://rapanuiclothing.com/uploaded/thumbnails/rna23_mens-cardigan_stone_002_15387366_480xauto.jpg',
+            rating: '★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Not the most exciting clothing but good quality',
+            rating: '★★★',
+            createdBy: users[4]._id
+          }, {
+            text: 'Better for men\'s clothing than for women\'s',
+            rating: '★★★',
+            createdBy: users[1]._id
+          }
+        ]
       }, {
         name: 'Ankura',
         categories: ['women', 'accessories'],
         about: 'Ankura is a Peruvian based sustainable fashion brand that works to complement a sustainable and ethical lifestyle, creating must-have pieces with a conscious process. They believe that ethical & sustainable fashion is not a trend, it is a movement. ',
         website: 'https://www.ankurabrand.com/',
         priceRange: '£££',
-        image1: 'http://www.stundumplings.co.uk/wp-content/uploads/2014/01/rapanui-mens-tshirt-polar-bear.jpg',
+        image1: 'https://www.ankurabrand.com/wp/wp-content/uploads/2017/11/Ankura-facebook-2.jpg',
         image2: 'https://www.shopankurabrand.com/wp-content/uploads/2017/03/MG_5990.jpg',
         image3: 'https://www.shopankurabrand.com/wp-content/uploads/2016/09/bs3.jpg',
         image4: 'https://www.shopankurabrand.com/wp-content/uploads/2016/03/2_1440x2160.jpg',
         image5: 'https://www.shopankurabrand.com/wp-content/uploads/2016/09/AC-Relleno-4.jpg',
-        createdBy: users[4]._id
+        createdBy: users[0]._id,
+        products: [
+          {
+            name: 'Arielle Dress',
+            image: 'https://www.shopankurabrand.com/wp-content/uploads/2016/11/9-copy.jpeg',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }, {
+            name: 'Wool Cargigan',
+            image: 'https://www.shopankurabrand.com/wp-content/uploads/2017/03/MG_5990.jpg',
+            rating: '★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Oppurtunities to co-design with them - totally amazing!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            text: 'Beautiful women\'s clothing and accessories',
+            rating: '★★★',
+            createdBy: users[1]._id
+          }
+        ]
       }, {
         name: 'Thought',
         categories: ['women', 'men', 'accessories'],
@@ -192,7 +342,31 @@ User
         image3: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/m/s/msb3183-jacob-organic-cotton-trousers-grey-vapour-front.jpg',
         image4: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/w/s/wst3487--poppyred-corinna-organic-cotton-jumper-0004.jpg',
         image5: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/w/s/wsb3501--brigid-skirt-flower-print-skirt-0003.jpg',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Spot Print Knit Cardigan',
+            image: 'https://www.wearethought.com/media/catalog/product/cache/image/700x957/e9c3970ab036de70892d86c6d221abfe/w/s/wst3483--elaine-printed-knit-cardigan-0001.jpg',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }, {
+            name: 'Louis Grandpa',
+            image: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/m/w/mwt3442-louis-grandpa-hemp-grandad-collar-shirt-sky-blue-front.jpg',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Got some lovely socks from here.',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }, {
+            text: 'Really well made clothes at a good price',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }
+        ]
       }, {
         name: 'Silou Activewear',
         categories: ['women'],
@@ -200,11 +374,31 @@ User
         website: 'https://siloulondon.com/',
         priceRange: '£££',
         image1: 'https://i1.wp.com/attitudeorganic.com/wp-content/uploads/2017/10/silou.jpg?resize=800%2C600&ssl=1',
-        image2: 'https://siloulondon.com/wp-content/uploads/2016/12/newShot02_094.jpg',
-        image3: 'https://siloulondon.com/wp-content/uploads/2017/12/170921_Silou_s05_0042.jpg',
-        image4: 'https://siloulondon.com/wp-content/uploads/2016/11/Shot07_152-2.jpg',
-        image5: 'https://siloulondon.com/wp-content/uploads/2017/12/170921_Silou_s04_0007-e1518431211611.jpg',
-        createdBy: users[3]._id
+        image2: 'https://i.pinimg.com/736x/cc/ac/3d/ccac3d910a4de5afab55c1caafad4dec--behind-the-scenes-lookbook.jpg',
+        image3: 'https://pollykingandco.com/wp-content/uploads/2018/02/silou_image_01.jpg',
+        image4: 'http://www.pushpr.co.uk/wp-content/uploads/2017/01/003_161110_NH_SPORT_020f1-3.jpg',
+        image5: 'https://reve-en-vert.com/wp-content/uploads/2017/11/Lydia-Sports-Bra-2-1-silou-london-309x417.jpg',
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Black Cross Sportsbra',
+            image: 'https://reve-en-vert.com/wp-content/uploads/2017/11/lydia_M001_T005_Black_1-1-silou-london-309x417.jpg',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }, {
+            name: 'Navy Leggings',
+            image: 'https://bekibolondon.com/wp-content/uploads/2017/10/jaggad-women-s-black-black-compression-leggings-100576722968_grande-460x600.jpg',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The best sports gear - don\'t need to shop anywhere else',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }
+        ]
       }, {
         name: 'Laura Ironside',
         categories: ['women'],
@@ -312,7 +506,7 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1074/5128/products/bowen_crew_navy_m_onbody_CAT_480x.JPG?v=1517947952',
         image4: 'https://cdn.shopify.com/s/files/1/1074/5128/products/alga_jean_indigo_m_onbody_CAT_480x.JPG?v=1517933213',
         image5: 'https://cdn.shopify.com/s/files/1/1074/5128/products/sandway_trouser_w_onbody_CAT_480x.jpg?v=1511542455',
-        createdBy: users[2]._id
+        createdBy: users[4]._id
       }, {
         name: 'Absolutely Bear',
         categories: ['women','men'],
@@ -336,7 +530,7 @@ User
         image3: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/f/e/feller-m-171-pirate_black-parent_1.jpg',
         image4: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/s/t/striped_merino_ls-w-173-peacoat-parent_1.jpg',
         image5: 'http://www.howies.co.uk/media/catalog/product/cache/1/small_image/310x350/9df78eab33525d08d6e5fb8d27136e95/b/l/blade-m-163-phantom-parent_1_5_1.jpg',
-        createdBy: users[3]._id
+        createdBy: users[4]._id
       }, {
         name: 'The White T-shirt Co.',
         categories: ['women','men'],
@@ -348,7 +542,7 @@ User
         image3: 'https://www.thewhitetshirt.com/uploads/thumbs/the-white-t-shirt-co-mens-grey-marl-t-shirt.jpg',
         image4: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-black-organic-cotton-body-11111.jpg',
         image5: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-white-organic-cotton-round-neck-front-jpg-11.jpg',
-        createdBy: users[0]._id
+        createdBy: users[4]._id
       }, {
         name: 'Knowledge Cotton Apparel',
         categories: ['men'],
@@ -360,7 +554,7 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498053660.6212_300x300.jpg?v=1516780619',
         image4: 'https://cdn.shopify.com/s/files/1/1355/6205/products/Basic_Loose_Fit_O-Neck_Tee_GOTS-T-shirt-10110-1231_Blue_melange-1_300x300.jpg?v=1519381450',
         image5: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498059716.3528_300x300.jpg?v=1519133088',
-        createdBy: users[5]._id
+        createdBy: users[4]._id
       }, {
         name: 'Brothers We Stand',
         categories: ['men'],
@@ -372,7 +566,7 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/0262/5311/products/regular_dunn_blue_1_sq_grande.jpg?v=1516705525',
         image4: 'https://cdn.shopify.com/s/files/1/0262/5311/products/kca_pique_knit_grande.jpg?v=1519054805',
         image5: 'https://cdn.shopify.com/s/files/1/0262/5311/products/cream-wave_pocket_4_Cropped_grande.png?v=1517505633',
-        createdBy: users[1]._id
+        createdBy: users[4]._id
       }, {
         name: 'Aesop',
         categories: ['beauty'],
@@ -408,7 +602,7 @@ User
         image3: 'https://s7d3.scene7.com/is/image/BareEscentuals/82819?$sharpen1$&wid=345&hei=345',
         image4: 'https://s7d3.scene7.com/is/image/BareEscentuals/47627?$sharpen1$&wid=345&hei=345',
         image5: 'https://s7d3.scene7.com/is/image/BareEscentuals/82877?$sharpen1$&wid=345&hei=345',
-        createdBy: users[4]._id
+        createdBy: users[2]._id
       }, {
         name: 'Becca Cosmetics',
         categories: ['beauty'],

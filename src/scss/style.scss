@@ -198,7 +198,6 @@ div {
 .input-bar {
   width: 100%;
   margin: 0 auto;
-  background-color: lighten( $background-color, 2% );
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -251,6 +250,7 @@ img {
 }
 
 .product-container {
+  height: 100%;
   width: 100%;
   margin: 10px;
   border-radius: 6px;
