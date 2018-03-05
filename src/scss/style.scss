@@ -191,7 +191,6 @@ div {
   border-left: 0;
   border-right: 0;
   border-radius: 3px;
-  outline: none;
   margin-bottom: 1%;
 }
 
@@ -303,4 +302,8 @@ hr.horizontal-rule {
 
 .slick-next:before, .slick-prev:before {
   color: $hover-font-color;
+}
+
+.footer {
+  margin-top: 12%;
 }

@@ -25,8 +25,7 @@ class BrandsShow extends React.Component {
       image: '',
       rating: ''
     },
-    favorites: [],
-    apiKey: process.env.FILESTACK_API_KEY,
+    apiKey: 'ARDoR9teyRneYLd03TrlNz',
     errors: {}
   }
 
@@ -108,14 +107,14 @@ class BrandsShow extends React.Component {
 
     Axios
       .post(`/api/brands/${this.props.match.params.id}/favorites`, {}, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then((res) => this.setState({ favorites: res.data.favorites }, () => console.log(res.data.favorites)))
+      .then((res) => this.setState({ brand: res.data }, () => console.log(res.data.favorites)))
       .catch(err => console.log(err));
   }
 
   deleteFavourite = (id) => {
     Axios
       .delete(`/api/brands/${this.props.match.params.id}/favorites/${id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
-      .then((res) => this.setState({ favorites: res.data }, () => console.log(res.data)))
+      .then((res) => this.setState({ brand: res.data }, () => console.log(res.data)))
       .catch(err => console.log(err));
   }
 

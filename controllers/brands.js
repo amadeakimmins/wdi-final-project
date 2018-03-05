@@ -166,7 +166,7 @@ function unfavoriteBrand(req, res, next) {
 
       return brand.save();
     })
-    .then(() => res.status(204).end())
+    .then((brand) => res.json(brand))
     .catch(next);
 }
 
