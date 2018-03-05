@@ -49,7 +49,7 @@ class BrandsShow extends React.Component {
   // COMMENTS //
   handleChange = ({ target: { name, value } }) => {
     const comment = Object.assign({}, this.state.comment, { [name]: value });
-    this.setState({ comment }, () => console.log(this.state));
+    this.setState({ comment });
   }
 
   handleCommentSubmit = (e) => {
@@ -58,7 +58,7 @@ class BrandsShow extends React.Component {
       .post(`/api/brands/${this.props.match.params.id}/comments`, this.state.comment, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
       .then((res) => {
         const brand = Object.assign({}, this.state.brand, { comments: res.data.comments });
-        this.setState({ brand, comment: { text: ''} }, () => console.log(this.state));
+        this.setState({ brand, comment: { text: ''} });
       })
       .catch(err => console.log(err));
   }
@@ -72,7 +72,6 @@ class BrandsShow extends React.Component {
 
   // PRODUCTS //
   handleProductChange = ({ target: { name, value } }) => {
-    console.log(value);
     const product = Object.assign({}, this.state.product, { [name]: value });
     const errors  = Object.assign({}, this.state.errors, { [name]: ''});
     this.setState({ product, errors });
@@ -89,7 +88,7 @@ class BrandsShow extends React.Component {
       .post(`/api/brands/${this.props.match.params.id}/products`, this.state.product, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`}})
       .then((res) => {
         const brand = Object.assign({}, this.state.brand, { products: res.data.products });
-        this.setState({ brand, product: { text: ''} }, () => console.log(this.state));
+        this.setState({ brand, product: { name: '' } });
       })
       .catch(err => console.log(err));
   }

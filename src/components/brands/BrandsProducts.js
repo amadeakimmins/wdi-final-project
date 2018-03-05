@@ -27,7 +27,7 @@ function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload
         />
         { product.name && <div className="product-container">
           <h2 className="subtitle">Image Preview:</h2>
-          <img src={product.image} className="img-responsive" />
+          <img src={product.image} className="img-responsive image-preview" />
         </div> }
 
         <ControlLabel>Rating (5)</ControlLabel>
