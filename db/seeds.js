@@ -17,6 +17,12 @@ User
     email: 'amadea.kimmins@gmail.com',
     password: 'hello',
     passwordConfirmation: 'hello'
+  }, {
+    fullname: 'test',
+    username: 'test',
+    email: 'test@test.com',
+    password: 'test',
+    passwordConfirmation: 'test'
   }])
   .then(users => {
     console.log(`${users.length} users created!`);
