@@ -148,9 +148,9 @@ class BrandsShow extends React.Component {
               </Col>
             </Col>
 
-            {/* ABOUT BRAND */}
+            {/* INFO  */}
             <Col md={6} className="show-margin">
-              {/* <p className="subtitle"><strong><em>About: </em></strong></p> */}
+
               <p>{this.state.brand.about}</p>
 
               <Row>
@@ -161,22 +161,16 @@ class BrandsShow extends React.Component {
                 )}
               </Row>
 
-
               <p>price range - {this.state.brand.priceRange}</p>
 
               <p><a className="show-link" href={this.state.brand.website}><strong>Visit the website</strong></a></p>
 
-              {/* HEART ICON : <i className="fa fa-heart fa-stack-1.5x"></i> */}
-              {/* FAVORITES */}
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
                 this.state.brand.favorites.every(favorite => favorite !== Auth.getPayload().userId) &&
                 <button onClick={this.handleFavouriteSubmit} className="main-button margin-button"><i className="fa fa-thumbs-up"></i></button>
               }
-              {/* BROKEN HEART: <span className="fa-stack fa-1.5x">
-                <i className="fa fa-heart fa-stack-1x"></i>
-                <i className="fa fa-bolt fa-stack-1x fa-inverse"></i>
-              </span> */}
+
               { Auth.isAuthenticated() &&
                 this.state.brand.favorites &&
                 this.state.brand.favorites.some(favorite => favorite === Auth.getPayload().userId) &&
@@ -197,7 +191,7 @@ class BrandsShow extends React.Component {
           {/* TABS */}
           <Row className="tab-container">
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-              <Tab eventKey={1} className="subtitle" title="Recommend a Product">
+              <Tab eventKey={1} title="Review a Product">
                 { Auth.isAuthenticated() &&  <BrandsProducts
                   history={this.props.history}
                   handleSubmit={this.handleProductSubmit}
@@ -210,7 +204,7 @@ class BrandsShow extends React.Component {
                 /> }
               </Tab>
               {' '}
-              <Tab eventKey={2} title="Recommended Products">
+              <Tab eventKey={2} title="Product Reviews">
                 <p className="subtitle"><strong><em>
                   Recommended Products
                 </em></strong></p>
