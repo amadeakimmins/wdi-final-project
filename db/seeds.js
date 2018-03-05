@@ -202,7 +202,7 @@ User
         image5: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/59fc72ca53450ae23d8fd40d/1514890638592/3074+bullet+cape+darker.jpg?format=750w'
       }, {
         name: 'almasanta',
-        categories: ['women, accessories'],
+        categories: ['women', 'accessories'],
         about: 'A contender for best sustainable online store, Almasanta hosts a comprehensive range of ethical fashion brands. Low stock levels, high quality, recycled carbon neutral packaging and a transparent supply chain means it’s somewhere you could source your whole wardrobe without compromising on your ethics.',
         website: 'https://almasanta.com/',
         priceRange: '££££',

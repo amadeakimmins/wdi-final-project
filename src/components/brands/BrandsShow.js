@@ -17,7 +17,8 @@ class BrandsShow extends React.Component {
       categories: []
     },
     comment: {
-      text: ''
+      text: '',
+      rating: ''
     },
     product: {
       name: '',
@@ -155,7 +156,7 @@ class BrandsShow extends React.Component {
 
               <Row>
                 {this.state.brand.categories.map((category, index) =>
-                  <Col md={4} key={index}>
+                  <Col md={4} sm={3} xs={4} key={index}>
                     <p className="category">{category}</p>
                   </Col>
                 )}
@@ -191,23 +192,7 @@ class BrandsShow extends React.Component {
           {/* TABS */}
           <Row className="tab-container">
             <Tabs defaultActiveKey={1} id="uncontrolled-tab-example">
-              <Tab eventKey={1} title="Review a Product">
-                { Auth.isAuthenticated() &&  <BrandsProducts
-                  history={this.props.history}
-                  handleSubmit={this.handleProductSubmit}
-                  handleChange={this.handleProductChange}
-                  brand={this.state.brand}
-                  product={this.state.product}
-                  handleImageUpload={this.handleImageUpload}
-                  apiKey={this.state.apiKey}
-                  errors={this.state.errors}
-                /> }
-              </Tab>
-              {' '}
-              <Tab eventKey={2} title="Product Reviews">
-                <p className="subtitle"><strong><em>
-                  Recommended Products
-                </em></strong></p>
+              <Tab eventKey={1} title="Product Reviews">
                 <Row>
                   { this.state.brand.name && this.state.brand.products.map(product =>
                     <Col key={product.id} xs={12} sm={6} md={3}>
@@ -223,9 +208,16 @@ class BrandsShow extends React.Component {
                   )}
                 </Row>
               </Tab>
-              <Tab eventKey={3} title="Reviews">
-                <p className="subtitle"><strong><em>Reviews: </em></strong></p>
-                <Row>
+              <Tab eventKey={2} title="Reviews">
+                <Row className="comment-container">
+                  { this.state.brand.name && this.state.brand.comments.map(comment =>
+                    <li className="comments" key={comment.id}>
+                      <strong>{comment.createdBy.username} - </strong>{comment.text} - {comment.rating}
+                      { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
+                        <i className="fa fa-trash"></i>
+                      </button>}
+                    </li>
+                  )}
                   { Auth.isAuthenticated() && <BrandsComments
                     history={this.props.history}
                     handleCommentSubmit={this.handleCommentSubmit}
@@ -233,15 +225,19 @@ class BrandsShow extends React.Component {
                     brand={this.state.brand}
                     comment={this.state.comment}
                   /> }
-                  { this.state.brand.name && this.state.brand.comments.map(comment =>
-                    <li className="comments" key={comment.id}>
-                      <strong>{comment.createdBy.username} - </strong>{comment.text}
-                      { Auth.isAuthenticated() && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
-                      Delete
-                      </button>}
-                    </li>
-                  )}
                 </Row>
+              </Tab>
+              <Tab eventKey={3} className="comment-container" title="Review a Product">
+                { Auth.isAuthenticated() &&  <BrandsProducts
+                  history={this.props.history}
+                  handleSubmit={this.handleProductSubmit}
+                  handleChange={this.handleProductChange}
+                  brand={this.state.brand}
+                  product={this.state.product}
+                  handleImageUpload={this.handleImageUpload}
+                  apiKey={this.state.apiKey}
+                  errors={this.state.errors}
+                /> }
               </Tab>
             </Tabs>
           </Row>

@@ -53,8 +53,7 @@ class ProfilePage extends Component {
                 return(
                   <Col key={favorite.id} xs={12} sm={6} md={4}>
                     <Link to={`/brands/${favorite.id}`}>
-                      <div className="image-container">
-                        <img src={favorite.image1} className="img-responsive index-images" />
+                      <div className="image-container" style={{ backgroundImage: `url('${favorite.image1}')` }}>
                         <p className="brand-title">{favorite.name}</p>
                       </div>
                     </Link>

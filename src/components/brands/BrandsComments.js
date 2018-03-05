@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormGroup, FormControl } from 'react-bootstrap';
+import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 function BrandsComments({ handleCommentSubmit, handleChange, comment }) {
   return (
@@ -12,6 +12,14 @@ function BrandsComments({ handleCommentSubmit, handleChange, comment }) {
           placeholder="What do you think of the brand?"
           onChange={handleChange}
         >
+        </FormControl>
+        <ControlLabel>Rating (5)</ControlLabel>
+        <FormControl componentClass="select" className="input-bar" name="rating" onChange={handleChange}>
+          <option value="★">★</option>★
+          <option value="★★">★★</option>
+          <option value="★★★">★★★</option>
+          <option value="★★★★">★★★★</option>
+          <option value="★★★★★">★★★★★</option>
         </FormControl>
       </FormGroup>
       <FormGroup>

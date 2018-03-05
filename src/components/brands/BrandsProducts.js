@@ -7,7 +7,6 @@ function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
     <form onSubmit={handleSubmit}>
-      <p className="subtitle"><strong><em>Recommend a Product: </em></strong></p>
       <FormGroup>
         <ControlLabel htmlFor="name">Name</ControlLabel>
         <FormControl
@@ -33,11 +32,11 @@ function BrandsProducts({ handleSubmit, handleChange, product, handleImageUpload
 
         <ControlLabel>Rating (5)</ControlLabel>
         <FormControl componentClass="select" className="input-bar" name="rating" onChange={handleChange}>
-          <option value="⭐️">⭐️</option>
-          <option value="⭐️⭐️">⭐️⭐️</option>
-          <option value="⭐️⭐️⭐️">⭐️⭐️⭐️</option>
-          <option value="⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️</option>
-          <option value="⭐️⭐️⭐️⭐️⭐️">⭐️⭐️⭐️⭐️⭐️</option>
+          <option value="★">★</option>
+          <option value="★★">★★</option>
+          <option value="★★★">★★★</option>
+          <option value="★★★★">★★★★</option>
+          <option value="★★★★★">★★★★★</option>
         </FormControl>
         { errors.rating && <p className="errors">{errors.rating}</p>}
         <button disabled={formIsInvalid} className="main-button">Submit</button>

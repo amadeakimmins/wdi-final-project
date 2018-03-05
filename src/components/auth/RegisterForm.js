@@ -59,7 +59,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
         <ControlLabel htmlFor="passwordConfirmation">Password Confirmation</ControlLabel>
         <FormControl
           name="passwordConfirmation"
-          type="passwordConfirmation"
+          type="password"
           className="input-bar textarea"
           defaultValue={user.passwordConfirmation}
           onChange={handleChange}
