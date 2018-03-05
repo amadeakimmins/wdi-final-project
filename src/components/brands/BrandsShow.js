@@ -200,15 +200,16 @@ class BrandsShow extends React.Component {
               <Tab eventKey={1} title="Product Reviews">
                 <Row>
                   { this.state.brand.name && this.state.brand.products.map(product =>
-                    <Col key={product.id} xs={12} sm={6} md={3}>
+                    <Col key={product.id} xs={6} sm={4} md={4}>
                       <p><strong><em>
                         {product.name}
                       </em></strong></p>
                       <img className="product-container" src={product.image}/>
-                      <p><strong><em>Rating: </em></strong>{product.rating}</p>
-                      { Auth.isAuthenticated() && Auth.getPayload().userId === product.createdBy.id && <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
-                      Delete
-                      </button>}
+                      <p><strong><em>Rating: </em></strong>{product.rating}
+                        { Auth.isAuthenticated() && Auth.getPayload().userId === product.createdBy.id && <button className="main-button" onClick={() =>  this.deleteProduct(product.id)}>
+                          <i className="fa fa-trash"></i>
+                        </button>}
+                      </p>
                     </Col>
                   )}
                 </Row>
@@ -217,12 +218,13 @@ class BrandsShow extends React.Component {
                 <Row className="comment-container">
                   { this.state.brand.name && this.state.brand.comments.map(comment =>
                     <li className="comments" key={comment.id}>
-                      <strong>{comment.createdBy.username} - </strong>{comment.text} - {comment.rating}
+                      {comment.text} -  {comment.rating} - <strong>{comment.createdBy.username}</strong>
                       { Auth.isAuthenticated() && Auth.getPayload().userId === comment.createdBy.id && <button className="main-button" onClick={() =>  this.deleteComment(comment.id)}>
                         <i className="fa fa-trash"></i>
                       </button>}
                     </li>
                   )}
+                  <p><strong><em>LEAVE A REVIEW:</em></strong></p>
                   { Auth.isAuthenticated() && <BrandsComments
                     history={this.props.history}
                     handleCommentSubmit={this.handleCommentSubmit}

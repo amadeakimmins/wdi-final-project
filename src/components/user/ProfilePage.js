@@ -18,12 +18,13 @@ class ProfilePage extends Component {
 
 
   componentDidMount() {
+
     Axios
       .get(`/api/users/${this.props.match.params.id}`, { headers: { 'Authorization': `Bearer ${Auth.getToken()}`} })
       .then(res => {
 
         this.setState({ user: res.data });
-        console.log(this.state.user.favorites);
+        console.log(this.state.user);
       })
       .catch(err => console.log(err));
   }

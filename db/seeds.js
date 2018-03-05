@@ -18,11 +18,35 @@ User
     password: 'hello',
     passwordConfirmation: 'hello'
   }, {
-    fullname: 'test',
-    username: 'test',
-    email: 'test@test.com',
-    password: 'test',
-    passwordConfirmation: 'test'
+    fullname: 'Bella Dunlop',
+    username: 'bella',
+    email: 'bella@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    fullname: 'Jane Johnson',
+    username: 'jane69',
+    email: 'jane@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    fullname: 'Bill Edwards',
+    username: 'billybill',
+    email: 'bill@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    fullname: 'Milo Thomson',
+    username: 'miley',
+    email: 'milo@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
+  }, {
+    fullname: 'Louisa Keane',
+    username: 'loulee',
+    email: 'louisa@gmail.com',
+    password: 'password',
+    passwordConfirmation: 'password'
   }])
   .then(users => {
     console.log(`${users.length} users created!`);
@@ -31,7 +55,7 @@ User
     return Brand
       .create([{
         name: 'Zady',
-        categories: ['women'],
+        categories: ['women', 'accessories'],
         about: 'A company with the mission to understand "quality". In a system that is training us to buy more and ore products of increasingly low-quality goods  while hiding the outrageously high environmental and social costs of its production. Zady is creating the best material the world has to offer, working through the supply chain starting right from the beginning, at the farm. Finally they construct each piece so every stitch is measured and secure — none of this fall-apart-in-three-washes arrangement. The end result is a product designed and constructed to delight not just for one season, but for years to come. Through this timeless approach we’re working to make getting dressed a pleasure while cutting down on the over-production of thoughtless design. So fewer products end up in our landfills and more of it ends up where it should be - on us.',
         website: 'https://zady.com/',
         priceRange: '£££',
@@ -40,7 +64,36 @@ User
         image3: 'https://products-zady-com1.a.ssl.fastly.net/37/06d4208ff611e69f38694afe11f17d/SILKDRESSSHOT2.jpg',
         image4: 'https://products-zady-com0.a.ssl.fastly.net/43/05c9d07efc11e6baa60fcc4772d6b7/Turtneck-front.jpg',
         image5: 'https://products-zady-com1.a.ssl.fastly.net/64/3b22d0a1f711e6ab7083a27c4bcd87/Khaki-Trench-selling-shot-back.jpg',
-        createdBy: users[0]._id
+        createdBy: users[0]._id,
+        products: [
+          {
+            name: 'Silk Skirt',
+            image: 'https://products-zady-com0.a.ssl.fastly.net/ab/392cf08fca11e688d3a9358cd9a3c8/Screen-Shot-2016-10-08-at-10.38.06-AM.jpg',
+            rating: '★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Camel Pencil Skirt',
+            image: 'https://products-zady-com2.a.ssl.fastly.net/9c/9688107eff11e6baa60fcc4772d6b7/PENCIL-SKIRT-FULL.jpg',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }, {
+            name: 'Selen Stripped Scarf',
+            image: 'https://zady-web-production2.s3.amazonaws.com/65/3744b06d6a11e59236c9ebca4bd6c9/Fw15_APeaceTreaty_onfig_1.jpg',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'An amazing company with an incredible mission! All clothes are made beautifully and worth every penny!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            text: 'I agree, completely amazing company! I rarely buy from anywhere else and the clothes last forever.',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
       }, {
         name: 'Reformation',
         categories: ['women'],
@@ -52,7 +105,9 @@ User
         image2: 'https://assets2.thereformation.com/app/public/assets/products/140537/original/AVA_DRESS_MAY_1_clp.jpg?1519265637%27)',
         image3: 'https://assets2.thereformation.com/app/public/assets/products/124728/original/MILAN_DRESS_IVORY_1_CLP.jpg?1507318225%27)',
         image4: 'https://assets2.thereformation.com/app/public/assets/products/139819/original/GEORGIA_JUMPSUIT_KASAI_1_clp.jpg?1518832866%27)',
-        image5: 'https://assets2.thereformation.com/app/public/assets/products/131429/original/REX_TWO_PIECE_HEATHER_PLD_1_CLP.jpg?1512769948%27)'
+        image5: 'https://assets2.thereformation.com/app/public/assets/products/131429/original/REX_TWO_PIECE_HEATHER_PLD_1_CLP.jpg?1512769948%27)',
+        createdBy: users[1]._id
+
       }, {
         name: 'Stella McCartney',
         categories: ['women', 'accessories', 'men'],
@@ -63,7 +118,8 @@ User
         image2: 'https://www.stellamccartney.com/42/42640168GU_11_h.jpg',
         image3: 'https://www.stellamccartney.com/38/38696917UX_11_h.jpg',
         image4: 'https://www.stellamccartney.com/38/38697048AQ_11_h.jpg',
-        image5: 'https://www.stellamccartney.com/45/45379160FN_11_j.jpg'
+        image5: 'https://www.stellamccartney.com/45/45379160FN_11_j.jpg',
+        createdBy: users[2]._id
       }, {
         name: 'Svilu',
         categories: ['women'],
@@ -74,7 +130,8 @@ User
         image2: 'https://svilu.com/wp-content/uploads/2016/11/2-NIR_7952-copy.jpg',
         image3: 'https://svilu.com/wp-content/uploads/2016/11/4-NIR_9083-copy.jpg',
         image4: 'https://svilu.com/wp-content/uploads/2016/11/10-NIR_8287-copy.jpg',
-        image5: 'https://svilu.com/wp-content/uploads/2016/11/19-NIR_8427-copy.jpg'
+        image5: 'https://svilu.com/wp-content/uploads/2016/11/19-NIR_8427-copy.jpg',
+        createdBy: users[3]._id
       }, {
         name: 'Chinti & Parker',
         categories: ['women', 'accessories'],
@@ -85,7 +142,9 @@ User
         image2: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/b/l/black-cashmere-star-scarf_cp381bc_1.jpg',
         image3: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/s/u/sunflower-piped-milano-jacket_kk99mbc_2.jpg',
         image4: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/i/-/i-am-cashmere-sweater_kk118xbm_2.jpg',
-        image5: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/y/e/yellow-graduated-stripe-cashmere-sweater_kk88mc_2.jpg'
+        image5: 'https://www.chintiandparker.com/media/catalog/product/cache/1/small_image/445x667/9df78eab33525d08d6e5fb8d27136e95/y/e/yellow-graduated-stripe-cashmere-sweater_kk88mc_2.jpg',
+        createdBy: users[4]._id
+
       }, {
         name: 'kowtow',
         categories: ['women'],
@@ -96,7 +155,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/2182/6091/products/choreography-jumper_04_army-green_lookbook_1024x1024@2x.jpg?13008533507746690969',
         image3: 'https://cdn.shopify.com/s/files/1/2182/6091/products/nelken-top_06_gold_lookbook_1024x1024@2x.jpg?13008533507746690969',
         image4: 'https://cdn.shopify.com/s/files/1/2182/6091/products/SlowpaceDress_007_navy_lookbook_a83c6987-f765-417f-bb2b-aa13353dc70b_1024x1024@2x.jpg?13008533507746690969',
-        image5: 'https://cdn.shopify.com/s/files/1/2182/6091/products/formation-jacket_06_denim_lookbook_1024x1024@2x.jpg?13008533507746690969'
+        image5: 'https://cdn.shopify.com/s/files/1/2182/6091/products/formation-jacket_06_denim_lookbook_1024x1024@2x.jpg?13008533507746690969',
+        createdBy: users[5]._id
       }, {
         name: 'Rapanui',
         categories: ['women', 'men'],
@@ -107,7 +167,8 @@ User
         image2: 'https://rapanuiclothing.com/uploaded/thumbnails/rna15_mens-merino-wool-jumper_dark-yellow_003_15387898_480xauto.jpg',
         image3: 'https://rapanuiclothing.com/uploaded/thumbnails/grey-merino-wool-jumper_13045961_480xauto.jpg',
         image4: 'https://rapanuiclothing.com/uploaded/thumbnails/polar-berg_9876765_480xauto.jpg',
-        image5: 'https://rapanuiclothing.com/uploaded/thumbnails/redwine-baseball-top_15819154_480xauto.jpg'
+        image5: 'https://rapanuiclothing.com/uploaded/thumbnails/redwine-baseball-top_15819154_480xauto.jpg',
+        createdBy: users[2]._id
       }, {
         name: 'Ankura',
         categories: ['women', 'accessories'],
@@ -118,7 +179,8 @@ User
         image2: 'https://www.shopankurabrand.com/wp-content/uploads/2017/03/MG_5990.jpg',
         image3: 'https://www.shopankurabrand.com/wp-content/uploads/2016/09/bs3.jpg',
         image4: 'https://www.shopankurabrand.com/wp-content/uploads/2016/03/2_1440x2160.jpg',
-        image5: 'https://www.shopankurabrand.com/wp-content/uploads/2016/09/AC-Relleno-4.jpg'
+        image5: 'https://www.shopankurabrand.com/wp-content/uploads/2016/09/AC-Relleno-4.jpg',
+        createdBy: users[4]._id
       }, {
         name: 'Thought',
         categories: ['women', 'men', 'accessories'],
@@ -129,7 +191,8 @@ User
         image2: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/m/w/mwt3442-louis-grandpa-hemp-grandad-collar-shirt-sky-blue-front.jpg',
         image3: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/m/s/msb3183-jacob-organic-cotton-trousers-grey-vapour-front.jpg',
         image4: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/w/s/wst3487--poppyred-corinna-organic-cotton-jumper-0004.jpg',
-        image5: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/w/s/wsb3501--brigid-skirt-flower-print-skirt-0003.jpg'
+        image5: 'https://www.wearethought.com/media/catalog/product/cache/thumbnail/620x836/beff4985b56e3afdbeabfc89641a4582/w/s/wsb3501--brigid-skirt-flower-print-skirt-0003.jpg',
+        createdBy: users[5]._id
       }, {
         name: 'Silou Activewear',
         categories: ['women'],
@@ -140,7 +203,8 @@ User
         image2: 'https://siloulondon.com/wp-content/uploads/2016/12/newShot02_094.jpg',
         image3: 'https://siloulondon.com/wp-content/uploads/2017/12/170921_Silou_s05_0042.jpg',
         image4: 'https://siloulondon.com/wp-content/uploads/2016/11/Shot07_152-2.jpg',
-        image5: 'https://siloulondon.com/wp-content/uploads/2017/12/170921_Silou_s04_0007-e1518431211611.jpg'
+        image5: 'https://siloulondon.com/wp-content/uploads/2017/12/170921_Silou_s04_0007-e1518431211611.jpg',
+        createdBy: users[3]._id
       }, {
         name: 'Laura Ironside',
         categories: ['women'],
@@ -151,7 +215,8 @@ User
         image2: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586a9bc73e00bec12e67f783/586a9c216b8f5b6deb226b94/1483389858934/Look+1-1-new.jpg?format=500w',
         image3: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ab427d1758eb48823f4f3/586ac54fd482e92824900ed9/1483392411289/Look+3-5.jpg?format=1000w',
         image4: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ab562bebafbc7473ecea7/586ac490d2b8577385783e88/1483392146784/Look+4-9.jpg?format=500w',
-        image5: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ac77ad2b8577385787776/586ac7c6c534a5731deab2c4/1483392970727/Look+6-7.jpg?format=500w'
+        image5: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ac77ad2b8577385787776/586ac7c6c534a5731deab2c4/1483392970727/Look+6-7.jpg?format=500w',
+        createdBy: users[1]._id
       }, {
         name: 'Zoe Morton',
         categories: ['accessories'],
@@ -162,7 +227,8 @@ User
         image2: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/58d1455c2e69cf5657c04e24/1501678519788/JS_ZoePlantLife0826_retouched_crop.jpg?format=1500w',
         image3: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/58d1495ccd0f68e7f3643cd0/1490110820448/JS_ZoePlantLife0634.jpg?format=1500w',
         image4: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/59cbcdc7cf81e0784691856a/1507121311991/ROADS-24_crop.jpg?format=1000w',
-        image5: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/55f16e47e4b0fcd506759173/1519201823554/ZM_GreenwoodRing_Thin.jpg?format=1000w'
+        image5: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/55f16e47e4b0fcd506759173/1519201823554/ZM_GreenwoodRing_Thin.jpg?format=1000w',
+        createdBy: users[3]._id
       }, {
         name: 'Baia',
         categories: ['accessories'],
@@ -173,7 +239,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-566_980dbed1-778d-45c4-b127-2da31167e3ef_grande.jpg?v=1517780668',
         image3: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-575_grande.jpg?v=1517776049',
         image4: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-550_grande.jpg?v=1517778390',
-        image5: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-494_grande.jpg?v=1517776573'
+        image5: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-494_grande.jpg?v=1517776573',
+        createdBy: users[2]._id
       }, {
         name: 'Veja',
         categories: ['accessories'],
@@ -184,7 +251,8 @@ User
         image2: 'http://www.veja-store.com/6698-large_atch/esplar-leather-white-black.jpg',
         image3: 'http://www.veja-store.com/7664-large_atch/v-12-velcro-leather-black-black.jpg',
         image4: 'http://www.veja-store.com/7004-large_atch/v-10-suede-electric-blue.jpg',
-        image5: 'http://www.veja-store.com/8937-large_atch/v-10-oxford-grey-pierre.jpg'
+        image5: 'http://www.veja-store.com/8937-large_atch/v-10-oxford-grey-pierre.jpg',
+        createdBy: users[1]._id
       }, {
         name: 'Aiayu',
         categories: ['women', 'accessories'],
@@ -195,7 +263,8 @@ User
         image2: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUIwqtMk9d1N05iJvXhmLdFew6vBEzVaThznU_T7gFzo46FsZH',
         image3: 'http://wac.b8d2.edgecastcdn.net/80B8D2/cdn-tomorrow/seanmcmenomy/wp-content/blogs.dir/6/files/2016/02/aiayu_presslayout_151026_ORG2.jpg',
         image4: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmFlh8G7Gd9UvOUlRsB28UQIvewcT6ayqeIG3OpJ-lnP6hTvSanQ',
-        image5: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgJJsMuV7XQt9VWI0yag5Iz1vA99XLbIBka0UyMW8OVNyFd-O'
+        image5: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgJJsMuV7XQt9VWI0yag5Iz1vA99XLbIBka0UyMW8OVNyFd-O',
+        createdBy: users[0]._id
       }, {
         name: 'Mandkhai',
         categories: ['women'],
@@ -206,7 +275,8 @@ User
         image2: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a71966b9140b79f3b897cc4/1518518961084/ss18+purple+suit.jpg?format=750w',
         image3: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a719f5de4966be6e6f17d50/1518519254871/ss18+white+frill+dress.jpg?format=750w',
         image4: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a2e77c571c10b8afee47084/1514890873091/4846+Tube+detail+bomber+front.jpg?format=750w',
-        image5: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/59fc72ca53450ae23d8fd40d/1514890638592/3074+bullet+cape+darker.jpg?format=750w'
+        image5: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/59fc72ca53450ae23d8fd40d/1514890638592/3074+bullet+cape+darker.jpg?format=750w',
+        createdBy: users[5]._id
       }, {
         name: 'almasanta',
         categories: ['women', 'accessories'],
@@ -217,7 +287,8 @@ User
         image2: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/2764/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T122053Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=2611c6b7a38e013c5fc3d09513086d3beea9fa49bb07cff366e0509fd7b3129f',
         image3: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/3961/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121144Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d73c53332b96230f837bc2ac7401857e0d5933cf790405dfcd965bbd2de45601',
         image4: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/4190/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121757Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3d451d494cc7f3f85b9e75687baa9171a0516b6a125fc938874366551380efa5',
-        image5: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/1949/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121834Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ed29b04889fcc5a3a31942ca0ded6946fd1c49c6b83bf5ab1e76fbc09a1bfd21'
+        image5: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/1949/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121834Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ed29b04889fcc5a3a31942ca0ded6946fd1c49c6b83bf5ab1e76fbc09a1bfd21',
+        createdBy: users[1]._id
       }, {
         name: 'All Sisters',
         categories: ['women'],
@@ -228,7 +299,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/0827/0589/products/andromeda_1024x1024.jpg?v=1498559609',
         image3: 'https://cdn.shopify.com/s/files/1/0827/0589/products/PYRAMID_bikini_blackandwhite_5954c863-7b20-408c-9a02-f4d51bfeb044_1024x1024.jpg?v=1498563639',
         image4: 'https://cdn.shopify.com/s/files/1/0827/0589/products/ALL_LOOK_SS17_07_sRGB_opt_1024x1024.jpg?v=1496744369',
-        image5: 'https://cdn.shopify.com/s/files/1/0827/0589/products/3_fa53caef-4bcd-4220-81f5-d2bea6e7e443_1024x1024.jpg?v=1499168175'
+        image5: 'https://cdn.shopify.com/s/files/1/0827/0589/products/3_fa53caef-4bcd-4220-81f5-d2bea6e7e443_1024x1024.jpg?v=1499168175',
+        createdBy: users[0]._id
       }, {
         name: 'finisterre',
         categories: ['women','men'],
@@ -239,7 +311,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/1074/5128/products/lerwick_shirt_cream_fleck_m_onbody_CAT_480x.JPG?v=1517937119',
         image3: 'https://cdn.shopify.com/s/files/1/1074/5128/products/bowen_crew_navy_m_onbody_CAT_480x.JPG?v=1517947952',
         image4: 'https://cdn.shopify.com/s/files/1/1074/5128/products/alga_jean_indigo_m_onbody_CAT_480x.JPG?v=1517933213',
-        image5: 'https://cdn.shopify.com/s/files/1/1074/5128/products/sandway_trouser_w_onbody_CAT_480x.jpg?v=1511542455'
+        image5: 'https://cdn.shopify.com/s/files/1/1074/5128/products/sandway_trouser_w_onbody_CAT_480x.jpg?v=1511542455',
+        createdBy: users[2]._id
       }, {
         name: 'Absolutely Bear',
         categories: ['women','men'],
@@ -250,7 +323,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-26_6e5d7cfa-018d-4cf7-bcaf-f92ed9054593_large.jpg?v=1515776472',
         image3: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-21_large.jpg?v=1515776266',
         image4: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-31_18a6e5fb-8c49-4be1-9dff-7aa1c8943232_large.jpg?v=1515960762',
-        image5: 'https://cdn.shopify.com/s/files/1/1061/4244/products/1605205007lowres_large.jpg?v=1515959230'
+        image5: 'https://cdn.shopify.com/s/files/1/1061/4244/products/1605205007lowres_large.jpg?v=1515959230',
+        createdBy: users[4]._id
       }, {
         name: 'Howies',
         categories: ['women','men'],
@@ -261,7 +335,8 @@ User
         image2: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/h/w/hwdi-m-181-pirate_black-parent_1.jpg',
         image3: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/f/e/feller-m-171-pirate_black-parent_1.jpg',
         image4: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/s/t/striped_merino_ls-w-173-peacoat-parent_1.jpg',
-        image5: 'http://www.howies.co.uk/media/catalog/product/cache/1/small_image/310x350/9df78eab33525d08d6e5fb8d27136e95/b/l/blade-m-163-phantom-parent_1_5_1.jpg'
+        image5: 'http://www.howies.co.uk/media/catalog/product/cache/1/small_image/310x350/9df78eab33525d08d6e5fb8d27136e95/b/l/blade-m-163-phantom-parent_1_5_1.jpg',
+        createdBy: users[3]._id
       }, {
         name: 'The White T-shirt Co.',
         categories: ['women','men'],
@@ -272,7 +347,8 @@ User
         image2: 'https://www.thewhitetshirt.com/uploads/thumbs/mens-relaxed-organic-cotton-white-long-sleeve-crew-neck-t-shirt-copy.jpg',
         image3: 'https://www.thewhitetshirt.com/uploads/thumbs/the-white-t-shirt-co-mens-grey-marl-t-shirt.jpg',
         image4: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-black-organic-cotton-body-11111.jpg',
-        image5: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-white-organic-cotton-round-neck-front-jpg-11.jpg'
+        image5: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-white-organic-cotton-round-neck-front-jpg-11.jpg',
+        createdBy: users[0]._id
       }, {
         name: 'Knowledge Cotton Apparel',
         categories: ['men'],
@@ -283,7 +359,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498043963.6799_300x300.jpg?v=1517842432',
         image3: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498053660.6212_300x300.jpg?v=1516780619',
         image4: 'https://cdn.shopify.com/s/files/1/1355/6205/products/Basic_Loose_Fit_O-Neck_Tee_GOTS-T-shirt-10110-1231_Blue_melange-1_300x300.jpg?v=1519381450',
-        image5: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498059716.3528_300x300.jpg?v=1519133088'
+        image5: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498059716.3528_300x300.jpg?v=1519133088',
+        createdBy: users[5]._id
       }, {
         name: 'Brothers We Stand',
         categories: ['men'],
@@ -294,7 +371,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/0262/5311/products/MWT3441-Devan-Classic-Hemp-Shirt-SKY_BLUE-FRONT_Cropped_grande.jpg?v=1505833226',
         image3: 'https://cdn.shopify.com/s/files/1/0262/5311/products/regular_dunn_blue_1_sq_grande.jpg?v=1516705525',
         image4: 'https://cdn.shopify.com/s/files/1/0262/5311/products/kca_pique_knit_grande.jpg?v=1519054805',
-        image5: 'https://cdn.shopify.com/s/files/1/0262/5311/products/cream-wave_pocket_4_Cropped_grande.png?v=1517505633'
+        image5: 'https://cdn.shopify.com/s/files/1/0262/5311/products/cream-wave_pocket_4_Cropped_grande.png?v=1517505633',
+        createdBy: users[1]._id
       }, {
         name: 'Aesop',
         categories: ['beauty'],
@@ -305,7 +383,8 @@ User
         image2: 'https://www.aesop.com/medias/Aesop-Body-Petitgrain-Reviving-Body-Gel-150mL-medium.png?context=bWFzdGVyfGltYWdlc3wyNjA0NjZ8aW1hZ2UvcG5nfGltYWdlcy9oZDAvaGE3Lzg3OTc0NDI1NzIzMTgucG5nfGFkMTVlOGU1ZDViN2EyOTBhZDQzZmE0MTUxODcyZGM4YTllN2FmNDI2OTI4MjZjNjcwMzJjMTM3NjBkMmY4NWU',
         image3: 'https://www.aesop.com/medias/Aesop-Body-Geranium-Leaf-Body-Cleanser-200mL-medium.png?context=bWFzdGVyfGltYWdlc3wzMzUwNjF8aW1hZ2UvcG5nfGltYWdlcy9oM2IvaGMyLzg4MTQ2Mjg2MDE4ODYucG5nfDAwMWEyMDBlNDUzNjg0OTNmZDdiNmNkZDhhMjZhZjI5ZGU2MmVlZDRjZGIxMWE1NmJiZjZhNmJlMmM5OGRkYzc',
         image4: 'https://www.aesop.com/medias/Aesop-Hair-Violet-Leaf-Hair-Balm-60mL-medium.png?context=bWFzdGVyfGltYWdlc3wxOTIwMzZ8aW1hZ2UvcG5nfGltYWdlcy9oNTYvaDc5Lzg3OTc0NDM2NTM2NjIucG5nfGY4MWEzMDQ2Njc0NTAyOTg0YWFiOThhNjk1MWRlMjk5MGVkZGRhYWYwYzc1MjRjYjkxNDllMjU4NmU4M2QxOWE',
-        image5: 'https://www.aesop.com/medias/Aesop-Hair-Rose-Hair-Scalp-Moisturising-Masque-120mL-medium.png?context=bWFzdGVyfGltYWdlc3wyODQ2MTF8aW1hZ2UvcG5nfGltYWdlcy9oYWEvaDkzLzg4MDc0MjI4NTMxNTAucG5nfDgzOTY3ODUzNjY1MDNkNmRkNmE3YzUzZTAwMDM1M2VjNjk0Nzc4YTVmZmIwYTk3YTEzYmMxNzY3YThjYTI2ZTk'
+        image5: 'https://www.aesop.com/medias/Aesop-Hair-Rose-Hair-Scalp-Moisturising-Masque-120mL-medium.png?context=bWFzdGVyfGltYWdlc3wyODQ2MTF8aW1hZ2UvcG5nfGltYWdlcy9oYWEvaDkzLzg4MDc0MjI4NTMxNTAucG5nfDgzOTY3ODUzNjY1MDNkNmRkNmE3YzUzZTAwMDM1M2VjNjk0Nzc4YTVmZmIwYTk3YTEzYmMxNzY3YThjYTI2ZTk',
+        createdBy: users[3]._id
       }, {
         name: 'Too Faced',
         categories: ['beauty'],
@@ -316,7 +395,8 @@ User
         image2: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dwee7f9fcd/images/hi-res/70241_1.png?sw=243&sh=243&sm=fit',
         image3: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcae7dbd0/images/hi-res/41038_1.png?sw=243&sh=243&sm=fit',
         image4: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw3328f189/images/hi-res/70228_1.png?sw=243&sh=243&sm=fit',
-        image5: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5c767400/images/hi-res/90645_1.png?sw=243&sh=243&sm=fit'
+        image5: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5c767400/images/hi-res/90645_1.png?sw=243&sh=243&sm=fit',
+        createdBy: users[5]._id
       }, {
         name: 'Bare Minerals',
         categories: ['beauty'],
@@ -327,7 +407,8 @@ User
         image2: 'https://s7d3.scene7.com/is/image/BareEscentuals/85963_1',
         image3: 'https://s7d3.scene7.com/is/image/BareEscentuals/82819?$sharpen1$&wid=345&hei=345',
         image4: 'https://s7d3.scene7.com/is/image/BareEscentuals/47627?$sharpen1$&wid=345&hei=345',
-        image5: 'https://s7d3.scene7.com/is/image/BareEscentuals/82877?$sharpen1$&wid=345&hei=345'
+        image5: 'https://s7d3.scene7.com/is/image/BareEscentuals/82877?$sharpen1$&wid=345&hei=345',
+        createdBy: users[4]._id
       }, {
         name: 'Becca Cosmetics',
         categories: ['beauty'],
@@ -338,7 +419,8 @@ User
         image2: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/h/y/hydramist_powder_angledcap_1400x1400_v2.png',
         image3: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/b/a/backlightprimingfilter.png',
         image4: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/2/_/2_slbp_pinkhaze_1400x1400_2.png',
-        image5: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/4/_/4_1400x1400-_0004_lush-lip-pack-_chai-creme_1.png'
+        image5: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/4/_/4_1400x1400-_0004_lush-lip-pack-_chai-creme_1.png',
+        createdBy: users[1]._id
       }, {
         name: 'Hourglass',
         categories: ['beauty'],
@@ -349,7 +431,8 @@ User
         image2: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/744x950/9df78eab33525d08d6e5fb8d27136e95/v/a/vanish-seamless-finish-foundation-stick-nude_2.jpg',
         image3: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/744x950/9df78eab33525d08d6e5fb8d27136e95/v/a/vanish-seamless-finish-foundation-makeup-brush.jpg',
         image4: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/a/m/ambient-lighting-palette-contouring-highlighting-face-makeup.jpg',
-        image5: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/v/e/veil-mineral-primer-makeup-primer.jpg'
+        image5: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/v/e/veil-mineral-primer-makeup-primer.jpg',
+        createdBy: users[3]._id
       }, {
         name: 'Barry M',
         categories: ['beauty'],
@@ -360,7 +443,8 @@ User
         image2: 'https://www.barrym.com/img/products/288/ranges/711/big.jpg',
         image3: 'https://www.barrym.com/img/products/117/ranges/412/big.jpg',
         image4: 'https://www.barrym.com/img/products/32/ranges/115/big.jpg',
-        image5: 'https://www.barrym.com/img/products/204/ranges/big.jpg'
+        image5: 'https://www.barrym.com/img/products/204/ranges/big.jpg',
+        createdBy: users[5]._id
       }, {
         name: 'Charlotte Tilbury',
         categories: ['beauty'],
@@ -371,7 +455,8 @@ User
         image2: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/c/h/charlotte-tilbury-filmstar-bronze-and-blush-pack-shot_1.jpg',
         image3: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/c/h/charlotte-tilbury-skincare-brightening-youth-glow-product_002_.jpg',
         image4: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/c/h/charlotte_tilbury_beauty_light_wand_closed.jpg',
-        image5: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/m/a/magic-cream1.jpg'
+        image5: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/m/a/magic-cream1.jpg',
+        createdBy: users[2]._id
       }, {
         name: 'Kat Von D Beauty',
         categories: ['beauty'],
@@ -382,7 +467,8 @@ User
         image2: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dw7294f482/hi-res/20012_2013.jpg?sw=290',
         image3: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dw1d0388bb/hi-res/22131V1.jpg?sw=290',
         image4: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwf2a0e0c7/hi-res/10008_1017.jpg?sw=290',
-        image5: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwbd7175e9/hi-res/22117V1.jpg?sw=290'
+        image5: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwbd7175e9/hi-res/22117V1.jpg?sw=290',
+        createdBy: users[5]._id
       }, {
         name: 'Lush',
         categories: ['beauty'],
@@ -393,7 +479,8 @@ User
         image2: 'https://res.cloudinary.com/lush/image/upload/s--5CZIOabQ--/c_fill,h_340,q_jpegmini,w_340/v1/lush_content/products/main/2017/05/new_shampoo_bar_be_cruelty_free_solid_shot_1.jpg?itok=TlSRzzUN',
         image3: 'http://img.allw.mn/content/2013/10/21101550_7036.jpg',
         image4: 'http://images.totalbeauty.com/uploads/tx_userproducts/200/tbp500891_v0_l.jpg',
-        image5: 'https://media1.popsugar-assets.com/files/thumbor/98Td7WvlQ3qbTDG3jeHBy-PuIvo/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/02/874/n/40039897/7f946ddc59822f01dd47b0.98728476_edit_img_image_43824340_1501646976/i/Lush-Cosmetics-Bestsellers.jpg'
+        image5: 'https://media1.popsugar-assets.com/files/thumbor/98Td7WvlQ3qbTDG3jeHBy-PuIvo/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/02/874/n/40039897/7f946ddc59822f01dd47b0.98728476_edit_img_image_43824340_1501646976/i/Lush-Cosmetics-Bestsellers.jpg',
+        createdBy: users[1]._id
       }, {
         name: 'NYX',
         categories: ['beauty'],
@@ -404,7 +491,8 @@ User
         image2: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dw98d18f1b/ProductImages/Face/Stay_Matte_But_Not_Flat_Liquid_Foundation/staymattebutnotflatliquidfoundation_main.jpg?sw=390&sh=390&sm=fit',
         image3: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dw51143853/ProductImages/2017/Face/Total_Control_Drop_Foundation/800897068752_totalcontroldropfoundation_alabaster_main.jpg?sw=390&sh=390&sm=fit',
         image4: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwb2c9c6d4/ProductImages/Face/Highlight_Contour_Palette/800897836245_highlightcontourpalette_main.jpg?sw=390&sh=390&sm=fit',
-        image5: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwbbca9dd2/ProductImages/Lips/Slim_Lip_Pencil/slimlippencil_main.jpg?sw=390&sh=390&sm=fit'
+        image5: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwbbca9dd2/ProductImages/Lips/Slim_Lip_Pencil/slimlippencil_main.jpg?sw=390&sh=390&sm=fit',
+        createdBy: users[0]._id
       }, {
         name: 'Nügg',
         categories: ['beauty'],
@@ -415,7 +503,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/0438/6525/products/1N0A6195-2_medium.jpg?v=1518669764',
         image3: 'https://cdn.shopify.com/s/files/1/0438/6525/products/DSC09875_1_medium.jpg?v=1512040263',
         image4: 'https://cdn.shopify.com/s/files/1/0438/6525/products/111317_NuggHoliday_01_020_V2_medium.jpg?v=1511216861',
-        image5: 'https://cdn.shopify.com/s/files/1/0438/6525/products/Copy_of_Copy_of_Copy_of_Instagram_Post_Untitled_Design_medium.png?v=1519788938'
+        image5: 'https://cdn.shopify.com/s/files/1/0438/6525/products/Copy_of_Copy_of_Copy_of_Instagram_Post_Untitled_Design_medium.png?v=1519788938',
+        createdBy: users[5]._id
       }, {
         name: 'Pai',
         categories: ['beauty'],
@@ -426,7 +515,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/1282/4197/products/AgeConfidenceOil_medium.png?v=1499775849',
         image3: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Rosehip_Mask_medium.png?v=1499776790',
         image4: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Exfoliator_1_medium.png?v=1499776183',
-        image5: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Cham_Day_Cream_medium.png?v=1508161175'
+        image5: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Cham_Day_Cream_medium.png?v=1508161175',
+        createdBy: users[2]._id
       }, {
         name: 'Odacité',
         categories: ['beauty'],
@@ -437,8 +527,8 @@ User
         image2: 'https://cdn.shopify.com/s/files/1/0671/5641/products/DeliveryCreme_large.png?v=1514998327',
         image3: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Rosehip_Mask_medium.png?v=1499776790',
         image4: 'https://cdn.shopify.com/s/files/1/0671/5641/products/AOW_large.jpg?v=1489449275',
-        image5: 'https://cdn.shopify.com/s/files/1/0671/5641/products/HydraPurify_MintGreenTea_2_large.png?v=1514997321'
-
+        image5: 'https://cdn.shopify.com/s/files/1/0671/5641/products/HydraPurify_MintGreenTea_2_large.png?v=1514997321',
+        createdBy: users[3]._id
       }]);
   })
   .then((brand) => {
