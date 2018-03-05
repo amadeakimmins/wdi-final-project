@@ -5,7 +5,7 @@ import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
   const formIsInvalid = Object.keys(errors).some(key => errors[key]);
   return (
-    <form onSubmit={handleSubmit} className="container">
+    <form onSubmit={handleSubmit} className="authentication-container">
 
       { errors.passwordConfirmation && <p className="errors">{errors.passwordConfirmation}</p>}
 

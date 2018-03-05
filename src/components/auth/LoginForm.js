@@ -4,7 +4,7 @@ import { FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 
 const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
   return (
-    <form onSubmit={handleSubmit} className="container">
+    <form onSubmit={handleSubmit} className="authentication-container">
       <FormGroup>
         <ControlLabel htmlFor="email">Email</ControlLabel>
         <FormControl
@@ -15,7 +15,7 @@ const LoginForm = ({ handleChange, handleSubmit, user, errors }) => {
           onChange={handleChange}
         >
         </FormControl>
-        
+
         <ControlLabel htmlFor="password">Password</ControlLabel>
         <FormControl
           name="password"
