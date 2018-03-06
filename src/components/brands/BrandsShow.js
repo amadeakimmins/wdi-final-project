@@ -184,7 +184,7 @@ class BrandsShow extends React.Component {
                 <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
 
-              { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
+              { Auth.isAuthenticated() && this.userCreatedBrand() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
                 <i className="fa fa-edit"></i></Link> }
 
               { Auth.isAuthenticated() && this.userCreatedBrand() &&
