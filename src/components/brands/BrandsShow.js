@@ -147,10 +147,10 @@ class BrandsShow extends React.Component {
             <Col md={6}>
               <Col className="show-container" >
                 <Slider className="slider" {...settings}>
-                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image2} /></div>
-                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image3} /></div>
-                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image4} /></div>
-                  <div><img width="300" height="400" alt="600x300" src={this.state.brand.image5} /></div>
+                  <div><img className="slider-image" alt="600x300" src={this.state.brand.image2} /></div>
+                  <div><img className="slider-image" alt="600x300" src={this.state.brand.image3} /></div>
+                  <div><img className="slider-image" alt="600x300" src={this.state.brand.image4} /></div>
+                  <div><img className="slider-image" alt="600x300" src={this.state.brand.image5} /></div>
                 </Slider>
               </Col>
             </Col>

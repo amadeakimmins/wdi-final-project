@@ -54,29 +54,35 @@ Trello was really useful in the planning process to work out how much I needed t
 Trello Screenshot:
 ![image](https://user-images.githubusercontent.com/32812117/37028927-9ca749b2-212d-11e8-99d4-6c76a1f63a56.png)
 
-
 ---
 
 ### My Project screenshots
 
-Splash Page:
-![image 3](https://user-images.githubusercontent.com/32818032/36024252-1a9c809a-0d87-11e8-9f71-cdbb3f9cd285.png)
+Homepage:
+![image](https://user-images.githubusercontent.com/32812117/37029730-5d689dc0-2130-11e8-8929-c547eaa8e539.png)
 
-Events Index Page:
-![image 2](https://user-images.githubusercontent.com/32818032/36024251-1a86900a-0d87-11e8-9a13-28eedbe8d924.png)
+Brands Index:
+![image](https://user-images.githubusercontent.com/32812117/37029731-5ed7db12-2130-11e8-8abd-e162002fc22f.png)
 
+Brand View:
+![image](https://user-images.githubusercontent.com/32812117/37029742-648b9742-2130-11e8-8418-d17806ef1463.png)
 
-User Profile Page:
-![image 4](https://user-images.githubusercontent.com/32818032/36024253-1abbb528-0d87-11e8-9d89-230d2351bcc5.png)
+Brand and Product Reviews:
+![image](https://user-images.githubusercontent.com/32812117/37029747-67a4e26c-2130-11e8-8485-83e9f01f3efc.png)
 
-Event View Page Map:
-![image 5](https://user-images.githubusercontent.com/32818032/36024255-1aced7f2-0d87-11e8-8a31-0d2a8f5a3db2.png)
+![image](https://user-images.githubusercontent.com/32812117/37029753-6d39e59c-2130-11e8-8c72-f9cf0830a285.png)
 
-Event View Page Description:
-![image 6](https://user-images.githubusercontent.com/32818032/36024256-1ae2c460-0d87-11e8-97b6-a9947115b21e.png)
+User Account:
+![image](https://user-images.githubusercontent.com/32812117/37029758-709bff72-2130-11e8-8f42-bac2044b0f54.png)
 
-Event View Page Comments:
-![image 7](https://user-images.githubusercontent.com/32818032/36024257-1afc16b8-0d87-11e8-9767-a6fd840c7c6b.png)
+Fully Mobile Responsive:
+![image](https://user-images.githubusercontent.com/32812117/37029764-740d8cb6-2130-11e8-9682-1ba853708469.png)
+
+![image](https://user-images.githubusercontent.com/32812117/37029792-853541e6-2130-11e8-8c8e-74a75f76056e.png)
+
+![image](https://user-images.githubusercontent.com/32812117/37029796-87ca04f0-2130-11e8-9f20-d7968fe7d5bd.png)
+
+![image](https://user-images.githubusercontent.com/32812117/37030085-833eff8e-2131-11e8-97ce-394a8c98c161.png)
 
 
 ---
