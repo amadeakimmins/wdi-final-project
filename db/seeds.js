@@ -410,7 +410,22 @@ User
         image3: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ab427d1758eb48823f4f3/586ac54fd482e92824900ed9/1483392411289/Look+3-5.jpg?format=1000w',
         image4: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ab562bebafbc7473ecea7/586ac490d2b8577385783e88/1483392146784/Look+4-9.jpg?format=500w',
         image5: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586ac77ad2b8577385787776/586ac7c6c534a5731deab2c4/1483392970727/Look+6-7.jpg?format=500w',
-        createdBy: users[1]._id
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'Silk Dress',
+            image: 'https://static1.squarespace.com/static/57bdf6a58419c28ef27e573a/586a9bc73e00bec12e67f783/586a9c216b8f5b6deb226b94/1483389858934/Look+1-1-new.jpg?format=500w',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'I got one of the silk dresses, it is so beautiful!! Go get yourself one',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
       }, {
         name: 'Zoe Morton',
         categories: ['accessories'],
@@ -422,7 +437,40 @@ User
         image3: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/58d1495ccd0f68e7f3643cd0/1490110820448/JS_ZoePlantLife0634.jpg?format=1500w',
         image4: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/59cbcdc7cf81e0784691856a/1507121311991/ROADS-24_crop.jpg?format=1000w',
         image5: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/55f16e47e4b0fcd506759173/1519201823554/ZM_GreenwoodRing_Thin.jpg?format=1000w',
-        createdBy: users[3]._id
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Roundabout Earrings',
+            image: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/59e5af272aeba56108af3c4a/1508224815904/ROADS-10_crop.jpg?format=750w',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }, {
+            name: 'Roads the Earrings',
+            image: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/59cbcd70d7bdceabea139192/1506528628300/ROADS_crop.jpg?format=750w',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }, {
+            name: 'Plantlife Pendant 18kt gold',
+            image: 'https://static1.squarespace.com/static/55c22137e4b0a390257b0249/5756da2486db43b14e88f02d/58d1472c3e00bea07a3503cc/1501679379192/JS_ZoePlantLife0875_retouched_crop.jpg?format=750w',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'simple and elegant jewellery',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          },{
+            text: 'my favourite are the roundabout earrings, can wear with anything',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          },{
+            text: 'The wave earrings are a bit flimsy, mine have fallen apart after 4 wears',
+            rating: '★★',
+            createdBy: users[3]._id
+          }
+        ]
       }, {
         name: 'Baia',
         categories: ['accessories'],
@@ -434,7 +482,31 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-575_grande.jpg?v=1517776049',
         image4: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-550_grande.jpg?v=1517778390',
         image5: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-494_grande.jpg?v=1517776573',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Mini Saddle, Fuschia',
+            image: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-598_grande.jpg?v=1517781941',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Mini Suede Drawstring, Mustard',
+            image: 'https://cdn.shopify.com/s/files/1/1138/3142/products/Baia-0917-1-566_980dbed1-778d-45c4-b127-2da31167e3ef_grande.jpg?v=1517780668',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'IN LOVE WITH THESE BAGS',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          },{
+            text: 'The mini saddle is perfect for every occassion',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
       }, {
         name: 'Veja',
         categories: ['accessories'],
@@ -446,7 +518,31 @@ User
         image3: 'http://www.veja-store.com/7664-large_atch/v-12-velcro-leather-black-black.jpg',
         image4: 'http://www.veja-store.com/7004-large_atch/v-10-suede-electric-blue.jpg',
         image5: 'http://www.veja-store.com/8937-large_atch/v-10-oxford-grey-pierre.jpg',
-        createdBy: users[1]._id
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'V-lock Leather Black Black',
+            image: 'http://www.veja-store.com/7664-large_atch/v-12-velcro-leather-black-black.jpg',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'V-12 Bmesh Black White',
+            image: 'http://www.veja-store.com/7341-large_atch/v-12-bmesh-black-white.jpg',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'So comfortable and reasonable price for how long they last!',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          },{
+            text: 'Bought myself two pairs I love them so much!',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ]
       }, {
         name: 'Aiayu',
         categories: ['women', 'accessories'],
@@ -458,7 +554,22 @@ User
         image3: 'http://wac.b8d2.edgecastcdn.net/80B8D2/cdn-tomorrow/seanmcmenomy/wp-content/blogs.dir/6/files/2016/02/aiayu_presslayout_151026_ORG2.jpg',
         image4: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmFlh8G7Gd9UvOUlRsB28UQIvewcT6ayqeIG3OpJ-lnP6hTvSanQ',
         image5: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHgJJsMuV7XQt9VWI0yag5Iz1vA99XLbIBka0UyMW8OVNyFd-O',
-        createdBy: users[0]._id
+        createdBy: users[0]._id,
+        products: [
+          {
+            name: 'Khaki Shorts',
+            image: 'https://s-media-cache-ak0.pinimg.com/originals/72/84/6a/72846aa33c2b26b21b36fc82f33835e3.jpg',
+            rating: '★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Really lovely simple clothes, really well made!',
+            rating: '★★★★',
+            createdBy: users[5]._id
+          }
+        ]
       }, {
         name: 'Mandkhai',
         categories: ['women'],
@@ -470,7 +581,31 @@ User
         image3: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a719f5de4966be6e6f17d50/1518519254871/ss18+white+frill+dress.jpg?format=750w',
         image4: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a2e77c571c10b8afee47084/1514890873091/4846+Tube+detail+bomber+front.jpg?format=750w',
         image5: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/59fc72ca53450ae23d8fd40d/1514890638592/3074+bullet+cape+darker.jpg?format=750w',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Suit Blazer',
+            image: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a719612419202e3cc1c46c7/1518518949791/ss18+pink+suit.jpg?format=1000w',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Wrap Dress',
+            image: 'https://static1.squarespace.com/static/5756a9dc01dbae2c96b894f8/58c13dbeb8a79bc99bf5923a/5a719f5de4966be6e6f17d50/1518519254871/ss18+white+frill+dress.jpg?format=1000w',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The pink suit is a must have!',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }, {
+            text: 'It really is!! I got it in the purple, best statement outfit!',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
       }, {
         name: 'almasanta',
         categories: ['women', 'accessories'],
@@ -482,7 +617,27 @@ User
         image3: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/3961/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121144Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=d73c53332b96230f837bc2ac7401857e0d5933cf790405dfcd965bbd2de45601',
         image4: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/4190/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121757Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=3d451d494cc7f3f85b9e75687baa9171a0516b6a125fc938874366551380efa5',
         image5: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/1949/list_full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180227%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180227T121834Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=ed29b04889fcc5a3a31942ca0ded6946fd1c49c6b83bf5ab1e76fbc09a1bfd21',
-        createdBy: users[1]._id
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'Black Duster Coat',
+            image: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/4409/full_product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180305%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180305T231923Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=6fa4920a624d72beb2328bf3f9c72a3e0ea0459404bf80fe0527069b1d56f12c',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Margaux Lonnberg Blazer',
+            image: 'https://almasanta-production.s3.eu-west-1.amazonaws.com/products/images/4386/product.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAJBV7XOM5Y6C23K4A%2F20180305%2Feu-west-1%2Fs3%2Faws4_request&X-Amz-Date=20180305T232005Z&X-Amz-Expires=604800&X-Amz-SignedHeaders=host&X-Amz-Signature=f8ace3127d683ba460d69f93fcbf261dc287b3178900d5edef278d1d01546b53',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Love the black long coat!',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
       }, {
         name: 'All Sisters',
         categories: ['women'],
@@ -494,7 +649,31 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/0827/0589/products/PYRAMID_bikini_blackandwhite_5954c863-7b20-408c-9a02-f4d51bfeb044_1024x1024.jpg?v=1498563639',
         image4: 'https://cdn.shopify.com/s/files/1/0827/0589/products/ALL_LOOK_SS17_07_sRGB_opt_1024x1024.jpg?v=1496744369',
         image5: 'https://cdn.shopify.com/s/files/1/0827/0589/products/3_fa53caef-4bcd-4220-81f5-d2bea6e7e443_1024x1024.jpg?v=1499168175',
-        createdBy: users[0]._id
+        createdBy: users[0]._id,
+        products: [
+          {
+            name: 'Cassiopea Swimsuit White',
+            image: 'https://cdn.shopify.com/s/files/1/0827/0589/products/casiopea_d92943dc-d696-4241-9dee-50727d55522f_1024x1024.jpg?v=1433877529',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }, {
+            name: 'Persei Bikini',
+            image: 'https://cdn.shopify.com/s/files/1/0827/0589/products/PERSEI_c5c4f227-8d53-48f2-adb9-61b3a6a821b5_1024x1024.jpg?v=1498563719',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Love this! Fits really comfortably and very flattering',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }, {
+            text: 'Really great material! Really recommend',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ]
       }, {
         name: 'finisterre',
         categories: ['women','men'],
@@ -506,10 +685,31 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1074/5128/products/bowen_crew_navy_m_onbody_CAT_480x.JPG?v=1517947952',
         image4: 'https://cdn.shopify.com/s/files/1/1074/5128/products/alga_jean_indigo_m_onbody_CAT_480x.JPG?v=1517933213',
         image5: 'https://cdn.shopify.com/s/files/1/1074/5128/products/sandway_trouser_w_onbody_CAT_480x.jpg?v=1511542455',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Alga Jean',
+            image: 'http://cdn.shopify.com/s/files/1/1074/5128/products/petram_jean_indigo_slim_m_onbody_CAT_grande.JPG?v=1517933390',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }, {
+            name: 'Perran Logo Longsleeve',
+            image: 'https://i.ebayimg.com/images/g/GfsAAOSwoG5Z8zB5/s-l300.jpg',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Really cool long sleeve shirts',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ]
+
       }, {
         name: 'Absolutely Bear',
-        categories: ['women','men'],
+        categories: ['women','men', 'accessories'],
         about: 'Absolutely Bear is an ethical clothing label for socially conscious men and women. Our mission is to use business to improve lives, we do this through combining sustainable fashion with giving. 10% of our profits go directly to our charity partners.  ',
         website: 'https://absolutelybear.com/',
         priceRange: '££',
@@ -518,7 +718,23 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-21_large.jpg?v=1515776266',
         image4: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-31_18a6e5fb-8c49-4be1-9dff-7aa1c8943232_large.jpg?v=1515960762',
         image5: 'https://cdn.shopify.com/s/files/1/1061/4244/products/1605205007lowres_large.jpg?v=1515959230',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Alga Jean',
+            image: 'https://cdn.shopify.com/s/files/1/1061/4244/products/Untitled-41_compact.jpg?v=1515775837',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Great Men\'s Jumpers!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ]
+
       }, {
         name: 'Howies',
         categories: ['women','men'],
@@ -530,7 +746,22 @@ User
         image3: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/f/e/feller-m-171-pirate_black-parent_1.jpg',
         image4: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/310x350/9df78eab33525d08d6e5fb8d27136e95/s/t/striped_merino_ls-w-173-peacoat-parent_1.jpg',
         image5: 'http://www.howies.co.uk/media/catalog/product/cache/1/small_image/310x350/9df78eab33525d08d6e5fb8d27136e95/b/l/blade-m-163-phantom-parent_1_5_1.jpg',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Alga Jean',
+            image: 'http://www.howies.co.uk/media/catalog/product/cache/1/image/100x133/9df78eab33525d08d6e5fb8d27136e95/b/l/blade-m-163-phantom-parent_3_1.jpg',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Great outerwear sold here for men and women - good for all outdoor activities!',
+            rating: '★★★★',
+            createdBy: users[4]._id
+          }
+        ]
       }, {
         name: 'The White T-shirt Co.',
         categories: ['women','men'],
@@ -542,7 +773,37 @@ User
         image3: 'https://www.thewhitetshirt.com/uploads/thumbs/the-white-t-shirt-co-mens-grey-marl-t-shirt.jpg',
         image4: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-black-organic-cotton-body-11111.jpg',
         image5: 'https://www.thewhitetshirt.com/uploads/thumbs/womens-white-organic-cotton-round-neck-front-jpg-11.jpg',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Long Sleeve Crew Neck',
+            image: 'https://www.thewhitetshirt.com/uploads/brag/mens-relaxed-organic-cotton-white-long-sleeve-crew-neck-t-shirt-copy.jpg',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            name: 'Short Sleeve V Neck',
+            image: 'https://www.thewhitetshirt.com/uploads/brag/mens-grey-marl-fitted-v-neck.jpg',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            name: 'Long Sleeve Round Neck Body',
+            image: 'https://www.thewhitetshirt.com/uploads/brag/womens-black-organic-cotton-body-11111.jpg',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The perfect t-shirt!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            text: 'I don\'t buy my tops from anywhere else',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
+
       }, {
         name: 'Knowledge Cotton Apparel',
         categories: ['men'],
@@ -554,7 +815,28 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498053660.6212_300x300.jpg?v=1516780619',
         image4: 'https://cdn.shopify.com/s/files/1/1355/6205/products/Basic_Loose_Fit_O-Neck_Tee_GOTS-T-shirt-10110-1231_Blue_melange-1_300x300.jpg?v=1519381450',
         image5: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498059716.3528_300x300.jpg?v=1519133088',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Big checked co/linen shirt',
+            image: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1498053200.993_150x.jpg?v=1516780613',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }, {
+            name: 'Chuck The Brain Chino',
+            image: 'https://cdn.shopify.com/s/files/1/1355/6205/products/1485354499.087_150x.jpg?v=1519138138',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Awesome shirts!!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ]
+
       }, {
         name: 'Brothers We Stand',
         categories: ['men'],
@@ -566,7 +848,23 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/0262/5311/products/regular_dunn_blue_1_sq_grande.jpg?v=1516705525',
         image4: 'https://cdn.shopify.com/s/files/1/0262/5311/products/kca_pique_knit_grande.jpg?v=1519054805',
         image5: 'https://cdn.shopify.com/s/files/1/0262/5311/products/cream-wave_pocket_4_Cropped_grande.png?v=1517505633',
-        createdBy: users[4]._id
+        createdBy: users[4]._id,
+        products: [
+          {
+            name: 'Thought Ezra Organic Cotton Overshirt',
+            image: 'https://cdn.shopify.com/s/files/1/0262/5311/products/MSJ3180-Ezra-Organic-Cotton-Jacket-Close_Cropped_df025896-dbfa-4247-bda6-d4272b65f9e6_1024x1024.jpg?v=1519931536',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'My go to for men\'s sustainable fashion!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ]
+
       }, {
         name: 'Aesop',
         categories: ['beauty'],
@@ -578,7 +876,41 @@ User
         image3: 'https://www.aesop.com/medias/Aesop-Body-Geranium-Leaf-Body-Cleanser-200mL-medium.png?context=bWFzdGVyfGltYWdlc3wzMzUwNjF8aW1hZ2UvcG5nfGltYWdlcy9oM2IvaGMyLzg4MTQ2Mjg2MDE4ODYucG5nfDAwMWEyMDBlNDUzNjg0OTNmZDdiNmNkZDhhMjZhZjI5ZGU2MmVlZDRjZGIxMWE1NmJiZjZhNmJlMmM5OGRkYzc',
         image4: 'https://www.aesop.com/medias/Aesop-Hair-Violet-Leaf-Hair-Balm-60mL-medium.png?context=bWFzdGVyfGltYWdlc3wxOTIwMzZ8aW1hZ2UvcG5nfGltYWdlcy9oNTYvaDc5Lzg3OTc0NDM2NTM2NjIucG5nfGY4MWEzMDQ2Njc0NTAyOTg0YWFiOThhNjk1MWRlMjk5MGVkZGRhYWYwYzc1MjRjYjkxNDllMjU4NmU4M2QxOWE',
         image5: 'https://www.aesop.com/medias/Aesop-Hair-Rose-Hair-Scalp-Moisturising-Masque-120mL-medium.png?context=bWFzdGVyfGltYWdlc3wyODQ2MTF8aW1hZ2UvcG5nfGltYWdlcy9oYWEvaDkzLzg4MDc0MjI4NTMxNTAucG5nfDgzOTY3ODUzNjY1MDNkNmRkNmE3YzUzZTAwMDM1M2VjNjk0Nzc4YTVmZmIwYTk3YTEzYmMxNzY3YThjYTI2ZTk',
-        createdBy: users[3]._id
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Parsley Seed Facial Cleanser',
+            image: 'https://www.aesop.com/medias/Aesop-SkinParsley-Seed-Facial-Cleanser-100mL-large.png?context=bWFzdGVyfGltYWdlc3wzNDYwMTh8aW1hZ2UvcG5nfGltYWdlcy9oYWMvaDIxLzg4MTUwMjM1ODczNTgucG5nfGFlYmNhMjRiM2Q2NWMzZTA1ZjljOTEyZmMxYmUyMTMyZDgyYjY4MGJlODU2OWEyNjkzYWQ0ZTBmMDY0NmQ1NjQ',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }, {
+            name: 'Fabulous Face Oil',
+            image: 'https://www.aesop.com/medias/Aesop-Skin-Fabulous-Face-Oil-25mL-large.png?context=bWFzdGVyfGltYWdlc3wxOTcyNzR8aW1hZ2UvcG5nfGltYWdlcy9oNTgvaGFhLzg3OTc0Mzc1MjYwNDYucG5nfDMzMWNlYWMyN2FiZWQ2YzhhNzM3Yjg5MjA2ZDFiYTM1ZDZkOGZhMDkxNmU4MjEwMGU2YTI3OTViNDM4ODRiZTY',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }, {
+            name: 'Chamomile Concentrate Anti-blemish Masque',
+            image: 'https://www.aesop.com/medias/Aesop-Skin-Chamomile-Concentrate-Anti-Blemish-Masque-60mL-large.png?context=bWFzdGVyfGltYWdlc3wyOTg3NjF8aW1hZ2UvcG5nfGltYWdlcy9oYmUvaGUwLzg3OTc0MzY4Mzc5MTgucG5nfDk5NjIwYTAyMDNkMzc4MDNhNTgyNWQ3NmFlNTZkMWRkMzliMDljNjk3MDZjYWIwZWIzMDU3ZmVjMTJiOGVkYWI',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'All of aesop\'s products are incredible! My favourtie is the face oil, it is so moisturising.',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }, {
+            text: 'I tried the blemish masque and it did wonders for my skin',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }, {
+            text: 'The lip cream is so good for chapped lips!',
+            rating: '★★★★★',
+            createdBy: users[4]._id
+          }
+        ]
+
       }, {
         name: 'Too Faced',
         categories: ['beauty'],
@@ -590,7 +922,23 @@ User
         image3: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dwcae7dbd0/images/hi-res/41038_1.png?sw=243&sh=243&sm=fit',
         image4: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw3328f189/images/hi-res/70228_1.png?sw=243&sh=243&sm=fit',
         image5: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw5c767400/images/hi-res/90645_1.png?sw=243&sh=243&sm=fit',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Chocolate and Gold Eye Palette',
+            image: 'https://www.toofaced.com/dw/image/v2/BBWM_PRD/on/demandware.static/-/Sites-master-catalog/default/dw252249b9/images/hi-res/41039_1.png?sw=243&sh=243&sm=fit',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Too Faced have some really great products',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }
+        ]
+
       }, {
         name: 'Bare Minerals',
         categories: ['beauty'],
@@ -602,7 +950,23 @@ User
         image3: 'https://s7d3.scene7.com/is/image/BareEscentuals/82819?$sharpen1$&wid=345&hei=345',
         image4: 'https://s7d3.scene7.com/is/image/BareEscentuals/47627?$sharpen1$&wid=345&hei=345',
         image5: 'https://s7d3.scene7.com/is/image/BareEscentuals/82877?$sharpen1$&wid=345&hei=345',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Ageless Serum Duo',
+            image: 'https://s7d3.scene7.com/is/image/BareEscentuals/84936?$sharpen1$&wid=345&hei=345',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'All of the bare minerals products feel so good on the skin',
+            rating: '★★★★★',
+            createdBy: users[2]._id
+          }
+        ]
+
       }, {
         name: 'Becca Cosmetics',
         categories: ['beauty'],
@@ -615,6 +979,7 @@ User
         image4: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/2/_/2_slbp_pinkhaze_1400x1400_2.png',
         image5: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/4/_/4_1400x1400-_0004_lush-lip-pack-_chai-creme_1.png',
         createdBy: users[1]._id
+
       }, {
         name: 'Hourglass',
         categories: ['beauty'],
