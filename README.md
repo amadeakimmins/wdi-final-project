@@ -76,32 +76,32 @@ User Account:
 ![image](https://user-images.githubusercontent.com/32812117/37029758-709bff72-2130-11e8-8f42-bac2044b0f54.png)
 
 Fully Mobile Responsive:
-![image](https://user-images.githubusercontent.com/32812117/37029764-740d8cb6-2130-11e8-9682-1ba853708469.png)
+![image](https://user-images.githubusercontent.com/32812117/37031305-315742ee-2136-11e8-99a2-d97f6bba2b16.png)
 
-![image](https://user-images.githubusercontent.com/32812117/37029792-853541e6-2130-11e8-8c8e-74a75f76056e.png)
+![image](https://user-images.githubusercontent.com/32812117/37031319-3ca8ecf6-2136-11e8-984d-e0b0a955c668.png)
 
-![image](https://user-images.githubusercontent.com/32812117/37029796-87ca04f0-2130-11e8-9f20-d7968fe7d5bd.png)
+![image](https://user-images.githubusercontent.com/32812117/37031337-4b07487e-2136-11e8-95ad-fdfd494a2cde.png)
 
-![image](https://user-images.githubusercontent.com/32812117/37030085-833eff8e-2131-11e8-97ce-394a8c98c161.png)
+![image](https://user-images.githubusercontent.com/32812117/37031346-579774f6-2136-11e8-96cf-3874ca5a45a5.png)
 
 
 ---
 
 ### Challenges and Problems
 
-- It was challenging at first to figure out the step-by-step process of building the app and inputting this into our Trello board so that we could divide the work and have a solid plan.
+-  Getting the category filter on the index page to work by mapping over the array of categories and checking to see if the selected category existed in all the brands array of categories was challenging
 
--  The meetup API was harder to implement than we thought it would be originally and took us longer than we expected to get it working and to find the correct url needed to get the response we wanted. Making a proxy request was challenging as it required a more intricate setup.
+- I used react-bootstrap for the first time with this project which worked well in the end but it was a challenge at first to get to grips with how it worked.
 
-- The functionality behind a logged in user joining an existing meetup event from the API and displaying the single event on the show page was also more complicated than we originally expected. We had to save the information from the API we wished to display on the page.
+- I didn't have as much time as I hoped to do testing. I have a few back end tests running but none on the front-end so I will hopefully add them in the time after the course.
 
 ---
 
 ### Wins
 
-- The project seemed to flow very smoothly with no disagreements. We had frequent stand ups to discuss what we had achieved and what we were working on and what we were finding difficult. We worked really efficiently in a team and generally managed to meet our targets in time. We communicated frequently over slack which meant we always knew what the other team mate was working on.
+- This project was really enjoyable. I aimed to keep the idea behind it simple and to focus on making it as clean and finished as I could. I love styling so this meant I could really put a lot of effort into making it look as good as I could in the week we had.
 
-- We are proud of all the functionality that we have produced in the project as well as the styling.
+- I also really liked React and the way it is laid out and has thrown out the MVC convention.
 
 ---
 
@@ -109,8 +109,11 @@ Fully Mobile Responsive:
 
 Features I would have liked to include:
 
-- Expanding the app to give the user the ability to suggest restuarants, bars and activities, nearby the events or associated with them, on the groups that they join in the comment section.
+- A page that can link it's users to methods for recycling clothes that they do not want anymore.
+  - For example, places where they can sustainably dispose of clothese which can be found by post code.   
+  - and possibly designers or people who buy or take old clothes and re style them.
 
-- Support real-time messaging - allow users to message each other over the app.
 
-- Link the app to city mapper so that users can get a route from their current location to the event.
+- Also a rating system for just how green these brands are depending on a variety of different factors- what each supplier is promising in a comparable rating system.
+
+- A blog where users can write articles about interesting stories related to sustainable and ethical production of clothing and beauty products.
