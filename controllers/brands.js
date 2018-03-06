@@ -9,7 +9,7 @@ function brandsIndex(req, res, next) {
 }
 
 function brandsCreate(req, res, next) {
-
+  req.body.createdBy = req.currentUser;
   if(req.file) req.body.image = req.file.filename;
 
   Brand

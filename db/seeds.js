@@ -106,7 +106,7 @@ User
         image3: 'https://assets2.thereformation.com/app/public/assets/products/124728/original/MILAN_DRESS_IVORY_1_CLP.jpg?1507318225%27)',
         image4: 'https://assets2.thereformation.com/app/public/assets/products/139819/original/GEORGIA_JUMPSUIT_KASAI_1_clp.jpg?1518832866%27)',
         image5: 'https://assets2.thereformation.com/app/public/assets/products/131429/original/REX_TWO_PIECE_HEATHER_PLD_1_CLP.jpg?1512769948%27)',
-        createdBy: users[1]._id,
+        createdBy: users[0]._id,
         products: [
           {
             name: 'Hendrix Jean',

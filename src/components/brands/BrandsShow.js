@@ -32,6 +32,7 @@ class BrandsShow extends React.Component {
 
   // BRANDS
   componentDidMount() {
+    window.scrollTo(0, 0);
 
     Axios
       .get(`/api/brands/${this.props.match.params.id}`)
@@ -120,6 +121,7 @@ class BrandsShow extends React.Component {
 
   userCreatedBrand = () => {
     console.log('created by', this.state.brand.createdBy);
+    if(this.state.brand.createdBy) console.log(Auth.getPayload().userId, this.state.brand.createdBy.id);
     return this.state.brand.createdBy && Auth.getPayload().userId === this.state.brand.createdBy.id;
   }
 
@@ -181,16 +183,16 @@ class BrandsShow extends React.Component {
                 this.state.brand.favorites.some(favorite => favorite === Auth.getPayload().userId) &&
                 <button className="main-button" onClick={this.deleteFavourite}><i className="fa fa-thumbs-down"></i></button>
               }
+
+              { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
+                <i className="fa fa-edit"></i></Link> }
+
+              { Auth.isAuthenticated() && this.userCreatedBrand() &&
+              <button className="main-button" onClick={this.deleteBrand}>
+                <i className="fa fa-trash"></i>
+              </button>}
+
             </Col>
-            {' '}
-            {/* this.userCreatedBrand() && */}
-            { Auth.isAuthenticated() &&
-            <button className="main-button" onClick={this.deleteBrand}>
-            Delete
-            </button>}
-            { Auth.isAuthenticated() && <Link className="main-button" to={`/brands/${this.state.brand.id}/edit`} >
-            Edit
-            </Link> }
           </Row>
           <hr className="horizontal-rule"/>
 
