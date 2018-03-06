@@ -12,7 +12,7 @@ const RegisterForm = ({ handleChange, handleSubmit, user, errors }) => {
       { errors.emailUnique && <p className="errors">{errors.emailUnique}</p>}
 
       <FormGroup>
-        <ControlLabel htmlFor="fullname">fullname</ControlLabel>
+        <ControlLabel htmlFor="fullname">Fullname</ControlLabel>
         <FormControl
           name="fullname"
           type="fullname"
