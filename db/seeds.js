@@ -978,7 +978,15 @@ User
         image3: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/b/a/backlightprimingfilter.png',
         image4: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/2/_/2_slbp_pinkhaze_1400x1400_2.png',
         image5: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/4/_/4_1400x1400-_0004_lush-lip-pack-_chai-creme_1.png',
-        createdBy: users[1]._id
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'Backlight Priming Filter',
+            image: 'https://d1g7p5gdkuk5bn.cloudfront.net/media/catalog/product/cache/1/small_image/620x700/040ec09b1e35df139433887a97daa66f/b/a/backlightprimingfilter.png',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }
+        ]
 
       }, {
         name: 'Hourglass',
@@ -991,7 +999,27 @@ User
         image3: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/744x950/9df78eab33525d08d6e5fb8d27136e95/v/a/vanish-seamless-finish-foundation-makeup-brush.jpg',
         image4: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/a/m/ambient-lighting-palette-contouring-highlighting-face-makeup.jpg',
         image5: 'https://www.hourglasscosmetics.com/media/catalog/product/cache/1/image/1200x/040ec09b1e35df139433887a97daa66f/v/e/veil-mineral-primer-makeup-primer.jpg',
-        createdBy: users[3]._id
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Lip Treatment Oil',
+            image: 'https://www.hourglasscosmetics.com/media/catalog/product/324x414//n/o/no_28_lip_treatment_oil_1.jpg',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'The best lip treatment you can get and it\'s completely vegan',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            text: 'I love all these products',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
+
       }, {
         name: 'Barry M',
         categories: ['beauty'],
@@ -1003,7 +1031,15 @@ User
         image3: 'https://www.barrym.com/img/products/117/ranges/412/big.jpg',
         image4: 'https://www.barrym.com/img/products/32/ranges/115/big.jpg',
         image5: 'https://www.barrym.com/img/products/204/ranges/big.jpg',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        comments: [
+          {
+            text: 'Love that Barry M is made ethically',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ]
+
       }, {
         name: 'Charlotte Tilbury',
         categories: ['beauty'],
@@ -1015,7 +1051,32 @@ User
         image3: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/c/h/charlotte-tilbury-skincare-brightening-youth-glow-product_002_.jpg',
         image4: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/c/h/charlotte_tilbury_beauty_light_wand_closed.jpg',
         image5: 'http://media.charlottetilbury.com/catalog/product/cache/1/small_image/296x340/9df78eab33525d08d6e5fb8d27136e95/m/a/magic-cream1.jpg',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Filmstar Bronze & Glow',
+            image: 'http://media.charlottetilbury.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/f/i/filmstar-bronze-and-glow_open_1_1.jpg',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Luxury Palette',
+            image: '  http://media.charlottetilbury.com/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/p/p/pp-quad_the-vinatge-vamp_1_1.jpg',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'You\'ll never use another make up brand after using Charlotte Tilbury',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            text: 'I love all these products',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }
+        ]
+
       }, {
         name: 'Kat Von D Beauty',
         categories: ['beauty'],
@@ -1027,7 +1088,17 @@ User
         image3: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dw1d0388bb/hi-res/22131V1.jpg?sw=290',
         image4: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwf2a0e0c7/hi-res/10008_1017.jpg?sw=290',
         image5: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwbd7175e9/hi-res/22117V1.jpg?sw=290',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Lock-it Foundation',
+            image: 'https://www.katvondbeauty.com/dw/image/v2/AAXW_PRD/on/demandware.static/-/Sites-itemmaster_KVD/default/dwa766874e/hi-res/20005_2052N.jpg?sw=160',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }
+        ]
+
+
       }, {
         name: 'Lush',
         categories: ['beauty'],
@@ -1039,7 +1110,23 @@ User
         image3: 'http://img.allw.mn/content/2013/10/21101550_7036.jpg',
         image4: 'http://images.totalbeauty.com/uploads/tx_userproducts/200/tbp500891_v0_l.jpg',
         image5: 'https://media1.popsugar-assets.com/files/thumbor/98Td7WvlQ3qbTDG3jeHBy-PuIvo/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2017/08/02/874/n/40039897/7f946ddc59822f01dd47b0.98728476_edit_img_image_43824340_1501646976/i/Lush-Cosmetics-Bestsellers.jpg',
-        createdBy: users[1]._id
+        createdBy: users[1]._id,
+        products: [
+          {
+            name: 'Shampoo Bar',
+            image: 'https://res.cloudinary.com/lush/image/upload/s--RW4cR9U9--/c_fill,h_200,q_jpegmini,w_200/v1/products/main/2014/10/Jason_argan_oils_web.jpg?itok=0QDZzDaK',
+            rating: '★★★★',
+            createdBy: users[2]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Revolutionary solid shampoo, works so well! And so much less waste! LOVE IT <3',
+            rating: '★★★★',
+            createdBy: users[1]._id
+          }
+        ]
+
       }, {
         name: 'NYX',
         categories: ['beauty'],
@@ -1051,7 +1138,23 @@ User
         image3: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dw51143853/ProductImages/2017/Face/Total_Control_Drop_Foundation/800897068752_totalcontroldropfoundation_alabaster_main.jpg?sw=390&sh=390&sm=fit',
         image4: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwb2c9c6d4/ProductImages/Face/Highlight_Contour_Palette/800897836245_highlightcontourpalette_main.jpg?sw=390&sh=390&sm=fit',
         image5: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwbbca9dd2/ProductImages/Lips/Slim_Lip_Pencil/slimlippencil_main.jpg?sw=390&sh=390&sm=fit',
-        createdBy: users[0]._id
+        createdBy: users[0]._id,
+        products: [
+          {
+            name: 'Illuminating Powder',
+            image: 'https://www.nyxcosmetics.co.uk/dw/image/v2/AAQP_PRD/on/demandware.static/-/Sites-nyx-master-catalog/default/dwa7c6b6cf/ProductImages/2017/Face/Away_We_Glow_Illuminating_Powder/awayweglowilluminatingpowder_main.jpg?sw=390&sh=390&sm=fit',
+            rating: '★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Great products but not the best!',
+            rating: '★★★',
+            createdBy: users[1]._id
+          }
+        ]
+
       }, {
         name: 'Nügg',
         categories: ['beauty'],
@@ -1063,7 +1166,23 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/0438/6525/products/DSC09875_1_medium.jpg?v=1512040263',
         image4: 'https://cdn.shopify.com/s/files/1/0438/6525/products/111317_NuggHoliday_01_020_V2_medium.jpg?v=1511216861',
         image5: 'https://cdn.shopify.com/s/files/1/0438/6525/products/Copy_of_Copy_of_Copy_of_Instagram_Post_Untitled_Design_medium.png?v=1519788938',
-        createdBy: users[5]._id
+        createdBy: users[5]._id,
+        products: [
+          {
+            name: 'Lip Scrub and Smoother',
+            image: 'https://cdn.shopify.com/s/files/1/0438/6525/products/1N0A6195-2_large.jpg?v=1520049991',
+            rating: '★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Helped my lips SO much!',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ]
+
       }, {
         name: 'Pai',
         categories: ['beauty'],
@@ -1075,7 +1194,27 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Rosehip_Mask_medium.png?v=1499776790',
         image4: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Exfoliator_1_medium.png?v=1499776183',
         image5: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Cham_Day_Cream_medium.png?v=1508161175',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Avocado & Jojoba Hydrating Day Cream',
+            image: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Avo_Day_Cream_medium.png?v=1508161161',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'such hudrating products for your skin!',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }, {
+            text: 'I love Pai products',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }
+        ]
+
       }, {
         name: 'Odacité',
         categories: ['beauty'],
@@ -1087,7 +1226,23 @@ User
         image3: 'https://cdn.shopify.com/s/files/1/1282/4197/products/Rosehip_Mask_medium.png?v=1499776790',
         image4: 'https://cdn.shopify.com/s/files/1/0671/5641/products/AOW_large.jpg?v=1489449275',
         image5: 'https://cdn.shopify.com/s/files/1/0671/5641/products/HydraPurify_MintGreenTea_2_large.png?v=1514997321',
-        createdBy: users[3]._id
+        createdBy: users[3]._id,
+        products: [
+          {
+            name: 'Green Tea Lemongrass Serum Concentrate',
+            image: 'https://cdn.shopify.com/s/files/1/0671/5641/products/Gt_L_Bottle_Drop_large.jpg?v=1520274341',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Odacite is amazing!!',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ]
+
       }]);
   })
   .then((brand) => {
