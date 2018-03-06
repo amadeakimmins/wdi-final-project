@@ -147,7 +147,36 @@ User
         image3: 'https://www.stellamccartney.com/38/38696917UX_11_h.jpg',
         image4: 'https://www.stellamccartney.com/38/38697048AQ_11_h.jpg',
         image5: 'https://www.stellamccartney.com/45/45379160FN_11_j.jpg',
-        createdBy: users[2]._id
+        createdBy: users[2]._id,
+        products: [
+          {
+            name: 'Falabella Reversible Tote',
+            image: 'https://www.stellamccartney.com/45/45379254tj_12_h.jpg',
+            rating: '★★★★★',
+            createdBy: users[0]._id
+          }, {
+            name: 'Gabriell Maxi Dress',
+            image: 'https://www.stellamccartney.com/34/34827070SW_11_h.jpg',
+            rating: '★★★★★',
+            createdBy: users[1]._id
+          }, {
+            name: 'Lorinda Embroidery Bomber Jacket',
+            image: 'https://www.stellamccartney.com/41/41765534LG_11_h.jpg',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ],
+        comments: [
+          {
+            text: 'Stella McCartney is a genius',
+            rating: '★★★★★',
+            createdBy: users[5]._id
+          }, {
+            text: 'I bought one of her bags, best thing I ever bought',
+            rating: '★★★★★',
+            createdBy: users[3]._id
+          }
+        ]
       }, {
         name: 'Svilu',
         categories: ['women'],
