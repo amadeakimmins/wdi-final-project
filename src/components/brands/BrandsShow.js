@@ -253,6 +253,7 @@ class BrandsShow extends React.Component {
             </Tabs>
           </Row>
         </Grid>
+        <footer className="footer"></footer>
       </div>
     );
   }

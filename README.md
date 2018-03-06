@@ -4,13 +4,11 @@
 
 ### Overview
 
+A website promoting sustainable and ethical fashion brands to the conscious shopper. Users can add and share sustainable and ethical clothing brands and then rate the brand, leave comments and review specific products they would like to recommend.
 
-
-[**Heroku**]()
+[**Heroku**](https://sustain-app.herokuapp.com/)
 
 [**GitHub Repository**](https://github.com/amadeakimmins/wdi-group-project.git)   
-
-
 
 ---
 
@@ -20,57 +18,41 @@ For this project we have used the following technologies:
 
 - HTML5
 - SCSS
-- Angular: ^1.6.8
-- Node JS
 - JavaScript (ECMAScript 6)
-- mongoose: V5.0.0-rc2
-- morgan: V1.8.1
+- React
+- React-bootstrap
+- React-slick
+- slick-carousel
+- Bootstrap CSS only
+- filestack-js
+- mongoose
 - Git
 - GitHub
 - Heroku
 - Trello
 - Balsamiq
-- Bower
-- satellizer: ^0.15.5
-- angular-ui-router: ^1.0.14
-- angular-resource: ^1.6.9
-- bulma: ^0.6.2
-- angular-filepicker: ^1.1.4
-- angular-messages: ^1.6.9
-- chai: ^4.1.2
-- mocha: ^5.0.0,
-- nyc: ^11.4.1
-- require-dir: ^0.3.1
-- supertest: ^3.0.0
-
----
-
-### APIs Used:
-
-For this project we have used the following API:
-
--  [**Meetup API**](https://www.meetup.com/meetup_api/?_cookie-check=wHqkfxSLgVwWVBb0)
--  [**Google Maps API**](https://developers.google.com/maps/documentation/javascript/tutorial)
--  [**Place Autocomplete**](https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete)
+- Yarn
+- Chai
+- Mocha
+- nyc
+- supertest
 
 ---
 
 ### Wireframes
 
-Our original wireframes are similar to how the project actually turned out:  
-
 Wireframes:
-![image](https://user-images.githubusercontent.com/32818032/36024584-10f126f8-0d88-11e8-8552-8feea71a9fef.png)
+![image](https://user-images.githubusercontent.com/32812117/37028835-524664e8-212d-11e8-9bb5-7d5b3a1a8fbe.png)
 
 
 ---
 
 ### Trello
 
-We used Trello to make a thorough plan of all the tasks we had to do and to divide the work evenly between us. It allowed us to keep track and to keep on top of what we needed to do. The screenshot below was taken early on in the project.
+Trello was really useful in the planning process to work out how much I needed to do and to keep track of what I had already done:
 
 Trello Screenshot:
-![trello](https://user-images.githubusercontent.com/32818032/36024585-1104873e-0d88-11e8-9b25-2e1aa6de948c.png)
+![image](https://user-images.githubusercontent.com/32812117/37028927-9ca749b2-212d-11e8-99d4-6c76a1f63a56.png)
 
 
 ---

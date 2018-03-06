@@ -45,7 +45,6 @@ class App extends React.Component {
             <AuthenticationRoutes />
             <BrandsRoutes />
           </main>
-          <footer className="footer"></footer>
         </div>
       </Router>
 
