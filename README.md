@@ -101,8 +101,6 @@ Fully Mobile Responsive:
 
 - This project was really enjoyable. I aimed to keep the idea behind it simple and to focus on making it as clean and finished as I could. I love styling so this meant I could really put a lot of effort into making it look as good as I could in the week we had.
 
-- I also really liked React and the way it is laid out and has thrown out the MVC convention.
-
 ---
 
 ### Future Features
